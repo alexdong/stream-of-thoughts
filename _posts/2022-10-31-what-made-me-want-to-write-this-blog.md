@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Let me speak through these text"
-date: 2022-11-01 21:19
+date: 2022-10-31 21:19
 comments: true
 categories: life
 ---
