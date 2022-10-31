@@ -1,0 +1,2 @@
+
+bundle exec jekyll build -d docs && git add . && git commit -m "new post" && git push
