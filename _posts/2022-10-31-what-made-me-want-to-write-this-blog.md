@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Let me speak through these text"
+date: 2022-11-01 21:19
+comments: true
+categories: life
+---
+
 Hey Mia,
 
 Here is why I decided to write this blog.
