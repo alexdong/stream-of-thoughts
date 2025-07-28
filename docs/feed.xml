@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2025-07-29T09:26:32+12:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Stream of thoughts from Alex Dong</title><subtitle>What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">A broader view on blue/red team</title><link href="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="A broader view on blue/red team" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao wrote about blue and red teams in the context of working with AI.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2025-07-29T09:27:48+12:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Stream of thoughts from Alex Dong</title><subtitle>What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">A broader view on blue/red team</title><link href="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="A broader view on blue/red team" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao wrote about blue and red teams in the context of working with AI.
 https://mathstodon.xyz/@tao</p>
 
 <blockquote>
@@ -13,7 +13,9 @@ the damage that can result from deploying insecure systems.</p>
 invaders who finds inconsistencies, the weakest link, in a coherent whole and
 punch holes in it.</p>
 
-<p>An unexpected insight is red teams compound faster.</p>
+<p>An unexpected insight is red teams compound faster. From an organisational
+design perspective, slightly weird/unconventional contributors are more
+suitable for playing the red team role.</p>
 
 <blockquote>
   <p>The nature of these teams mirror each other; mathematicians would call them
@@ -25,10 +27,7 @@ sense of security).  Dually, the contributions to a red team can often be
 additive: a red team report that contains both a serious vulnerability and a
 more trivial one is more useful than a report that only contains the serious
 issue, as it is valuable to have the blue team address both vulnerabilities.</p>
-</blockquote>
-
-<p>From organisational design perspective, slightly weird/unconventional
-contributors are more suitable for playing the red team role.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao wrote about blue and red teams in the context of working with AI. https://mathstodon.xyz/@tao]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
+</blockquote>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao wrote about blue and red teams in the context of working with AI. https://mathstodon.xyz/@tao]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
 so we can all look at it everyday.</p>
 
 <blockquote>

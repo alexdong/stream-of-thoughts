@@ -19,7 +19,9 @@ Blue teams are builders who create orders from chaos, while red teams are
 invaders who finds inconsistencies, the weakest link, in a coherent whole and
 punch holes in it. 
 
-An unexpected insight is red teams compound faster. 
+An unexpected insight is red teams compound faster. From an organisational
+design perspective, slightly weird/unconventional contributors are more
+suitable for playing the red team role. 
 
 > The nature of these teams mirror each other; mathematicians would call them
 > "dual".  The output of a blue team is only as strong as its weakest link: a
@@ -31,5 +33,3 @@ An unexpected insight is red teams compound faster.
 > more trivial one is more useful than a report that only contains the serious
 > issue, as it is valuable to have the blue team address both vulnerabilities.
 
-From organisational design perspective, slightly weird/unconventional
-contributors are more suitable for playing the red team role. 
