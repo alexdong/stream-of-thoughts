@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2022-10-31T21:25:31+13:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Letters to Mia</title><subtitle>One day, you&apos;ll understand.</subtitle><entry><title type="html">Let me speak through these text</title><link href="https://alexdong.com//life/2022/10/31/what-made-me-want-to-write-this-blog.html" rel="alternate" type="text/html" title="Let me speak through these text" /><published>2022-10-31T21:19:00+13:00</published><updated>2022-10-31T21:19:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/what-made-me-want-to-write-this-blog</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/what-made-me-want-to-write-this-blog.html"><![CDATA[<p>Hey Mia,</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2025-07-29T09:26:32+12:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Stream of thoughts from Alex Dong</title><subtitle>What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">A broader view on blue/red team</title><link href="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="A broader view on blue/red team" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao wrote about blue and red teams in the context of working with AI.
+https://mathstodon.xyz/@tao</p>
 
-<p>Here is why I decided to write this blog.</p>
+<blockquote>
+  <p>In the field of cybersecurity, a distinction is made between the “blue team”
+task of building a secure system, and the “red team” task of locating
+vulnerabilities in such systems.  The blue team is more obviously necessary
+to create the desired product; but the red team is just as essential, given
+the damage that can result from deploying insecure systems.</p>
+</blockquote>
 
-<p>I was listening to <a href="https://podcasts.apple.com/nz/podcast/people-i-mostly-admire/id1525936566?i=1000551594029">The only COVID-19 book worth
-reading</a>.
-The conversation was mainly about Michael Lewis’s book on COVID-19 and CDC.  But
-towards the end, Michael shared the story of losing his daughter to a car
-accident.</p>
+<p>Blue teams are builders who create orders from chaos, while red teams are
+invaders who finds inconsistencies, the weakest link, in a coherent whole and
+punch holes in it.</p>
 
-<p>Standing there by the strawberry patch, I remain motionless for a few minutes. 
-Overwhelmed by the sadness for Michael.</p>
+<p>An unexpected insight is red teams compound faster.</p>
 
-<p>Life is unpredictable. Life is short. life is fragile. And we can’t do anything
-about it.</p>
+<blockquote>
+  <p>The nature of these teams mirror each other; mathematicians would call them
+“dual”.  The output of a blue team is only as strong as its weakest link: a
+security system that consists of a strong component and a weak component
+(e.g., a house with a securely locked door, but an open window) will be
+insecure (and in fact worse, because the strong component may convey a false
+sense of security).  Dually, the contributions to a red team can often be
+additive: a red team report that contains both a serious vulnerability and a
+more trivial one is more useful than a report that only contains the serious
+issue, as it is valuable to have the blue team address both vulnerabilities.</p>
+</blockquote>
 
-<p>By the time you reach 45, which is how old I am when I am writing this sentence,
-I would be 82 years old. And there is a 50-50 chance that I won’t be here for you.
-(NZ’s <a href="https://www.stats.govt.nz/news/growth-in-life-expectancy-slows/">male average life expectency is 82</a>.)</p>
-
-<p>It scares me to realise that I won’t be here with you. The possibility has
-always been here but I have never really thought about it until hearing about
-Michael’s story.</p>
-
-<p>So at that moment, I promised myself that I will start writing down what is
-happening in our life; what has been going through in my mind everyday, and what
-challenges I’m facing and how I dealt with it.</p>
-
-<p>I hope that one day in the future, when you wake up and say to yourself “I
-really wish I can talk to daddy now”, you can find me speaking to you thorugh
-these writings.</p>]]></content><author><name></name></author><category term="life" /><summary type="html"><![CDATA[Hey Mia,]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
+<p>From organisational design perspective, slightly weird/unconventional
+contributors are more suitable for playing the red team role.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao wrote about blue and red teams in the context of working with AI. https://mathstodon.xyz/@tao]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
 so we can all look at it everyday.</p>
 
 <blockquote>

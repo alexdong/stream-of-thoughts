@@ -1,8 +1,0 @@
-
-bundle exec jekyll build -d docs 
-
-echo "alexdong.com" > docs/CNAME
-
-git add . 
-git commit -m "new post"
-git push
