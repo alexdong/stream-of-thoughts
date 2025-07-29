@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Insights from thinking of the blue/red team dynamic in the AI age"
+title: "Two Insights from Tao's Blue/Red Teams Metaphor: Software Testing's Future and AI as a Coach"
 date: 2025-07-29 09:17
 comments: true
 categories: 
