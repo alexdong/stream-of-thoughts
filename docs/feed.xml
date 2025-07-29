@@ -1,5 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2025-07-29T09:27:48+12:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Stream of thoughts from Alex Dong</title><subtitle>What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">A broader view on blue/red team</title><link href="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="A broader view on blue/red team" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao wrote about blue and red teams in the context of working with AI.
-https://mathstodon.xyz/@tao</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com//feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com//" rel="alternate" type="text/html" /><updated>2025-07-29T13:00:39+12:00</updated><id>https://alexdong.com//feed.xml</id><title type="html">Stream of thoughts from Alex Dong</title><subtitle>What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Insights from thinking of the blue/red team dynamic in the AI age</title><link href="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Insights from thinking of the blue/red team dynamic in the AI age" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com//2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao’s <a href="https://mathstodon.xyz/@tao/114915604830689046">blue and red
+teams</a> post crystalised several
+insights about software testing and a different class of AI product that I have
+been building but hadn’t found the language to articulate until now.</p>
+
+<p>He begins by describing the role of blue and red teams. Blue teams are
+builders who construct and defend orders from chaos, while red teams are
+hunters and invaders who find the weakest link in a coherent whole and exploit
+it.</p>
 
 <blockquote>
   <p>In the field of cybersecurity, a distinction is made between the “blue team”
@@ -7,27 +14,90 @@ task of building a secure system, and the “red team” task of locating
 vulnerabilities in such systems.  The blue team is more obviously necessary
 to create the desired product; but the red team is just as essential, given
 the damage that can result from deploying insecure systems.</p>
-</blockquote>
 
-<p>Blue teams are builders who create orders from chaos, while red teams are
-invaders who finds inconsistencies, the weakest link, in a coherent whole and
-punch holes in it.</p>
-
-<p>An unexpected insight is red teams compound faster. From an organisational
-design perspective, slightly weird/unconventional contributors are more
-suitable for playing the red team role.</p>
-
-<blockquote>
   <p>The nature of these teams mirror each other; mathematicians would call them
 “dual”.  The output of a blue team is only as strong as its weakest link: a
 security system that consists of a strong component and a weak component
 (e.g., a house with a securely locked door, but an open window) will be
 insecure (and in fact worse, because the strong component may convey a false
-sense of security).  Dually, the contributions to a red team can often be
+sense of security).</p>
+</blockquote>
+
+<p>His observation about the human dynamics of red teams is particularly insightful:</p>
+
+<blockquote>
+  <p>Dually, the contributions to a red team can often be
 additive: a red team report that contains both a serious vulnerability and a
 more trivial one is more useful than a report that only contains the serious
 issue, as it is valuable to have the blue team address both vulnerabilities.</p>
-</blockquote>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao wrote about blue and red teams in the context of working with AI. https://mathstodon.xyz/@tao]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
+</blockquote>
+
+<p>Two unexpected insights about QA and testers emerged:</p>
+
+<p>1) Red teams compound faster. Once there’s a vulnerability, subsequent exploit
+attempts can build upon it.  This can be quite different from blue teams, where
+each new feature or component is a fresh start with a clear boundary from other
+neighboring components.</p>
+
+<p>2) Unconventional thinkers are better suited for red team roles.</p>
+
+<p>Today, in most software organizations, testers are treated as second-class
+citizens and are not given the same respect as developers. Research shows
+testers typically earn 25-33% less than software engineers with comparable
+experience. In worse yet common cases, testers are brought in as an
+afterthought to clean up after development is largely complete.</p>
+
+<p>As AI’s code generation capabilities advance, testers may become far more
+critical than they are today. Finding inconsistencies and ambiguities in
+software would provide high-leverage positive impact on the system’s integrity,
+creating far more business value than just finding isolated bugs that
+developers might overlook.</p>
+
+<p>This also requires a shift in recruiting and hiring testers. Instead of manual
+laborers content with repetitive tasks, we need people with explorative and
+inquisitive mindsets.</p>
+
+<p>Tao then applies this framework to AI products—an insightful perspective
+coming from a mathematician rather than a software engineer:</p>
+
+<blockquote>
+  <p>Many of the proposed use cases for AI tools try to place such tools in the
+“blue team” category, such as creating code, text, images, or mathematical
+arguments in some semi-automated or automated fashion, that is intended for
+use for some external application.  However, in view of the unreliability and
+opacity of such tools, it may be better to put them to work on the “red
+team”, critiquing the output of blue team human experts but not directly
+replacing that output; “blue team” AI use should only be permitted up to the
+capability of one’s “red team” to catch and correct any errors generated.
+This approach not only plays to current AI strengths, such as breadth of
+exposure and fast feedback, but also mitigates the risks of deploying
+unverified AI output in high-stakes settings.</p>
+
+  <p>In my own personal experiments with AI, for instance, I have found it to be
+useful for providing additional feedback on some proposed text, argument,
+code, or slides that I have generated (including this current text).  I might
+only agree with a fraction of the suggestions generated by the AI tool; but I
+find that there are still several useful comments made that I do agree with,
+and incorporate into my own output.  This is a significantly less glamorous
+or intuitive use case for AI than the more commonly promoted “blue team” one
+of directly automating one’s own output, but one that I find adds much more
+reliable value.</p>
+</blockquote>
+
+<p>This suggests a new category of AI products focused on coaching and feedback
+rather than direct output generation.</p>
+
+<p><a href="https://github.com/alexdong/high-taste">alexdong/high-taste</a> is my small
+experiment in this direction—using AI to develop coding judgment rather than
+generate code. Now imagine red team AI across every domain: tools that
+critique your arguments, challenge your assumptions, stress-test your
+strategies. Not to replace expertise, but to forge it.</p>
+
+<p>AI’s capabilities remain frustratingly jagged—brilliant at some tasks, 
+unreliable at others. But perhaps that’s exactly why red team AI works: 
+it sidesteps AI’s weaknesses while amplifying what it does well. Maybe the 
+companies building critique tools today might discover a more constructive
+path through the AI landscape than those chasing perfect generation.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com//life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
 so we can all look at it everyday.</p>
 
 <blockquote>
