@@ -29,7 +29,6 @@ Polish blog posts for clarity and flow while preserving the author's voice and q
 - Keep professional yet conversational tone
 
 **Title Options:**
-If the post contains multiple insights, offer titles that:
 - Clearly signal the structure ("Two Insights from...")
 - Reference the source material when relevant
 - Capture both main themes concisely

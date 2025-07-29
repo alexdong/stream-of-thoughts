@@ -9,3 +9,8 @@ github_username:  alexdong
 theme: minima
 plugins:
   - jekyll-feed
+
+# Sass configuration to suppress deprecation warnings
+sass:
+  quiet_deps: true
+  verbose: false
