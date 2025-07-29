@@ -1,0 +1,20 @@
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250729-7509-3mrn3n sitelibdir\=./.gem.20250729-7509-3mrn3n clean
+
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250729-7509-3mrn3n sitelibdir\=./.gem.20250729-7509-3mrn3n
+compiling ruby_http_parser.c
+In file included from ruby_http_parser.c:1:
+In file included from /opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby.h:38:
+In file included from /opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby/ruby.h:25:
+/opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby/defines.h:16:10: fatal error: 'stdio.h' file not found
+   16 | #include <stdio.h>
+      |          ^~~~~~~~~
+1 error generated.
+make: *** [ruby_http_parser.o] Error 1
+
+make failed, exit code 2

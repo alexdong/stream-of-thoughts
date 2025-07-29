@@ -1,0 +1,21 @@
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/google-protobuf-3.25.8/ext/google/protobuf_c
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/google-protobuf-3.25.8/ext/google/protobuf_c
+make DESTDIR\= sitearchdir\=./.gem.20250729-7509-vob40t sitelibdir\=./.gem.20250729-7509-vob40t clean
+
+current directory: /Users/alexdong/Projects/alexdong.com/vendor/bundle/ruby/3.4.0/gems/google-protobuf-3.25.8/ext/google/protobuf_c
+make DESTDIR\= sitearchdir\=./.gem.20250729-7509-vob40t sitelibdir\=./.gem.20250729-7509-vob40t
+compiling protobuf.c
+In file included from protobuf.c:8:
+In file included from ./protobuf.h:13:
+In file included from /opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby.h:38:
+In file included from /opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby/ruby.h:25:
+/opt/homebrew/Cellar/ruby/3.4.5/include/ruby-3.4.0/ruby/defines.h:16:10: fatal error: 'stdio.h' file not found
+   16 | #include <stdio.h>
+      |          ^~~~~~~~~
+1 error generated.
+make: *** [protobuf.o] Error 1
+
+make failed, exit code 2

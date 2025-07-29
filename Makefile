@@ -3,8 +3,8 @@
 # Default editor (can be overridden by environment variable)
 EDITOR ?= vim
 
-# Ensure user-installed bundler is in PATH
-export PATH := $(HOME)/.gem/ruby/2.6.0/bin:$(PATH)
+# Ensure Homebrew Ruby is in PATH
+export PATH := /opt/homebrew/opt/ruby/bin:$(PATH)
 
 # Get current date in YYYY-MM-DD format
 DATE := $(shell date +%Y-%m-%d)
@@ -46,7 +46,7 @@ publish: ## Build and deploy the site
 
 dev: ## Start development server
 	@echo "Starting Jekyll development server..."
-	bundle exec jekyll serve --livereload
+	bundle exec jekyll serve --livereload --incremental
 
 clean: ## Clean generated files
 	@echo "Cleaning generated files..."
