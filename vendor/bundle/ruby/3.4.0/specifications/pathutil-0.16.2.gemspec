@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.7.7".freeze
   s.summary = "Almost like Pathname but just a little less insane.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 
   s.specification_version = 4
 

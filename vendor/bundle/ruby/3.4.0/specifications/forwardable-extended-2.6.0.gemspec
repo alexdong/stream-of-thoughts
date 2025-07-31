@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.6.2".freeze
   s.summary = "Forwardable with hash, and instance variable extensions.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 end

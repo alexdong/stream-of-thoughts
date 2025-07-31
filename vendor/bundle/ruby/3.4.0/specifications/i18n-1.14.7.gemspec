@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.23".freeze
   s.summary = "New wave Internationalization support for Ruby".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 
   s.specification_version = 4
 

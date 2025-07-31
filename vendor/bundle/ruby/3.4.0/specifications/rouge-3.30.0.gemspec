@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.1.6".freeze
   s.summary = "A pure-ruby colorizer based on pygments".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 end

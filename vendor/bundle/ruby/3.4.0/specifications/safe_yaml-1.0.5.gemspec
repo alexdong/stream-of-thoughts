@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.6.14".freeze
   s.summary = "SameYAML provides an alternative implementation of YAML.load suitable for accepting user input in Ruby applications.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 end

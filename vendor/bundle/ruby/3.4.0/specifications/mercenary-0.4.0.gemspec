@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.0.6".freeze
   s.summary = "Lightweight and flexible library for writing command-line apps in Ruby.".freeze
 
-  s.installed_by_version = "3.6.9".freeze
+  s.installed_by_version = "3.7.1".freeze
 
   s.specification_version = 4
 
