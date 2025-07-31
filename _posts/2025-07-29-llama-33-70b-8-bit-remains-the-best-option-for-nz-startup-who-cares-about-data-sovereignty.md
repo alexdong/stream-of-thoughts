@@ -72,17 +72,11 @@ In New Zealand, RTX 4090 GPUs are available from NZD $3,284-4,499, suitable for 
 
 ## Practical deployment paths
 
-The deployment strategy depends on your scale and requirements. For development
-and prototyping, start with a Mac Studio M4 Ultra and MLX, providing
-the performance needed for serious AI development work.
+The deployment strategy depends on your scale and requirements. For development and prototyping, start with a Mac Studio M3 Ultra and MLX, providing the performance needed for serious AI development work.
 
-Getting started is straightforward: download from [LM
-Studio](https://lmstudio.ai/model/llama-3.3-70b) or [HuggingFace's GGUF
-repository](https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF). 
+Getting started is straightforward: download from [LM Studio](https://lmstudio.ai/model/llama-3.3-70b) or [HuggingFace's GGUF repository](https://huggingface.co/bartowski/Llama-3.3-70B-Instruct-GGUF).
 
-For more deployment guidance, Simon Willison's [practical setup
-guide](https://simonwillison.net/2025/Jul/31/qwen3-coder-flash/) demonstrates
-local model deployment.
+For more deployment guidance, Simon Willison's [practical setup guide](https://simonwillison.net/2025/Jul/31/qwen3-coder-flash/) demonstrates local model deployment.
 
 ## Alternatives - Qwen2.5-32B
 
@@ -98,5 +92,5 @@ Mistral Small 3 (24B parameters) provides 85-90% of Llama's performance with 3×
 
 Model selection, while important, isn't your highest-leverage activity. The critical foundation is building a comprehensive evaluation framework that measures performance from your end-users' perspective. Create regression-tested eval suites covering your specific use cases—customer support quality, code generation accuracy, content relevance—whatever matters to your business.
 
-This eval framework becomes your competitive moat: enabling apple-to-apple model comparisons, supporting supervised fine-tuning decisions, and providing the foundation for reinforcement learning from human feedback. Invest in evaluation infrastructure first; model selection becomes trivial when you can measure what actually matters to your users.
+This eval framework becomes your competitive moat: enabling apple-to-apple model comparisons, supporting supervised fine-tuning decisions, and providing the foundation for reinforcement learning from human feedback. Invest in evaluation infrastructure first; model selection becomes straightforward when you can measure what actually matters to your users.
 
