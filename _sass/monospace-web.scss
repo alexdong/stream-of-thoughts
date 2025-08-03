@@ -1,0 +1,488 @@
+// The Monospace Web - Custom overrides for alexdong.com
+// Based on https://owickstrom.github.io/the-monospace-web/
+
+@import url("https://fonts.cdnfonts.com/css/jetbrains-mono-2");
+
+// CSS Custom Properties
+:root {
+  // Typography
+  --font-family: "JetBrains Mono", monospace;
+  --line-height: 1.5rem;
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
+  
+  // Spacing & Layout
+  --border-thickness: 2px;
+  --spacing-unit: 30px;
+  
+  // Colors - Light theme
+  --text-color: #000;
+  --text-color-alt: #666;
+  --background-color: #fff;
+  --background-color-alt: #eee;
+  
+  // Apply base font settings
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-normal);
+  font-style: normal;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 16px;
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --text-color-alt: #aaa;
+    --background-color: #000;
+    --background-color-alt: #111;
+  }
+}
+
+// Global box-sizing
+* {
+  box-sizing: border-box;
+}
+
+// Universal vertical rhythm
+* + * {
+  margin-top: var(--line-height);
+}
+
+// Base layout
+html {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: var(--line-height) 2ch;
+  max-width: 80ch; // Fallback for older browsers
+  max-width: min(80ch, 100%);
+  line-height: var(--line-height);
+  overflow-x: hidden;
+  font-family: var(--font-family) !important;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+// Mobile adjustments
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+  body {
+    padding: var(--line-height) 1ch;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  // margin: calc(var(--line-height) * 2) 0 var(--line-height);
+  line-height: inherit; // Let individual heading styles control line-height
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: calc(var(--line-height) * 2);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 2.15rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+h4, h5, h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+// Paragraphs
+p {
+  margin-bottom: var(--line-height);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+// Links
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: var(--border-thickness);
+  
+  &:visited {
+    color: var(--text-color);
+  }
+  
+  &:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-style: solid;
+  }
+}
+
+// Code and Pre
+pre, code {
+  font-family: var(--font-family);
+}
+
+code {
+  font-weight: var(--font-weight-medium);
+  padding: 1px 0.5ch;
+  background-color: var(--background-color-alt);
+  border: 1px solid var(--text-color-alt);
+}
+
+pre {
+  white-space: pre;
+  overflow: auto hidden;
+  margin: var(--line-height) 0;
+  padding: calc(var(--line-height) / 2) 1ch;
+  background-color: var(--background-color-alt);
+  border: var(--border-thickness) solid var(--text-color);
+  
+  code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 var(--line-height);
+}
+
+ul {
+  list-style-type: square;
+  padding: 0 0 0 2ch;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: item 0;
+  padding: 0;
+  
+  li {
+    &::before {
+      content: counters(item, ".") ". ";
+      counter-increment: item 1;
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}
+
+// Nested lists
+ol ul, ol ol, ul ol, ul ul {
+  padding: 0 0 0 3ch;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  
+  &::marker {
+    line-height: 0;
+  }
+}
+
+// Horizontal rule
+hr {
+  position: relative;
+  display: block;
+  height: var(--line-height);
+  margin: calc(var(--line-height) * 1.5) 0;
+  border: none;
+  color: var(--text-color);
+  
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: calc(var(--line-height) / 2 - var(--border-thickness));
+    left: 0;
+    width: 100%;
+    border-top: calc(var(--border-thickness) * 3) double var(--text-color);
+    height: 0;
+  }
+}
+
+// Tables
+table {
+  position: relative;
+  top: calc(var(--line-height) / 2);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 calc(var(--line-height) * 2);
+}
+
+th, td {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc((var(--line-height) / 2) - var(--border-thickness)) 
+           calc(1ch - var(--border-thickness) / 2);
+  line-height: var(--line-height);
+  vertical-align: top;
+  text-align: left;
+}
+
+table tbody tr:first-child > * {
+  padding-top: calc((var(--line-height) / 2) - var(--border-thickness));
+}
+
+th {
+  font-weight: var(--font-weight-bold);
+  background-color: var(--background-color-alt);
+}
+
+// Forms
+input, button, textarea {
+  font-family: var(--font-family);
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) / 2 - var(--border-thickness))
+           calc(1ch - var(--border-thickness));
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  height: calc(var(--line-height) * 2);
+  width: auto;
+  overflow: visible;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  appearance: none;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  
+  &:hover {
+    background: var(--background-color-alt);
+  }
+  
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}
+
+button:focus, input:focus {
+  --border-thickness: 3px;
+  outline: none;
+}
+
+// Images and media
+img, video {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+img {
+  font-style: italic;
+  color: var(--text-color-alt);
+}
+
+// Figures
+figure {
+  margin: calc(var(--line-height) * 2) 3ch;
+  overflow: auto hidden;
+  
+  pre {
+    margin: 0;
+  }
+}
+
+figcaption {
+  display: block;
+  font-style: italic;
+  margin-top: var(--line-height);
+}
+
+// Blockquotes
+blockquote {
+  color: var(--text-color-alt);
+  border-left: calc(var(--border-thickness) * 2) solid var(--text-color);
+  padding-left: 2ch;
+  margin: var(--line-height) 0;
+  font-style: italic;
+}
+
+// Override Minima-specific styles
+.wrapper {
+  max-width: 80ch; // Fallback for older browsers
+  max-width: min(80ch, 100%);
+  padding-right: 2ch;
+  padding-left: 2ch;
+}
+
+.site-header {
+  border-top: calc(var(--border-thickness) * 2) solid var(--text-color);
+  border-bottom: var(--border-thickness) solid var(--text-color);
+  min-height: calc(var(--line-height) * 3);
+  padding: calc(var(--line-height) * 2) 0;
+}
+
+.site-title {
+  font-family: var(--font-family);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  line-height: calc(var(--line-height) * 2);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 2ch;
+  margin: 0 auto;
+  width: 100%;
+  
+  &, &:visited {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  &:hover {
+    background-color: var(--background-color-alt);
+    text-decoration: none;
+  }
+}
+
+.site-nav {
+  line-height: calc(var(--line-height) * 2);
+  
+  .page-link {
+    color: var(--text-color);
+    font-weight: var(--font-weight-medium);
+    
+    &:not(:last-child) {
+      margin-right: 2ch;
+    }
+  }
+}
+
+.page-content {
+  padding: calc(var(--line-height) * 2) 0;
+}
+
+.post-list {
+  > li {
+    margin-bottom: calc(var(--line-height) * 2);
+  }
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--text-color-alt);
+  font-family: var(--font-family);
+}
+
+.post-link {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+}
+
+.post-title {
+  font-size: 2rem;
+  line-height: calc(var(--line-height) * 2);
+  letter-spacing: 0;
+  font-family: var(--font-family);
+}
+
+// Footer
+.site-footer {
+  border-top: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) * 2) 0;
+}
+
+.footer-col-wrapper {
+  font-size: 0.875rem;
+  color: var(--text-color-alt);
+  margin-left: 0;
+}
+
+.footer-col {
+  padding-left: 0;
+  margin-bottom: var(--line-height);
+}
+
+// Social media list
+.social-media-list {
+  a {
+    color: var(--text-color);
+    
+    &:hover {
+      text-decoration: none;
+      
+      .username {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Syntax highlighting overrides
+.highlight {
+  background: var(--background-color-alt);
+  
+  code {
+    background: none;
+    border: none;
+  }
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  height: var(--line-height);
+}
+
+// Grid support (for future use)
+.grid {
+  --grid-cells: 0;
+  display: flex;
+  gap: 1ch;
+  width: calc(100%);
+  margin-bottom: var(--line-height);
+  
+  > *, > input {
+    flex: 0 0 calc((100% - (1ch * (var(--grid-cells) - 1))) / var(--grid-cells));
+  }
+}
+
+.grid:has(> :last-child:nth-child(1)) { --grid-cells: 1; }
+.grid:has(> :last-child:nth-child(2)) { --grid-cells: 2; }
+.grid:has(> :last-child:nth-child(3)) { --grid-cells: 3; }
+.grid:has(> :last-child:nth-child(4)) { --grid-cells: 4; }
+.grid:has(> :last-child:nth-child(5)) { --grid-cells: 5; }
+.grid:has(> :last-child:nth-child(6)) { --grid-cells: 6; }

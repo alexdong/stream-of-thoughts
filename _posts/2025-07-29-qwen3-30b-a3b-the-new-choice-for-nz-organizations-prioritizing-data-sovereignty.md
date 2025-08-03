@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-04T09:47:37+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics</title><link href="http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html" rel="alternate" type="text/html" title="Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics" /><published>2025-08-01T14:30:00+12:00</published><updated>2025-08-01T14:30:00+12:00</updated><id>http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty</id><content type="html" xml:base="http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html"><![CDATA[## The recommendation shift
+---
+layout: post
+title: "Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics"
+date: 2025-08-01 14:30
+comments: true
+categories: local-ai
+---
+
+## The recommendation shift
 
 For the past few months, I've recommended Llama 3.3 70B with 8-bit quantization to New Zealand organizations prioritizing data sovereignty. That recommendation is changing.
 
@@ -167,107 +175,4 @@ Start with real user queries, not synthetic benchmarks. Build test suites from a
 Models are becoming utilities. GPT-4's capabilities will be table stakes within 18 months. But your ability to consistently deliver domain-specific quality? That's defensible. An evaluation framework built on deep customer understanding allows you to fine-tune smaller, faster models to outperform larger ones on your specific tasks. This expertise—encoded in test cases, validated through real usage, refined through feedback loops—becomes the sustainable differentiator in a world of commodity AI.
 
 **Option 5: Future-proofing perspective**
-The AI landscape changes weekly. New models, new capabilities, new price points. Without a robust evaluation framework, you're flying blind—making decisions based on vendor marketing rather than measured performance. Build your framework to answer three questions: Does this model solve our users' actual problems? Can we measure improvement objectively? How do we capture feedback to improve continuously? These capabilities matter more than which model you choose today, because they determine how well you'll adapt to whatever comes next.]]></content><author><name></name></author><category term="local-ai" /><summary type="html"><![CDATA[The recommendation shift]]></summary></entry><entry><title type="html">Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach</title><link href="http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[Terence Tao's [blue and red
-teams](https://mathstodon.xyz/@tao/114915604830689046) post crystalised several
-insights about software testing and a different class of AI product that I have
-been building but hadn't found the language to articulate until now.
-
-
-He begins by describing the role of blue and red teams. Blue teams are
-builders who construct and defend orders from chaos, while red teams are
-hunters and invaders who find the weakest link in a coherent whole and exploit
-it.
-
-> In the field of cybersecurity, a distinction is made between the "blue team"
-> task of building a secure system, and the "red team" task of locating
-> vulnerabilities in such systems.  The blue team is more obviously necessary
-> to create the desired product; but the red team is just as essential, given
-> the damage that can result from deploying insecure systems.
->
-> The nature of these teams mirror each other; mathematicians would call them
-> "dual".  The output of a blue team is only as strong as its weakest link: a
-> security system that consists of a strong component and a weak component
-> (e.g., a house with a securely locked door, but an open window) will be
-> insecure (and in fact worse, because the strong component may convey a false
-> sense of security).  
-
-His observation about the human dynamics of red teams is particularly insightful:
-
-> Dually, the contributions to a red team can often be
-> additive: a red team report that contains both a serious vulnerability and a
-> more trivial one is more useful than a report that only contains the serious
-> issue, as it is valuable to have the blue team address both vulnerabilities.
-
-Two unexpected insights about QA and testers emerged: 
-
-1) Red teams compound faster. Once there's a vulnerability, subsequent exploit
-attempts can build upon it.  This can be quite different from blue teams, where
-each new feature or component is a fresh start with a clear boundary from other
-neighboring components.
-
-2) Unconventional thinkers are better suited for red team roles. 
-
-Today, in most software organizations, testers are treated as second-class
-citizens and are not given the same respect as developers. Research shows
-testers typically earn 25-33% less than software engineers with comparable
-experience. In worse yet common cases, testers are brought in as an
-afterthought to clean up after development is largely complete. 
-
-As AI's code generation capabilities advance, testers may become far more
-critical than they are today. Finding inconsistencies and ambiguities in
-software would provide high-leverage positive impact on the system's integrity,
-creating far more business value than just finding isolated bugs that
-developers might overlook.
-
-This also requires a shift in recruiting and hiring testers. Instead of manual
-laborers content with repetitive tasks, we need people with explorative and
-inquisitive mindsets. 
-
-Tao then applies this framework to AI products—an insightful perspective
-coming from a mathematician rather than a software engineer:
-
-> Many of the proposed use cases for AI tools try to place such tools in the
-> "blue team" category, such as creating code, text, images, or mathematical
-> arguments in some semi-automated or automated fashion, that is intended for
-> use for some external application.  However, in view of the unreliability and
-> opacity of such tools, it may be better to put them to work on the "red
-> team", critiquing the output of blue team human experts but not directly
-> replacing that output; "blue team" AI use should only be permitted up to the
-> capability of one's "red team" to catch and correct any errors generated.
-> This approach not only plays to current AI strengths, such as breadth of
-> exposure and fast feedback, but also mitigates the risks of deploying
-> unverified AI output in high-stakes settings.
-> 
-> In my own personal experiments with AI, for instance, I have found it to be
-> useful for providing additional feedback on some proposed text, argument,
-> code, or slides that I have generated (including this current text).  I might
-> only agree with a fraction of the suggestions generated by the AI tool; but I
-> find that there are still several useful comments made that I do agree with,
-> and incorporate into my own output.  This is a significantly less glamorous
-> or intuitive use case for AI than the more commonly promoted "blue team" one
-> of directly automating one's own output, but one that I find adds much more
-> reliable value.
-
-This suggests a new category of AI products focused on coaching and feedback
-rather than direct output generation. 
-
-[alexdong/high-taste](https://github.com/alexdong/high-taste) is my small
-experiment in this direction—using AI to develop coding judgment rather than
-generate code. Now imagine red team AI across every domain: tools that
-critique your arguments, challenge your assumptions, stress-test your
-strategies. Not to replace expertise, but to forge it.
-
-AI's capabilities remain frustratingly jagged—brilliant at some tasks, 
-unreliable at others. But perhaps that's exactly why red team AI works: 
-it sidesteps AI's weaknesses while amplifying what it does well. Maybe the 
-companies building critique tools today might discover a more constructive
-path through the AI landscape than those chasing perfect generation.]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge 
-so we can all look at it everyday.
-
-> To laugh often and much; to win the respect of intelligent people and
-> the affection of children; to earn the appreciation of honest critics
-> and endure the betrayal of false friends; to appreciate beauty; to
-> find the best in others; to leave the world a bit better, whether by a
-> healthy child, a garden patch, or a redeemed social condition; to know
-> even one life has breathed easier because you have lived. This is to
-> have succeeded."]]></content><author><name></name></author><category term="life" /><summary type="html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge so we can all look at it everyday.]]></summary></entry></feed>
+The AI landscape changes weekly. New models, new capabilities, new price points. Without a robust evaluation framework, you're flying blind—making decisions based on vendor marketing rather than measured performance. Build your framework to answer three questions: Does this model solve our users' actual problems? Can we measure improvement objectively? How do we capture feedback to improve continuously? These capabilities matter more than which model you choose today, because they determine how well you'll adapt to whatever comes next.
