@@ -1,40 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-04T15:05:15+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="http://localhost:4000/2025/08/04/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>http://localhost:4000/2025/08/04/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="http://localhost:4000/2025/08/04/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[Larry Wall famously declared that laziness, impatience, and hubris are the three great virtues of a
-programmer. These qualities drive us to automate repetitive tasks, build efficient solutions, and
-write maintainable code. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-08-04T16:19:53+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[<p>Twenty years ago, when I first encountered Larry Wall’s declaration that laziness, impatience, and hubris are the three great virtues of a programmer, it crystallised something I’d observed but couldn’t articulate. These weren’t character flaws—they were evolutionary advantages. Laziness drove us to automate the mundane. Impatience pushed us toward elegant solutions. Hubris made us believe we could solve problems others couldn’t.</p>
 
-But what happens when AI enters the picture?
+<p>Today, with AI coding assistants generating functions faster than we can type, Wall’s virtues feel like relics from a different era. When GitHub Copilot can autocomplete entire algorithms and ChatGPT can architect systems from scratch, what virtues should guide us?</p>
 
-Sean Goedecke suggests that AI-assisted programmers need different virtues:
-> - Obsession to keep your own mind working at the problem
-> - Impatience to eject and work it out yourself
-> - Suspicious of what the AI is doing
+<p>Sean Goedecke proposes a compelling answer. He argues that AI-assisted programmers need fundamentally different virtues:</p>
+<blockquote>
+  <ul>
+    <li>Obsession to keep your own mind working at the problem</li>
+    <li>Impatience to eject and work it out yourself</li>
+    <li>Suspicious of what the AI is doing</li>
+  </ul>
+</blockquote>
 
-Now, how can you find these out in a traditional job interview? You can't.
+<p>This shift reveals something profound about how AI transforms programming. Where Wall’s virtues optimised for creation, Goedecke’s optimise for curation. The challenge isn’t writing code anymore—it’s maintaining intellectual ownership of the solution.</p>
 
-From: [Three great virtues of an AI-assisted programmer](https://www.seangoedecke.com/llm-user-virtues/)]]></content><author><name></name></author><summary type="html"><![CDATA[Larry Wall famously declared that laziness, impatience, and hubris are the three great virtues of a programmer. These qualities drive us to automate repetitive tasks, build efficient solutions, and write maintainable code.]]></summary></entry><entry><title type="html">Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics</title><link href="http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html" rel="alternate" type="text/html" title="Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics" /><published>2025-08-01T14:30:00+12:00</published><updated>2025-08-01T14:30:00+12:00</updated><id>http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty</id><content type="html" xml:base="http://localhost:4000/local-ai/2025/08/01/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html"><![CDATA[<h2 id="the-recommendation-shift">The recommendation shift</h2>
+<p>Consider obsession. In the pre-AI era, we could afford mental shortcuts because the act of typing forced us to think. Now, with AI eagerly completing our half-formed thoughts, maintaining deep engagement requires deliberate effort. I’ve watched developers become passengers in their own codebases, accepting AI suggestions without truly understanding the implications.</p>
+
+<p>Impatience takes on new meaning too. It’s no longer about rushing to implement—it’s about knowing when to abandon the AI and trust your instincts. The most effective AI-assisted developers I know have developed a sixth sense for when the conversation with AI has become counterproductive. They cut their losses quickly and code directly.</p>
+
+<p>And suspicion? This might be the most critical virtue. AI doesn’t just make mistakes—it makes plausible mistakes. It generates code that looks right, passes initial tests, but harbours subtle bugs or architectural flaws that surface months later. The developers who thrive are those who treat AI output like they would treat code from an overconfident junior developer: potentially useful, but requiring careful review.</p>
+
+<p>These new virtues pose a challenge for organisations. How do you identify these qualities in candidates? Traditional coding interviews test for Wall’s virtues—can you solve this problem efficiently? But testing for Goedecke’s virtues requires different approaches entirely.</p>
+
+<p>You can’t gauge obsession through a whiteboard exercise. You can’t measure productive impatience in a take-home assignment. And you certainly can’t assess healthy suspicion when candidates aren’t using AI tools during the interview process.</p>
+
+<p>The companies that figure this out first will have a significant advantage. They’ll build teams that harness AI’s power without surrendering their ability to think deeply about problems. They’ll ship faster without accumulating technical debt from uncritically accepted AI suggestions.</p>
+
+<p>For now, the best approach might be to look for evidence of these virtues in how candidates describe their past work. Do they talk about diving deep into problems even when AI offered quick solutions? Can they articulate moments when they rejected AI assistance? Do they demonstrate understanding of AI’s limitations alongside its capabilities?</p>
+
+<p>The transition from Wall’s virtues to Goedecke’s represents more than a shift in programming practice—it’s a fundamental reimagining of what it means to be a technologist in an AI-augmented world.</p>
+
+<p>From: <a href="https://www.seangoedecke.com/llm-user-virtues/">Three great virtues of an AI-assisted programmer</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Twenty years ago, when I first encountered Larry Wall’s declaration that laziness, impatience, and hubris are the three great virtues of a programmer, it crystallised something I’d observed but couldn’t articulate. These weren’t character flaws—they were evolutionary advantages. Laziness drove us to automate the mundane. Impatience pushed us toward elegant solutions. Hubris made us believe we could solve problems others couldn’t.]]></summary></entry><entry><title type="html">Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics</title><link href="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html" rel="alternate" type="text/html" title="Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics" /><published>2025-08-01T14:30:00+12:00</published><updated>2025-08-01T14:30:00+12:00</updated><id>https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty</id><content type="html" xml:base="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html"><![CDATA[<h2 id="the-recommendation-shift">The recommendation shift</h2>
 
 <p>I’ve been asked by a number of New Zealand startups about the best local AI
-model. For the past few months, I’ve recommended Llama 3.3 70B with 8-bit
-quantization. I always ended my response with the caveat that it’s really a toy
-model.</p>
+model. For the past a few months, I’ve reluctantly recommended Llama 3.3 70B
+with 8-bit quantization. I would always quickly follow up with the caveat that
+this setup is really only a toy. “If you want to do real work, you should
+at least use Claude Haiku 3.5 or even Sonnet 4.0”, I would say.</p>
 
 <p>But With the arrival of <a href="https://qwenlm.github.io/blog/qwen3-30b-a3b/">Qwen3-30B-A3B-Instruct-2507</a>,
-I think we finally have a local model that is good enough for both local exploration
-and production use. Two things set this model apart from Llama 3.3 70B:</p>
+I think we finally have a local model that is good enough for both fast local
+interactive exploration and production use. Why did I change my mind? Two things:</p>
 
 <p><strong>Higher output quality</strong>. Based on my own benchmarks, Qwen3-30B’s performance
-in Coding is slightly lower than ChatGPT-4o, but noticeably
-higher than Claude’s haiku-3.5-20241022, a workhorse model that has been the
-go-to for all my personal projects.</p>
+in coding tasks is slightly behind than ChatGPT-4o, but noticeably
+higher than Claude’s haiku-3.5-20241022, a workhorse model that has been my 
+go-to for most of my personal projects.</p>
 
-<p><strong>Faster inference speed</strong>. Qwen3-30B-A3B runs at 78 tokens/second on M4 Max
-with 128GB RAM (with MLX optimisation turned on). Previously, the biggest
-problem I had with Llama-3.3-4-bit is its inference speed is only 7-10
-tokens/second. It’s just a bit too slow for interactive use, particularly that
-I’ve been trained to expect 52-68 tokens/second speed (as offered by claude’s
-API). But 78? That’s more than usable.</p>
+<p><strong>Faster inference speed</strong>. Qwen3-30B runs at 78 tokens/second on M4 Max with
+128GB RAM (with MLX optimisation turned on), this feels a lot faster than haiku
+3.5 streamed, which typically runs at 52-68 tokens/second speed.</p>
 
-<p>Read on for a deep dive on 7 reasons why you should consider Qwen3-30B-A3B for
+<p>Read on for a deep dive on 6 reasons why you should consider Qwen3-30B-A3B for
 your local AI needs.</p>
 
 <h2 id="1-benchmark-result-matching-larger-models">1. Benchmark result matching larger models</h2>
@@ -96,17 +112,17 @@ your local AI needs.</p>
   </tbody>
 </table>
 
-<p>For real-world applications, <a href="https://simonwillison.net/2025/Jul/29/qwen3-30b-a3b-instruct-2507/">Simon Willison</a> confirms these results in practical applications, noting performance “approaching GPT-4o and larger Qwen models.”</p>
+<p>For real-world applications, <a href="https://simonwillison.net/2025/Jul/29/qwen3-30b-a3b-instruct-2507/">Simon
+Willison</a>
+confirms these results in practical applications, noting performance
+“approaching GPT-4o and larger Qwen models.”</p>
 
 <h2 id="2-the-speed-advantage-through-moe-architecture">2. The speed advantage through MoE architecture</h2>
 
 <p>Qwen3-30B-A3B uses the Mixture of Experts (MoE) architecture. Think of
 Qwen3-30B-A3B as having 128 specialist consultants on staff, but only calling
-on the 8 most relevant experts for each task.</p>
-
-<p>This Mixture of Experts architecture means the full 30.5B parameters are
-available when needed, but the model runs at the speed of a much smaller 3.3B
-parameter system.</p>
+on the 8 most relevant experts for each task. This architecture means that the
+model runs at the speed of a much smaller 3.3B parameter system.</p>
 
 <h2 id="3-almost-one-click-local-deployment">3. (Almost) one-click local deployment</h2>
 
@@ -119,28 +135,29 @@ provides additional implementation details.</p>
 
 <h2 id="4-production-deployment-made-affordable">4. Production deployment made affordable</h2>
 
-<p>For GPU deployment, the best value is a [Mac Mini M4 Pro with 64GB
-RAM]https://www.apple.com/nz/shop/buy-mac/mac-mini/apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb). It gives 79 tokens/second with MLX optimization for $4,299 NZD.</p>
+<p>For deployment, the best gang-for-the-buck is a <a href="https://www.apple.com/nz/shop/buy-mac/mac-mini/apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb">Mac Mini M4 Pro with 64GB
+RAM</a>. It gives 79 tokens/second with MLX optimization for $4,299 NZD.</p>
 
-<p>Or, you can go with one or two <a href="https://www.pbtech.co.nz/product/VGAASU350901/ASUS-ROG-ASTRAL-NVIDIA-GeForce-RTX-5090-OC-GAMING">RTX 5090 (NZD $6,799 each on
+<p>Or, you can go with one or two <a href="https://www.pbtech.co.nz/product/VGAASU350901/ASUS-ROG-ASTRAL-NVIDIA-GeForce-RTX-5090-OC-GAMING">RTX 5090 GPU (NZD $6,799 each on
 PBTech)</a>
 runs about 48 tokens/seconds.</p>
 
-<h2 id="5-extended-context-window">5. Extended context window</h2>
+<p>Note that Even though the GPU approach appears to be slower than M4 Pro, it
+does open up the possibility of further scaling through further
+runtime/pipeline options, e.g.
+<a href="https://huggingface.co/unsloth/Qwen3-30B-A3B-GGUF">unsloth</a>. Also, you get to
+choose different parameters for <a href="https://huggingface.co/unsloth/Qwen3-30B-A3B-GGUF">Thinking and Non-Thinking
+Mode</a> or use
+<a href="https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_(4B)-GRPO.ipynb">GRPO</a>
+for fine tuning.</p>
 
-<p>Qwen3-30B-A3B brings a 256K token context window to local deployment.</p>
-
-<p>This compares favorably to alternatives: Llama 3.3 70B supports 128K tokens,
-while Claude Haiku 3.5 offers 200K. The extra headroom matters when you’re
-building applications that need to maintain context across extended
-interactions or process substantial documentation in single passes.</p>
-
-<h2 id="6-tool-use">6. Tool use</h2>
+<h2 id="5-tool-use">5. Tool use</h2>
 
 <p>Qwen3-30B-A3B brings excellent function calling capabilities to local
-deployment—a feature notably absent in Llama 3.3 70B. Qwen3-30B-A3B simplifies
-this with the <a href="https://github.com/QwenLM/Qwen-Agent">Qwen-Agent framework</a>,
-providing built-in support for:</p>
+deployment—a feature notably absent in Llama 3.3 70B. Qwen3-30B-A3B further
+simplifies this task with the <a href="https://github.com/QwenLM/Qwen-Agent">Qwen-Agent
+framework</a>, providing built-in support
+for:</p>
 
 <ul>
   <li><strong>MCP (Model Context Protocol)</strong> configuration for standardized tool definitions</li>
@@ -148,15 +165,14 @@ providing built-in support for:</p>
   <li><strong>Hybrid thinking modes</strong> that switch between deep reasoning and fast response</li>
 </ul>
 
-<h2 id="7-apache-20-licensing">7. Apache 2.0 licensing</h2>
+<h2 id="6-apache-20-licensing">6. Apache 2.0 licensing</h2>
 
-<p>Qwen3-30B-A3B adopts the Apache 2.0 license, which is also a game-changer for
-New Zealand startups. The Apache 2.0 license is one of the most permissive and
+<p>Qwen3-30B-A3B adopts the Apache 2.0 license, which is also a much-welcomed change
+from the Llama 3.3 license. The Apache 2.0 license is one of the most permissive and
 widely accepted open-source licenses, allowing you to use, modify, and
 distribute the model with minimal restrictions. It’s the same license powering
-many open source projects so your legal team probably already knows it.</p>
-
-<p>This contrasts sharply with Llama’s custom license, which imposes user count
+many open source projects so your legal team probably already knows it. 
+This contrasts sharply with Llama’s custom license, which imposes user count
 thresholds and revenue restrictions that can complicate commercial use.</p>
 
 <h2 id="but-isnt-qwen3-from-china">But isn’t Qwen3 from China?</h2>
@@ -167,132 +183,137 @@ when it runs exclusively on your hardware. Qwen3-30B-A3B offers the same data
 sovereignty guarantees as any locally-deployed software: your data stays on
 your servers, processed by your infrastructure, governed by your policies.</p>
 
-<h2 id="your-evaluation-framework--model-choice">Your evaluation framework &gt; Model choice</h2>
+<h2 id="models-come-and-go">Models come and go</h2>
 
-<p>Before you get too excited about Qwen3-30B-A3B, let’s talk about the real
-secret to success in AI: your evaluation framework.</p>
-
-<p>The AI landscape changes weekly. New models, new capabilities, new price
+<p>You see, the AI landscape changes weekly. New models, new capabilities, new price
 points. Without a robust evaluation framework, you’re flying blind—making
-decisions based on vendor marketing rather than measured performance. Build
-your framework to answer three questions: Does this model solve our users’
-actual problems? Can we measure improvement objectively? How do we capture
-feedback to improve continuously? These capabilities matter more than which
-model you choose today, because they determine how well you’ll adapt to
-whatever comes next.</p>
+decisions based on vendor marketing rather than measured performance that’s 
+relevant to your specific use cases.</p>
 
-<p>Think of AI models as engines and your evaluation framework as the vehicle
-design. Anyone can buy the same engine, but how you integrate it, optimize it,
-and apply it to specific use cases determines competitive advantage. Your
-evaluation framework captures institutional knowledge that no model vendor can
-replicate: understanding of your customers’ edge cases, industry-specific
-quality standards, and the subtle differences between acceptable and
-exceptional outputs in your domain.</p>
+<p>BTW, your evaluation framework should be the bedrock of your AI strategy, not just a
+tool for comparing models. It should help you answer three questions:</p>
 
-<p>While models depreciate rapidly—today’s state-of-the-art becomes tomorrow’s
-baseline—your evaluation framework appreciates with use. Each test case
-refined, each edge case captured, each performance metric validated adds to an
-irreplaceable asset.</p>]]></content><author><name></name></author><category term="local-ai" /><summary type="html"><![CDATA[The recommendation shift]]></summary></entry><entry><title type="html">Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach</title><link href="http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team</id><content type="html" xml:base="http://localhost:4000/2025/07/29/a-broader-view-on-blue-red-team.html"><![CDATA[Terence Tao's [blue and red
-teams](https://mathstodon.xyz/@tao/114915604830689046) post crystalised several
+<ol>
+  <li>Does this model solve our users’ actual problems?</li>
+  <li>Can we measure improvement and progress objectively?</li>
+  <li>How do we capture feedback to improve continuously?</li>
+</ol>
+
+<p>These capabilities matter more than which model you choose today, because they
+determine how well you’ll adapt to whatever comes next. While models depreciate
+rapidly—today’s state-of-the-art becomes tomorrow’s baseline—your evaluation
+framework appreciates with use. Each test case refined, each edge case
+captured, each performance metric validated adds to an irreplaceable asset.</p>
+
+<p>So, while models come and go, your evaluation framework remains a long-term asset.
+If your business is serious about AI, invest in building a robust evaluation framework.</p>]]></content><author><name></name></author><category term="local-ai" /><summary type="html"><![CDATA[The recommendation shift]]></summary></entry><entry><title type="html">Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach</title><link href="https://alexdong.com/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao’s <a href="https://mathstodon.xyz/@tao/114915604830689046">blue and red
+teams</a> post crystalised several
 insights about software testing and a different class of AI product that I have
-been building but hadn't found the language to articulate until now.
+been building but hadn’t found the language to articulate until now.</p>
 
-
-He begins by describing the role of blue and red teams. Blue teams are
+<p>He begins by describing the role of blue and red teams. Blue teams are
 builders who construct and defend orders from chaos, while red teams are
 hunters and invaders who find the weakest link in a coherent whole and exploit
-it.
+it.</p>
 
-> In the field of cybersecurity, a distinction is made between the "blue team"
-> task of building a secure system, and the "red team" task of locating
-> vulnerabilities in such systems.  The blue team is more obviously necessary
-> to create the desired product; but the red team is just as essential, given
-> the damage that can result from deploying insecure systems.
->
-> The nature of these teams mirror each other; mathematicians would call them
-> "dual".  The output of a blue team is only as strong as its weakest link: a
-> security system that consists of a strong component and a weak component
-> (e.g., a house with a securely locked door, but an open window) will be
-> insecure (and in fact worse, because the strong component may convey a false
-> sense of security).  
+<blockquote>
+  <p>In the field of cybersecurity, a distinction is made between the “blue team”
+task of building a secure system, and the “red team” task of locating
+vulnerabilities in such systems.  The blue team is more obviously necessary
+to create the desired product; but the red team is just as essential, given
+the damage that can result from deploying insecure systems.</p>
 
-His observation about the human dynamics of red teams is particularly insightful:
+  <p>The nature of these teams mirror each other; mathematicians would call them
+“dual”.  The output of a blue team is only as strong as its weakest link: a
+security system that consists of a strong component and a weak component
+(e.g., a house with a securely locked door, but an open window) will be
+insecure (and in fact worse, because the strong component may convey a false
+sense of security).</p>
+</blockquote>
 
-> Dually, the contributions to a red team can often be
-> additive: a red team report that contains both a serious vulnerability and a
-> more trivial one is more useful than a report that only contains the serious
-> issue, as it is valuable to have the blue team address both vulnerabilities.
+<p>His observation about the human dynamics of red teams is particularly insightful:</p>
 
-Two unexpected insights about QA and testers emerged: 
+<blockquote>
+  <p>Dually, the contributions to a red team can often be
+additive: a red team report that contains both a serious vulnerability and a
+more trivial one is more useful than a report that only contains the serious
+issue, as it is valuable to have the blue team address both vulnerabilities.</p>
+</blockquote>
 
-1) Red teams compound faster. Once there's a vulnerability, subsequent exploit
+<p>Two unexpected insights about QA and testers emerged:</p>
+
+<p>1) Red teams compound faster. Once there’s a vulnerability, subsequent exploit
 attempts can build upon it.  This can be quite different from blue teams, where
 each new feature or component is a fresh start with a clear boundary from other
-neighboring components.
+neighboring components.</p>
 
-2) Unconventional thinkers are better suited for red team roles. 
+<p>2) Unconventional thinkers are better suited for red team roles.</p>
 
-Today, in most software organizations, testers are treated as second-class
+<p>Today, in most software organizations, testers are treated as second-class
 citizens and are not given the same respect as developers. Research shows
 testers typically earn 25-33% less than software engineers with comparable
 experience. In worse yet common cases, testers are brought in as an
-afterthought to clean up after development is largely complete. 
+afterthought to clean up after development is largely complete.</p>
 
-As AI's code generation capabilities advance, testers may become far more
+<p>As AI’s code generation capabilities advance, testers may become far more
 critical than they are today. Finding inconsistencies and ambiguities in
-software would provide high-leverage positive impact on the system's integrity,
+software would provide high-leverage positive impact on the system’s integrity,
 creating far more business value than just finding isolated bugs that
-developers might overlook.
+developers might overlook.</p>
 
-This also requires a shift in recruiting and hiring testers. Instead of manual
+<p>This also requires a shift in recruiting and hiring testers. Instead of manual
 laborers content with repetitive tasks, we need people with explorative and
-inquisitive mindsets. 
+inquisitive mindsets.</p>
 
-Tao then applies this framework to AI products—an insightful perspective
-coming from a mathematician rather than a software engineer:
+<p>Tao then applies this framework to AI products—an insightful perspective
+coming from a mathematician rather than a software engineer:</p>
 
-> Many of the proposed use cases for AI tools try to place such tools in the
-> "blue team" category, such as creating code, text, images, or mathematical
-> arguments in some semi-automated or automated fashion, that is intended for
-> use for some external application.  However, in view of the unreliability and
-> opacity of such tools, it may be better to put them to work on the "red
-> team", critiquing the output of blue team human experts but not directly
-> replacing that output; "blue team" AI use should only be permitted up to the
-> capability of one's "red team" to catch and correct any errors generated.
-> This approach not only plays to current AI strengths, such as breadth of
-> exposure and fast feedback, but also mitigates the risks of deploying
-> unverified AI output in high-stakes settings.
-> 
-> In my own personal experiments with AI, for instance, I have found it to be
-> useful for providing additional feedback on some proposed text, argument,
-> code, or slides that I have generated (including this current text).  I might
-> only agree with a fraction of the suggestions generated by the AI tool; but I
-> find that there are still several useful comments made that I do agree with,
-> and incorporate into my own output.  This is a significantly less glamorous
-> or intuitive use case for AI than the more commonly promoted "blue team" one
-> of directly automating one's own output, but one that I find adds much more
-> reliable value.
+<blockquote>
+  <p>Many of the proposed use cases for AI tools try to place such tools in the
+“blue team” category, such as creating code, text, images, or mathematical
+arguments in some semi-automated or automated fashion, that is intended for
+use for some external application.  However, in view of the unreliability and
+opacity of such tools, it may be better to put them to work on the “red
+team”, critiquing the output of blue team human experts but not directly
+replacing that output; “blue team” AI use should only be permitted up to the
+capability of one’s “red team” to catch and correct any errors generated.
+This approach not only plays to current AI strengths, such as breadth of
+exposure and fast feedback, but also mitigates the risks of deploying
+unverified AI output in high-stakes settings.</p>
 
-This suggests a new category of AI products focused on coaching and feedback
-rather than direct output generation. 
+  <p>In my own personal experiments with AI, for instance, I have found it to be
+useful for providing additional feedback on some proposed text, argument,
+code, or slides that I have generated (including this current text).  I might
+only agree with a fraction of the suggestions generated by the AI tool; but I
+find that there are still several useful comments made that I do agree with,
+and incorporate into my own output.  This is a significantly less glamorous
+or intuitive use case for AI than the more commonly promoted “blue team” one
+of directly automating one’s own output, but one that I find adds much more
+reliable value.</p>
+</blockquote>
 
-[alexdong/high-taste](https://github.com/alexdong/high-taste) is my small
+<p>This suggests a new category of AI products focused on coaching and feedback
+rather than direct output generation.</p>
+
+<p><a href="https://github.com/alexdong/high-taste">alexdong/high-taste</a> is my small
 experiment in this direction—using AI to develop coding judgment rather than
 generate code. Now imagine red team AI across every domain: tools that
 critique your arguments, challenge your assumptions, stress-test your
-strategies. Not to replace expertise, but to forge it.
+strategies. Not to replace expertise, but to forge it.</p>
 
-AI's capabilities remain frustratingly jagged—brilliant at some tasks, 
-unreliable at others. But perhaps that's exactly why red team AI works: 
-it sidesteps AI's weaknesses while amplifying what it does well. Maybe the 
+<p>AI’s capabilities remain frustratingly jagged—brilliant at some tasks, 
+unreliable at others. But perhaps that’s exactly why red team AI works: 
+it sidesteps AI’s weaknesses while amplifying what it does well. Maybe the 
 companies building critique tools today might discover a more constructive
-path through the AI landscape than those chasing perfect generation.]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="http://localhost:4000/life/2022/10/31/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge 
-so we can all look at it everyday.
+path through the AI landscape than those chasing perfect generation.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="https://alexdong.com/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>https://alexdong.com/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="https://alexdong.com/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[<p>Today, I printed out a quote from Emerson and put onto our fridge 
+so we can all look at it everyday.</p>
 
-> To laugh often and much; to win the respect of intelligent people and
-> the affection of children; to earn the appreciation of honest critics
-> and endure the betrayal of false friends; to appreciate beauty; to
-> find the best in others; to leave the world a bit better, whether by a
-> healthy child, a garden patch, or a redeemed social condition; to know
-> even one life has breathed easier because you have lived. This is to
-> have succeeded."]]></content><author><name></name></author><category term="life" /><summary type="html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge so we can all look at it everyday.]]></summary></entry></feed>
+<blockquote>
+  <p>To laugh often and much; to win the respect of intelligent people and
+the affection of children; to earn the appreciation of honest critics
+and endure the betrayal of false friends; to appreciate beauty; to
+find the best in others; to leave the world a bit better, whether by a
+healthy child, a garden patch, or a redeemed social condition; to know
+even one life has breathed easier because you have lived. This is to
+have succeeded.”</p>
+</blockquote>]]></content><author><name></name></author><category term="life" /><summary type="html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge so we can all look at it everyday.]]></summary></entry></feed>

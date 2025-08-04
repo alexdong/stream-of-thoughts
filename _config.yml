@@ -10,6 +10,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Permalink configuration for shorter URLs
+permalink: /:title.html
+
 # Sass configuration to suppress deprecation warnings
 sass:
   quiet_deps: true

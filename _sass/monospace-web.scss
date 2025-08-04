@@ -502,6 +502,12 @@ blockquote {
 .grid:has(> :last-child:nth-child(5)) { --grid-cells: 5; }
 .grid:has(> :last-child:nth-child(6)) { --grid-cells: 6; }
 
+// Post content overrides
+.post-content h2 {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
 // Theme toggle button
 .theme-toggle {
   position: absolute;
@@ -525,5 +531,34 @@ blockquote {
   &:focus {
     outline: 3px solid var(--text-color);
     outline-offset: 2px;
+  }
+}
+
+// Dark mode table improvements
+@media (prefers-color-scheme: dark) {
+  table {
+    th, td {
+      border-color: #444;
+    }
+    th {
+      background-color: #1a1a1a;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #0a0a0a;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  table {
+    th, td {
+      border-color: #444;
+    }
+    th {
+      background-color: #1a1a1a;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #0a0a0a;
+    }
   }
 }
