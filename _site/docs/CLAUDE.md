@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Jekyll-based static site for https://alexdong.com/, a personal blog. The site uses the Minima theme and is deployed to GitHub Pages via the `docs/` directory.
+This is a Jekyll-based static site for alexdong.com, a personal blog. The site uses the Minima theme and is deployed to GitHub Pages via the `docs/` directory.
 
 ## Architecture
 
