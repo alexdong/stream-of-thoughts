@@ -675,6 +675,20 @@ table td {
     --background-color-alt: #111;
   }
 }
+[data-theme=light] {
+  --text-color: #000;
+  --text-color-alt: #666;
+  --background-color: #fff;
+  --background-color-alt: #eee;
+}
+
+[data-theme=dark] {
+  --text-color: #fff;
+  --text-color-alt: #aaa;
+  --background-color: #000;
+  --background-color-alt: #111;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -851,6 +865,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 calc(var(--line-height) * 2);
+  color: var(--text-color);
 }
 
 th, td {
@@ -1087,6 +1102,55 @@ blockquote {
 
 .grid:has(> :last-child:nth-child(6)) {
   --grid-cells: 6;
+}
+
+.post-content h2 {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: calc(var(--line-height) * 2);
+  right: 2ch;
+  width: calc(var(--line-height) * 2);
+  height: calc(var(--line-height) * 2);
+  padding: 0;
+  font-size: 1.25rem;
+  background: transparent;
+  border: var(--border-thickness) solid var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggle:hover {
+  background: var(--background-color-alt);
+}
+.theme-toggle:focus {
+  outline: 3px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  table th, table td {
+    border-color: #444;
+  }
+  table th {
+    background-color: #1a1a1a;
+  }
+  table tbody tr:nth-child(even) {
+    background-color: #0a0a0a;
+  }
+}
+[data-theme=dark] table th, [data-theme=dark] table td {
+  border-color: #444;
+}
+[data-theme=dark] table th {
+  background-color: #1a1a1a;
+}
+[data-theme=dark] table tbody tr:nth-child(even) {
+  background-color: #0a0a0a;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -103,7 +103,7 @@ many open source projects so your legal team probably already knows it.
 This contrasts sharply with Llama's custom license, which imposes user count
 thresholds and revenue restrictions that can complicate commercial use.
 
-## But isn't Qwen3 from China?
+## But, isn't Qwen3 from China?
 
 Yes. But the beauty of local deployment lies in its complete neutrality.
 Whether a model comes from Silicon Valley, Beijing, or Paris becomes irrelevant
