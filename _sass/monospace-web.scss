@@ -513,11 +513,12 @@ blockquote {
 .theme-toggle {
   position: absolute;
   top: calc(var(--line-height) * 2);
-  right: 2ch;
-  width: calc(var(--line-height) * 2);
-  height: calc(var(--line-height) * 2);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--line-height) * 1.5);
+  height: calc(var(--line-height) * 1.5);
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   background: transparent;
   border: var(--border-thickness) solid var(--text-color);
   cursor: pointer;
