@@ -6,9 +6,15 @@ comments: true
 categories: 
 ---
 
-Twenty years ago, when I first encountered Larry Wall's declaration that laziness, impatience, and hubris are the three great virtues of a programmer, it crystallised something I'd observed but couldn't articulate. These weren't character flaws—they were evolutionary advantages. Laziness drove us to automate the mundane. Impatience pushed us toward elegant solutions. Hubris made us believe we could solve problems others couldn't.
 
-Today, with AI coding assistants generating functions faster than we can type, Wall's virtues feel like relics from a different era. When GitHub Copilot can autocomplete entire algorithms and ChatGPT can architect systems from scratch, what virtues should guide us?
+Larry Wall, the creator of Perl langauge, famously said that laziness,
+impatience, and hubris are the three great virtues of a programmer. 
+
+These three "virtues" turns out to be a great hiring advice because laziness
+drove us to automate the mundane; impatience pushed us toward elegant
+solutions; hubris made us believe we could solve problems others couldn't.
+
+How do we hire in the age of AI? 
 
 Sean Goedecke proposes a compelling answer. He argues that AI-assisted programmers need fundamentally different virtues:
 > - Obsession to keep your own mind working at the problem
