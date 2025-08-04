@@ -8,7 +8,11 @@
   
   const setTheme = (theme) => {
     localStorage.setItem(STORAGE_KEY, theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
   };
   
   const cycleTheme = () => {

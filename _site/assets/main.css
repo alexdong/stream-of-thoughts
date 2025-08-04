@@ -865,6 +865,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 calc(var(--line-height) * 2);
+  color: var(--text-color);
 }
 
 th, td {

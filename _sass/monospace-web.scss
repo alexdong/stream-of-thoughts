@@ -254,6 +254,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 calc(var(--line-height) * 2);
+  color: var(--text-color); // Override Minima's hardcoded color
 }
 
 th, td {
