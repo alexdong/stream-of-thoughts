@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-08-05T19:31:49+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[<p>Larry Wall, the creator of Perl langauge, famously said that laziness,
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-08-05T19:34:42+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[<p>Larry Wall, the creator of Perl langauge, famously said that laziness,
 impatience, and hubris are the three great virtues of a programmer. These three
 “virtues” turns out to be a great hiring advice because laziness drove us to
 automate the mundane, which translates to discover new optimisation
@@ -19,28 +19,29 @@ programmers need the following virtues:</p>
   </ul>
 </blockquote>
 
-<p>From: <a href="https://www.seangoedecke.com/llm-user-virtues/">Three great virtues of an AI-assisted programmer</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness, impatience, and hubris are the three great virtues of a programmer. These three “virtues” turns out to be a great hiring advice because laziness drove us to automate the mundane, which translates to discover new optimisation opportunities; impatience pushed us toward more performant, often simpler and more elegant, solutions; hubris gave us the courage, or stupidity, to work on problems others couldn’t solve.]]></summary></entry><entry><title type="html">Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics</title><link href="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html" rel="alternate" type="text/html" title="Qwen3-30B: The Open Source AI Model That Changes On-Premises Deployment Economics" /><published>2025-08-01T14:30:00+12:00</published><updated>2025-08-01T14:30:00+12:00</updated><id>https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty</id><content type="html" xml:base="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html"><![CDATA[<h2 id="the-recommendation-shift">The recommendation shift</h2>
+<p>From: <a href="https://www.seangoedecke.com/llm-user-virtues/">Three great virtues of an AI-assisted programmer</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness, impatience, and hubris are the three great virtues of a programmer. These three “virtues” turns out to be a great hiring advice because laziness drove us to automate the mundane, which translates to discover new optimisation opportunities; impatience pushed us toward more performant, often simpler and more elegant, solutions; hubris gave us the courage, or stupidity, to work on problems others couldn’t solve.]]></summary></entry><entry><title type="html">Qwen3-30B: The first AI model that is good enough for local deployment</title><link href="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html" rel="alternate" type="text/html" title="Qwen3-30B: The first AI model that is good enough for local deployment" /><published>2025-08-01T14:30:00+12:00</published><updated>2025-08-01T14:30:00+12:00</updated><id>https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty</id><content type="html" xml:base="https://alexdong.com/qwen3-30b-a3b-the-new-choice-for-nz-organizations-prioritizing-data-sovereignty.html"><![CDATA[<h2 id="finally-good-enough">Finally good enough</h2>
 
-<p>I’ve been asked by a number of New Zealand startups about the best local AI
-model. For the past a few months, I’ve reluctantly recommended Llama 3.3 70B
-with 8-bit quantization. I would always quickly follow up with the caveat that
-this setup is really only a toy. “If you want to do real work, you should
+<p>In the past a few months, I’ve been asked by a number of New Zealand startups about the best local AI model.  I’ve reluctantly recommended Llama 3.3 70B
+with 8-bit quantization but I would always quickly follow up with the caveat that
+this setup is “really only a toy”. “If you want to do real work, you should
 at least use Claude Haiku 3.5 or even Sonnet 4.0”, I would say.</p>
 
 <p>But With the arrival of <a href="https://qwenlm.github.io/blog/qwen3-30b-a3b/">Qwen3-30B-A3B-Instruct-2507</a>,
-I think we finally have a local model that is good enough for both fast local
-interactive exploration and production use. Why did I change my mind? Two things:</p>
+I think we finally have an AI model that is good enough for fast local
+interactive exploration and production use. There are two main reasons I feel this way:</p>
 
 <p><strong>Higher output quality</strong>. Based on my own benchmarks, Qwen3-30B’s performance
 in coding tasks is slightly behind than ChatGPT-4o, but noticeably
 higher than Claude’s haiku-3.5-20241022, a workhorse model that has been my 
-go-to for most of my personal projects.</p>
+go-to for most of my personal projects. To surpass haiku 3.5 means that it has
+a good-enough core cognitive capabilities that it can now be used to build real 
+applications.</p>
 
 <p><strong>Faster inference speed</strong>. Qwen3-30B runs at 78 tokens/second on M4 Max with
 128GB RAM (with MLX optimisation turned on), this feels a lot faster than haiku
-3.5 streamed, which typically runs at 52-68 tokens/second speed.</p>
+3.5 streamed from Claude’s API, which typically runs at 52-68 tokens/second speed.</p>
 
-<p>Read on for a deep dive on 6 reasons why you should consider Qwen3-30B-A3B for
+<p>Read on for a deeper dive on 6 reasons why you should consider Qwen3-30B-A3B for
 your local AI needs.</p>
 
 <h2 id="1-benchmark-result-matching-larger-models">1. Benchmark result matching larger models</h2>
@@ -112,39 +113,39 @@ confirms these results in practical applications, noting performance
 <p>Qwen3-30B-A3B uses the Mixture of Experts (MoE) architecture. Think of
 Qwen3-30B-A3B as having 128 specialist consultants on staff, but only calling
 on the 8 most relevant experts for each task. This architecture means that the
-model runs at the speed of a much smaller 3.3B parameter system.</p>
+model runs at the speed of a much smaller 3.3B parameter system, yet it is still
+capable for a wide range of cognitive intensive tasks.</p>
 
 <h2 id="3-almost-one-click-local-deployment">3. (Almost) one-click local deployment</h2>
 
 <p>The <a href="https://huggingface.co/lmstudio-community/Qwen3-30B-A3B-Instruct-2507-MLX-8bit">MLX 8-bit
 model</a>
-is readily available, optimized specifically for Apple Silicon deployment.
-Simon Willison’s <a href="https://simonwillison.net/2025/Jul/29/qwen3-30b-a3b-instruct-2507/">deployment
+is already available to download from Hugging Face. Simon Willison’s <a href="https://simonwillison.net/2025/Jul/29/qwen3-30b-a3b-instruct-2507/">deployment
 guide</a>
-provides additional implementation details.</p>
+provides additional details to get you started.</p>
 
 <h2 id="4-production-deployment-made-affordable">4. Production deployment made affordable</h2>
 
-<p>For deployment, the best gang-for-the-buck is a <a href="https://www.apple.com/nz/shop/buy-mac/mac-mini/apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb">Mac Mini M4 Pro with 64GB
-RAM</a>. It gives 79 tokens/second with MLX optimization for $4,299 NZD.</p>
+<p>For deployment, the easiest way is to run the model via LM Studio on a 
+<a href="https://www.apple.com/nz/shop/buy-mac/mac-mini/apple-m4-pro-chip-with-12-core-cpu-16-core-gpu-24gb-memory-512gb">Mac Mini M4 Pro with 64GB RAM</a>. 
+79 tokens/second for $4,299 NZD. Not bad at all.</p>
 
-<p>Or, you can go with one or two <a href="https://www.pbtech.co.nz/product/VGAASU350901/ASUS-ROG-ASTRAL-NVIDIA-GeForce-RTX-5090-OC-GAMING">RTX 5090 GPU (NZD $6,799 each on
-PBTech)</a>
-runs about 48 tokens/seconds.</p>
+<p>Or, you can go with one <a href="https://www.pbtech.co.nz/product/VGAASU350901/ASUS-ROG-ASTRAL-NVIDIA-GeForce-RTX-5090-OC-GAMING">RTX 5090 GPU (NZD $6,799 on
+PBTech)</a>, which gives
+about 48 tokens/seconds.</p>
 
-<p>Note that Even though the GPU approach appears to be slower than M4 Pro, it
-does open up the possibility of further scaling through further
-runtime/pipeline options, e.g.
+<p>Note that even though the GPU approach appears to be slower than M4 Pro, it
+does open up the options to explore more scalable runtime/pipeline options, e.g.
 <a href="https://huggingface.co/unsloth/Qwen3-30B-A3B-GGUF">unsloth</a>. Also, you get to
 choose different parameters for <a href="https://huggingface.co/unsloth/Qwen3-30B-A3B-GGUF">Thinking and Non-Thinking
 Mode</a> or use
 <a href="https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_(4B)-GRPO.ipynb">GRPO</a>
 for fine tuning.</p>
 
-<h2 id="5-tool-use">5. Tool use</h2>
+<h2 id="5-tool-use-and-hybrid-thinking-mode">5. Tool use and hybrid thinking mode</h2>
 
 <p>Qwen3-30B-A3B brings excellent function calling capabilities to local
-deployment—a feature notably absent in Llama 3.3 70B. Qwen3-30B-A3B further
+deployment — a feature notably absent in Llama 3.3 70B. Qwen3-30B-A3B further
 simplifies this task with the <a href="https://github.com/QwenLM/Qwen-Agent">Qwen-Agent
 framework</a>, providing built-in support
 for:</p>
@@ -176,7 +177,7 @@ your servers, processed by your infrastructure, governed by your policies.</p>
 <h2 id="models-come-and-go">Models come and go</h2>
 
 <p>You see, the AI landscape changes weekly. New models, new capabilities, new price
-points. Without a robust evaluation framework, you’re flying blind—making
+points. Without a robust evaluation framework, you’re flying blind — making
 decisions based on vendor marketing rather than measured performance that’s 
 relevant to your specific use cases.</p>
 
@@ -189,14 +190,14 @@ tool for comparing models. It should help you answer three questions:</p>
   <li>How do we capture feedback to improve continuously?</li>
 </ol>
 
-<p>These capabilities matter more than which model you choose today, because they
+<p>It worth noting that these capabilities matter more than which model you choose today, because they
 determine how well you’ll adapt to whatever comes next. While models depreciate
 rapidly—today’s state-of-the-art becomes tomorrow’s baseline—your evaluation
 framework appreciates with use. Each test case refined, each edge case
 captured, each performance metric validated adds to an irreplaceable asset.</p>
 
 <p>So, while models come and go, your evaluation framework remains a long-term asset.
-If your business is serious about AI, invest in building a robust evaluation framework.</p>]]></content><author><name></name></author><category term="local-ai" /><summary type="html"><![CDATA[The recommendation shift]]></summary></entry><entry><title type="html">Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach</title><link href="https://alexdong.com/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao’s <a href="https://mathstodon.xyz/@tao/114915604830689046">blue and red
+If your business is serious about AI, invest in building a robust evaluation framework.</p>]]></content><author><name></name></author><category term="local-ai" /><summary type="html"><![CDATA[Finally good enough]]></summary></entry><entry><title type="html">Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach</title><link href="https://alexdong.com/a-broader-view-on-blue-red-team.html" rel="alternate" type="text/html" title="Two Insights from Tao’s Blue/Red Teams Metaphor: Software Testing’s Future and AI as a Coach" /><published>2025-07-29T09:17:00+12:00</published><updated>2025-07-29T09:17:00+12:00</updated><id>https://alexdong.com/a-broader-view-on-blue-red-team</id><content type="html" xml:base="https://alexdong.com/a-broader-view-on-blue-red-team.html"><![CDATA[<p>Terence Tao’s <a href="https://mathstodon.xyz/@tao/114915604830689046">blue and red
 teams</a> post crystalised several
 insights about software testing and a different class of AI product that I have
 been building but hadn’t found the language to articulate until now.</p>
