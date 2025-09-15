@@ -2,18 +2,219 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@use "sass:math";
+@charset "utf-8";
 
-// Import minima with sass:math division functions
+// Import the monospace CSS
+@import url('/assets/css/monospace.css');
+
+// Override Minima theme variables before importing
+$base-font-family: 'Courier New', Courier, monospace !default;
 $base-font-size:   16px !default;
-$base-line-height: 1.5 !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.6 !default;
+
 $spacing-unit:     30px !default;
 
-// Override variables before importing to avoid division warnings
-$spacing-unit-half: math.div($spacing-unit, 2);
-$spacing-unit-third: math.div($spacing-unit, 3);
+$text-color:       #000000 !default;
+$background-color: #ffffff !default;
+$brand-color:      #0000ee !default;
 
+$grey-color:       #666666 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+// Width of the content area
+$content-width:    80ch !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// Import minima theme
 @import "minima";
 
-// Import The Monospace Web overrides
-@import "monospace-web";
+// Override and additional monospace-specific styles
+body {
+  font-family: $base-font-family;
+}
+
+// Make all elements use monospace
+* {
+  font-family: inherit;
+}
+
+// Headers should maintain monospace
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-font-family;
+  font-weight: bold;
+}
+
+// Code blocks should remain monospace
+pre, code {
+  font-family: $base-font-family;
+  background-color: #f4f4f4;
+}
+
+// Site header adjustments
+.site-header {
+  border-bottom: 1px solid #cccccc;
+  background-color: transparent;
+}
+
+.site-title {
+  font-family: $base-font-family;
+  font-weight: bold;
+  letter-spacing: normal;
+  
+  &:visited {
+    color: $text-color;
+  }
+}
+
+// Navigation
+.site-nav {
+  font-family: $base-font-family;
+  
+  .page-link {
+    font-family: $base-font-family;
+  }
+}
+
+// Post list
+.post-list {
+  h3 {
+    font-family: $base-font-family;
+    margin-bottom: 0;
+  }
+}
+
+.post-meta {
+  font-family: $base-font-family;
+  color: $grey-color;
+}
+
+// Footer
+.site-footer {
+  border-top: 1px solid #cccccc;
+  font-family: $base-font-family;
+}
+
+// Social media list
+.social-media-list {
+  font-family: $base-font-family;
+}
+
+// Make tables more terminal-like
+table {
+  font-family: $base-font-family;
+  border-collapse: collapse;
+  
+  th, td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+}
+
+// Adjust link styling
+a {
+  color: $brand-color;
+  text-decoration: underline;
+  
+  &:visited {
+    color: #551a8b;
+  }
+  
+  &:hover {
+    background-color: $brand-color;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .site-header {
+    border-bottom-color: #444444;
+  }
+  
+  .site-footer {
+    border-top-color: #444444;
+  }
+  
+  a {
+    color: #6db3f2;
+    
+    &:visited {
+      color: #b19cd9;
+    }
+    
+    &:hover {
+      background-color: #6db3f2;
+      color: #1a1a1a;
+    }
+  }
+  
+  code, pre {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+  }
+  
+  table {
+    th, td {
+      border-color: #444444;
+    }
+    
+    th {
+      background-color: #2d2d2d;
+    }
+  }
+  
+  .site-title {
+    &:visited {
+      color: #e0e0e0;
+    }
+  }
+}
+
+// Character-based grid for post layout
+.wrapper {
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: $content-width;
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+// ASCII art support
+.ascii-art {
+  font-family: $base-font-family;
+  line-height: 1;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+// Make sure syntax highlighting uses monospace
+.highlight {
+  font-family: $base-font-family;
+  
+  pre {
+    font-family: $base-font-family;
+  }
+}
