@@ -11,7 +11,7 @@
   --meta-color: #666666;
 
   /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-sans: "Iosevka", "Iosevka Term", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: "Iosevka", "Iosevka Term", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   --base-font-size: 16px;
   --line-height: 1.35;
@@ -227,10 +227,6 @@ button:hover {
   }
 
   /* Better table contrast in dark mode */
-  tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.02);
-  }
-
   tr:hover {
     background-color: rgba(255, 255, 255, 0.05);
   }
