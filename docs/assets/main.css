@@ -674,6 +674,8 @@ pre, code {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   letter-spacing: normal;
+  display: block;
+  width: 100%;
 }
 .site-title:visited {
   color: #000000;

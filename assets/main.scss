@@ -65,7 +65,9 @@ pre, code {
   font-family: $base-font-family;
   font-weight: bold;
   letter-spacing: normal;
-  
+  display: block;
+  width: 100%;
+
   &:visited {
     color: $text-color;
   }
