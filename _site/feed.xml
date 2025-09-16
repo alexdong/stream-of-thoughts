@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-05T19:33:47+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness,
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-16T22:41:51+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="http://localhost:4000/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>http://localhost:4000/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="http://localhost:4000/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: Qwen-8B embeddings achieve near state-of-the-art accuracy while running 600x faster, fundamentally changing the cost-performance equation for text classification tasks.</p>
+
+<p>Working on the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle MAP</a> competition has given me an opportunity to systematically compare embedding models for text classification tasks. The results challenge conventional assumptions about model size and performance trade-offs.</p>
+
+<p>The architecture deliberately separates representation learning from classification: text → embedding model → vector → 3-layer MLP classifier. This modular design enables rapid experimentation with different embedding models while keeping the downstream architecture constant.</p>
+
+<p>I began with <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code class="language-plaintext highlighter-rouge">sentence-transformers/all-MiniLM-L6-v2</code></a>, a 22.7M parameter model that serves as the industry baseline. The <code class="language-plaintext highlighter-rouge">sentence-transformers</code> Python package enabled rapid prototyping—from zero to working system in three hours. After optimization, performance plateaued at 0.908 MAP score. While respectable for a lightweight model, this fell short of competitive requirements.</p>
+
+<p>DeepMind’s recent release of <a href="https://huggingface.co/google/embeddinggemma-300m">embedding-Gemma-300M</a> promised substantial gains. Their benchmarks show it outperforming <code class="language-plaintext highlighter-rouge">all-MiniLM-L6-v2</code> across the board and beating <code class="language-plaintext highlighter-rouge">multilingual-e5-large</code> on all <a href="https://developers.googleblog.com/en/introducing-embeddinggemma/">MTEB tasks</a>. My results: marginal improvement to 0.9101 MAP—a 0.2% gain that didn’t justify the 13x parameter increase.</p>
+
+<p>The modest gains suggested I’d reached the MLP architecture’s limits. While exploring LLM-as-classifier approaches, I realized Qwen-8B could serve as an embedding model—extracting its hidden state representations rather than using its generative capabilities. Though <code class="language-plaintext highlighter-rouge">sentence-transformers</code> doesn’t natively support this, <code class="language-plaintext highlighter-rouge">llama-cpp-python</code> provides direct access to the model’s internal representations.</p>
+
+<p>The results shifted my understanding of the embedding-performance relationship. MAP score: 0.9439—a 4% absolute improvement that brings us within striking distance of state-of-the-art.</p>
+
+<p>This performance gain becomes strategically significant when considering deployment economics. The current Kaggle leader achieves 0.952 MAP using full LLM inference at 10-20 seconds per call. Our Qwen-8B + MLP approach delivers 99.3% of that accuracy at 0.03 seconds per inference—a 600x speedup that fundamentally changes the viability equation for production systems.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Parameters</th>
+      <th>Embedding Dimensions</th>
+      <th>MAP@3 Score</th>
+      <th>Inference Time</th>
+      <th>Relative Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all-MiniLM-L6-v2</td>
+      <td>32M</td>
+      <td>384</td>
+      <td>0.9082</td>
+      <td>0.02s</td>
+      <td>1x (baseline)</td>
+    </tr>
+    <tr>
+      <td>Gemma-300M</td>
+      <td>300M</td>
+      <td>768</td>
+      <td>0.9101</td>
+      <td>0.025s</td>
+      <td>0.8x</td>
+    </tr>
+    <tr>
+      <td>Qwen3-8B</td>
+      <td>8B</td>
+      <td>4096</td>
+      <td>0.9439</td>
+      <td>0.03s</td>
+      <td>0.67x</td>
+    </tr>
+    <tr>
+      <td>SOTA (LLM)</td>
+      <td>-</td>
+      <td>-</td>
+      <td>0.9520</td>
+      <td>10-20s</td>
+      <td>0.002x</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These results validate a critical hypothesis in representation learning: superior embeddings enable simpler downstream architectures. The Qwen-8B model, trained on substantially more diverse data than specialized embedding models, captures richer semantic relationships in its 4096-dimensional space. This richness allows a basic 3-layer MLP to achieve near-SOTA performance.</p>
+
+<h2 id="strategic-implications">Strategic Implications</h2>
+
+<p>For engineering teams, this demonstrates a new architectural pattern: leverage large models for one-time embedding generation, then deploy lightweight classifiers for real-time inference. The 600x speed advantage translates directly to infrastructure cost savings and enables previously infeasible use cases like real-time content moderation at scale.</p>
+
+<p>From an investment perspective, this shift creates opportunities for businesses that can’t afford the computational overhead of full LLM deployments. A startup could now offer enterprise-grade text classification at 1/100th the infrastructure cost of LLM-based competitors. The 5-7 year horizon looks particularly promising as embedding models continue to improve—each generational leap in embedding quality cascades to all downstream applications without requiring architectural changes.</p>
+
+<p>The broader trend is clear: we’re moving toward a two-tier AI architecture where large models generate high-quality representations, and specialized, efficient models handle specific tasks. Organizations that recognize and adapt to this pattern early will capture significant competitive advantages through both cost reduction and capability expansion.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: Qwen-8B embeddings achieve near state-of-the-art accuracy while running 600x faster, fundamentally changing the cost-performance equation for text classification tasks.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="http://localhost:4000/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>http://localhost:4000/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="http://localhost:4000/llm-evolutionary-search-test-time-compute.html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time & token for quality. By "thinking" for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks? 
+
+This is where evolutionary search comes in. Evolutionary search takes the good old genetic algorithm and uses LLMs to decide on mutation, crossover and selection. DeepMind is the clear leader in this area. Their most recent paper [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) shows that the idea has born fruits for many projects within Google: data center scheduling (0.7% total saving), Verilog rewrite for TPUs and a breakthrough in matrix multiplication that leads to 1% reduction in Gemini's training time and 32.5% speedup for FlashAttention kernel implementation.
+
+Very impressive stuff. 
+
+As long as the problem/solution pair can be scored, we should be able to just sprinkle this magic powder over all sorts of problems and get impressive results, right? Why it has taken off like CoT or Reasoning models?  Why aren't more labs doing it? 
+
+My conclusion back in May was that this approach is way too expensive. The compute cost required to get a good process going is about 300x what a single pass would cost. Also, the complexity of developing an async, distributed evolution system seems non-trivial. Basically, you need a big problem to worth bringing on the big gun. In the back of my mind, I've always wanted to come back and see if I could peel off some of the complexities and get a working system without sinking too much time in it.
+
+Last week, I came across a January 2025 paper from Google on [Mind Evolution](https://arxiv.org/abs/2501.05952). The gem is the Ablation Study section that analyses the performance gains across different components. It turns out that with only three key components, we can capture most of the uplift. These three components are:
+
+1. Adopt the Island Model for evolution. Instead of running a single evolution path, the system maintains four parallel "islands" that evolve solutions independently. Best candidates will periodically swim over to other islands to cross pollinate. Performance jumped from 77.4% to 87.5% when moving from one to four islands (while maintaining the same number of total generations) — a 10.1% gain. 
+
+2. Contextual feedback. By giving the LLM enough context about what works and a history, it changes the evolution process from random mutation to guided refinement. After each generation, a critical analysis of what worked, what failed and evolution history get added to the next generation's context. This step adds a 15% improvement, from 76.1% to 91.1%. 
+
+3. Critique through role separation. Rather than having a single agent both evaluate and revise, the system uses two separated agents to produce the mutations over a handful turns of conversations. The critic agent identifying weaknesses and gaps; the design agent then takes this critique and produces a revised mutation. This seemingly simple step achieved the system's largest single gain: from 46.1% to 71.1%, a 25 percentage point improvement. 
+
+Intrigued? I certainly am. I'm looking forward to implementing this and see if it can help me with prompt engineering for the [Kaggle MAP](https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings) competition I'm working on.]]></content><author><name></name></author><summary type="html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?]]></summary></entry><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness,
 impatience, and hubris are the three great virtues of a programmer. These three
 "virtues" turns out to be a great hiring advice because laziness drove us to
 automate the mundane, which translates to discover new optimisation

@@ -4,63 +4,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Jekyll-based static site for https://alexdong.com/, a personal blog. The site uses the Minima theme and is deployed to GitHub Pages via the `docs/` directory.
+This is a Jekyll-based personal website (alexdong.com) that implements "The Monospace Web" aesthetic. The repository contains custom CSS styling for a monospace-themed design.
 
 ## Architecture
 
-- **Jekyll Site**: Standard Jekyll blog structure with `_config.yml`, `_posts/`, and standard Jekyll directories
-- **Theme**: Uses the Minima theme (`minima ~> 2.5`)
-- **Deployment**: Built to `docs/` directory for GitHub Pages hosting
-- **Domain**: Custom domain `alexdong.com` configured via CNAME
+### Tech Stack
+- **Static Site Generator**: Jekyll with Minima theme
+- **Styling**: SCSS with custom monospace CSS overrides
+- **CSS Framework**: Custom implementation based on The Monospace Web design principles
 
-## Key Commands
+### Key Files
+- `assets/css/monospace.css`: Core monospace styling implementation
+- `assets/main.scss`: Main SCSS file that imports Minima theme and applies monospace overrides
 
-### Create New Post
+## Development Commands
+
+Since this is a Jekyll site, use the following commands:
+
 ```bash
-make new
-```
-Interactive command that prompts for a post title, creates a new post file in `_posts/` with proper naming convention and Jekyll front matter template, then opens it in your `$EDITOR`.
+# Install dependencies (if Gemfile exists in parent directory)
+bundle install
 
-### Build and Deploy
-```bash
-make publish
-```
-Complete deployment workflow that builds the site, creates CNAME file, commits changes, and pushes to git.
+# Serve the site locally with auto-reload
+bundle exec jekyll serve
 
-### Development
-```bash
-make dev
-```
-Starts Jekyll development server with live reload at http://localhost:4000.
+# Build the site for production
+bundle exec jekyll build
 
-### Other Commands
-```bash
-make help      # Show all available commands
-make clean     # Clean generated files
-make install   # Install Jekyll dependencies
+# Build with production environment
+JEKYLL_ENV=production bundle exec jekyll build
 ```
 
-### Legacy Commands
-```bash
-./publish                    # Original deployment script (use make publish instead)
-bundle exec jekyll serve     # Manual dev server (use make dev instead)
-bundle exec jekyll build -d docs  # Manual build (use make publish instead)
-```
+## Design System
 
-## File Structure
+The site uses a monospace-first design with:
+- Font: 'Courier New', Courier, monospace
+- Max content width: 80 characters
+- Character-based spacing units
+- Dark mode support via CSS media queries
+- Consistent monospace styling across all elements
 
-- `_config.yml`: Jekyll configuration with site metadata and build settings
-- `_posts/`: Blog posts in Markdown format with YYYY-MM-DD-title.md naming
-- `docs/`: Generated site output directory (GitHub Pages source)
-- `Gemfile`: Ruby dependencies including Jekyll and plugins
-- `publish`: Deployment script that builds, commits, and pushes
+## CSS Architecture
 
-## Content Management
+The styling follows a two-layer approach:
+1. `monospace.css`: Base monospace styling with CSS custom properties
+2. `main.scss`: Jekyll/Minima integration and overrides
 
-Blog posts are stored in `_posts/` and follow Jekyll's naming convention. The site uses Jekyll Feed plugin for RSS generation.
+Key CSS variables defined:
+- `--char-width`: 0.6em (base unit for spacing)
+- `--spacing-unit`: 2 character widths
+- Color scheme variables for light/dark modes
 
-## Development Notes
+## Common Tasks
 
-- Site builds to `docs/` directory which serves as the GitHub Pages source
-- Custom domain is maintained via CNAME file in the root of `docs/`
-- The `publish` script automates the entire deployment workflow
+### Adding new pages
+- Create `.md` or `.html` files in the root directory
+- Add front matter with layout specification
+- Pages will automatically use the monospace styling
+
+### Modifying styles
+- For global monospace styles: Edit `assets/css/monospace.css`
+- For Jekyll-specific overrides: Edit `assets/main.scss`
+- Maintain consistency with the monospace aesthetic
+
+### Working with the grid system
+- Use the `.grid` class for character-width based layouts
+- Grid items automatically size to minimum 20 characters wide

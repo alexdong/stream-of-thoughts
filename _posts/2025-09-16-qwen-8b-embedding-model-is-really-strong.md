@@ -40,7 +40,7 @@ the entire test dataset within the 9-hour Kaggle time limit.
 
 This past Sunday, it suddenly occurred to me that I could use the Qwen-8B
 model purely as an embedding model. This isn't supported out of the
-box by `sentence-transformers`, but it was easy to implement through the
+box by `sentence-transformers`, but it was easy to vibe code it through the
 `llama-cpp-python` package.
 
 The result? Extraordinarily good. The MAP score jumped to 0.9439, a significant
@@ -66,6 +66,6 @@ work so well with so little resources.
 The concept of [Representation
 Learning](https://en.wikipedia.org/wiki/Feature_learning) always fascinates me.
 The idea that the entire world's complexity can be squeezed into 10k-dimensional vectors
-in a high-dimensional space is mind-boggling. 
+is mind-boggling. 
 
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?" />
+<meta property="og:description" content="Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?" />
+<link rel="canonical" href="http://localhost:4000/llm-evolutionary-search-test-time-compute.html" />
+<meta property="og:url" content="http://localhost:4000/llm-evolutionary-search-test-time-compute.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-15T23:29:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-15T23:29:00+12:00","datePublished":"2025-09-15T23:29:00+12:00","description":"Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?","headline":"LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/llm-evolutionary-search-test-time-compute.html"},"url":"http://localhost:4000/llm-evolutionary-search-test-time-compute.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-15T23:29:00+12:00" itemprop="datePublished">Sep 15, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?</p>
+
+<p>This is where evolutionary search comes in. Evolutionary search takes the good old genetic algorithm and uses LLMs to decide on mutation, crossover and selection. DeepMind is the clear leader in this area. Their most recent paper <a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a> shows that the idea has born fruits for many projects within Google: data center scheduling (0.7% total saving), Verilog rewrite for TPUs and a breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s training time and 32.5% speedup for FlashAttention kernel implementation.</p>
+
+<p>Very impressive stuff.</p>
+
+<p>As long as the problem/solution pair can be scored, we should be able to just sprinkle this magic powder over all sorts of problems and get impressive results, right? Why it has taken off like CoT or Reasoning models?  Why aren’t more labs doing it?</p>
+
+<p>My conclusion back in May was that this approach is way too expensive. The compute cost required to get a good process going is about 300x what a single pass would cost. Also, the complexity of developing an async, distributed evolution system seems non-trivial. Basically, you need a big problem to worth bringing on the big gun. In the back of my mind, I’ve always wanted to come back and see if I could peel off some of the complexities and get a working system without sinking too much time in it.</p>
+
+<p>Last week, I came across a January 2025 paper from Google on <a href="https://arxiv.org/abs/2501.05952">Mind Evolution</a>. The gem is the Ablation Study section that analyses the performance gains across different components. It turns out that with only three key components, we can capture most of the uplift. These three components are:</p>
+
+<ol>
+  <li>
+    <p>Adopt the Island Model for evolution. Instead of running a single evolution path, the system maintains four parallel “islands” that evolve solutions independently. Best candidates will periodically swim over to other islands to cross pollinate. Performance jumped from 77.4% to 87.5% when moving from one to four islands (while maintaining the same number of total generations) — a 10.1% gain.</p>
+  </li>
+  <li>
+    <p>Contextual feedback. By giving the LLM enough context about what works and a history, it changes the evolution process from random mutation to guided refinement. After each generation, a critical analysis of what worked, what failed and evolution history get added to the next generation’s context. This step adds a 15% improvement, from 76.1% to 91.1%.</p>
+  </li>
+  <li>
+    <p>Critique through role separation. Rather than having a single agent both evaluate and revise, the system uses two separated agents to produce the mutations over a handful turns of conversations. The critic agent identifying weaknesses and gaps; the design agent then takes this critique and produces a revised mutation. This seemingly simple step achieved the system’s largest single gain: from 46.1% to 71.1%, a 25 percentage point improvement.</p>
+  </li>
+</ol>
+
+<p>Intrigued? I certainly am. I’m looking forward to implementing this and see if it can help me with prompt engineering for the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle MAP</a> competition I’m working on.</p>
+
+  </div><a class="u-url" href="/llm-evolutionary-search-test-time-compute.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
