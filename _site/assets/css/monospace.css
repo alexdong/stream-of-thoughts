@@ -11,8 +11,8 @@
   --meta-color: #666666;
 
   /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  --font-sans: "Iosevka", "Iosevka Term", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Iosevka", "Iosevka Term", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   --base-font-size: 16px;
   --line-height: 1.35;
 
@@ -122,17 +122,20 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: var(--spacing-unit);
+  background-color: var(--bg-color);
 }
 
 th, td {
   text-align: left;
   padding: 0.5rem;
   border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 th {
   font-weight: 600;
   border-bottom: 2px solid var(--border-color);
+  background-color: var(--code-bg);
 }
 
 /* Blockquotes */
@@ -221,6 +224,11 @@ button:hover {
 
   blockquote {
     color: #aaa;
+  }
+
+  /* Better table contrast in dark mode */
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
   }
 
   button {

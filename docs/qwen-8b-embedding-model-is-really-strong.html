@@ -19,7 +19,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-16T22:06:00+12:00","datePublished":"2025-09-16T22:06:00+12:00","description":"TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.","headline":"Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"},"url":"https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
   <div class="wrapper">
     <div style="text-align: center;">
       <a class="site-title" rel="author" href="/">Stream of thoughts from Alex Dong</a>
@@ -116,12 +118,11 @@ per inference, yet achieves a score remarkably close to the top.</p>
 <p>I’ve long been aware of the hypothesis that if the representation is good
 enough, downstream tasks can be solved with really simple models. But this
 is the first time I’ve seen it in action and it’s truly impressive to see it
-work so well with so little resources.</p>
+work so well with so little moving parts. And so fast!</p>
 
-<p>The concept of <a href="https://en.wikipedia.org/wiki/Feature_learning">Representation
-Learning</a> always fascinates me.
-The idea that the entire world’s complexity can be squeezed into 10k-dimensional vectors
-is mind-boggling.</p>
+<p>For teams building AI products, I hope this quick note at least gives you an
+alternative architecture to consider. Maybe all we need is just really good
+representations and simple and fast models to get the job done.</p>
 
 
   </div><a class="u-url" href="/qwen-8b-embedding-model-is-really-strong.html" hidden></a>

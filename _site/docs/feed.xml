@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-16T14:40:02+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-16T23:15:51+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>https://alexdong.com/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
+classification tasks while running 600x faster than LLM-based approaches.</p>
+
+<p>For the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
+MAP</a>
+competition I’m working on, I’ve had a chance to try out different embedding
+models for text classification tasks.</p>
+
+<p>The setup is pretty simple. A sentence comes in. I’ll use an embedding model to
+encode it into a vector, which is then fed into a 3-layer MLP classifier.</p>
+
+<p>I started with
+<a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code class="language-plaintext highlighter-rouge">sentence-transformers/all-MiniLM-L6-v2</code></a>,
+a 22.7M parameter model. It was easy to put together (thanks to the
+<code class="language-plaintext highlighter-rouge">sentence-transformers</code> Python package) and I got a proof of concept working in
+a few hours. After some Optuna hyperparameter search, the system plateaued at
+around 0.908 MAP score. A respectable result but not competitive enough for the
+Kaggle leaderboard.</p>
+
+<p>Two weeks ago, DeepMind released
+<a href="https://huggingface.co/google/embeddinggemma-300m">embedding-Gemma-300M</a>.
+According to the release note, it outperforms <code class="language-plaintext highlighter-rouge">all-MiniLM-L6-v2</code> on a variety
+of tasks. It even beats <code class="language-plaintext highlighter-rouge">multilingual-e5-large</code>, a model that’s almost twice
+its size, on all <a href="https://developers.googleblog.com/en/introducing-embeddinggemma/">MTEB
+tasks</a>. I did
+see some improvement but it wasn’t significant.</p>
+
+<p>I thought maybe I had hit the ceiling of what the MLP architecture could do. So I
+started playing around with using the LLM itself as the classifier. It did give me
+a better score, but each inference takes 10-20 seconds—too slow to process
+the entire test dataset within the 9-hour Kaggle time limit.</p>
+
+<p>This past Sunday, it suddenly occurred to me that I could use the Qwen-8B
+model purely as an embedding model. This isn’t supported out of the
+box by <code class="language-plaintext highlighter-rouge">sentence-transformers</code>, but it was easy to vibe code it through the
+<code class="language-plaintext highlighter-rouge">llama-cpp-python</code> package.</p>
+
+<p>The result? Extraordinarily good. The MAP score jumped to 0.9439, a significant
+improvement over the previous two models.</p>
+
+<p>As context, the current top score on the Kaggle Leaderboard is 0.952. This
+almost embarrassingly simple MLP approach takes less than 0.03 seconds
+per inference, yet achieves a score remarkably close to the top.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Parameters</th>
+      <th>Embedding Dimensions</th>
+      <th>MAP@3 Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all-MiniLM-L6-v2</td>
+      <td>32M</td>
+      <td>384</td>
+      <td>0.9082</td>
+    </tr>
+    <tr>
+      <td>Gemma-300M</td>
+      <td>300M</td>
+      <td>768</td>
+      <td>0.9101</td>
+    </tr>
+    <tr>
+      <td>Qwen3-8B</td>
+      <td>8B</td>
+      <td>4096</td>
+      <td>0.9439</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I’ve long been aware of the hypothesis that if the representation is good
+enough, downstream tasks can be solved with really simple models. But this
+is the first time I’ve seen it in action and it’s truly impressive to see it
+work so well with so little resources.</p>
+
+<p>The concept of <a href="https://en.wikipedia.org/wiki/Feature_learning">Representation
+Learning</a> always fascinates me.
+The idea that the entire world’s complexity can be squeezed into 10k-dimensional vectors
+is mind-boggling.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?</p>
 
 <p>This is where evolutionary search comes in. Evolutionary search takes the good old genetic algorithm and uses LLMs to decide on mutation, crossover and selection. DeepMind is the clear leader in this area. Their most recent paper <a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a> shows that the idea has born fruits for many projects within Google: data center scheduling (0.7% total saving), Verilog rewrite for TPUs and a breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s training time and 32.5% speedup for FlashAttention kernel implementation.</p>
 

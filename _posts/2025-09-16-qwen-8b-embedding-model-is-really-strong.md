@@ -61,11 +61,9 @@ per inference, yet achieves a score remarkably close to the top.
 I've long been aware of the hypothesis that if the representation is good
 enough, downstream tasks can be solved with really simple models. But this
 is the first time I've seen it in action and it's truly impressive to see it
-work so well with so little resources.
+work so well with so little moving parts. And so fast!
 
-The concept of [Representation
-Learning](https://en.wikipedia.org/wiki/Feature_learning) always fascinates me.
-The idea that the entire world's complexity can be squeezed into 10k-dimensional vectors
-is mind-boggling. 
-
+For teams building AI products, I hope this quick note at least gives you an
+alternative architecture to consider. Maybe all we need is just really good
+representations and simple and fast models to get the job done.
 
