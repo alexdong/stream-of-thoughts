@@ -215,8 +215,17 @@ a {
 // Make sure syntax highlighting uses monospace
 .highlight {
   font-family: $base-font-family;
-  
+  background: transparent !important; // Remove white background
+
   pre {
     font-family: $base-font-family;
+    overflow-x: visible !important; // Prevent horizontal scrolling
+    white-space: pre-wrap !important; // Wrap long lines instead of scroll
+    word-wrap: break-word !important;
   }
+}
+
+// Remove background from highlighter-rouge
+.highlighter-rouge .highlight {
+  background: transparent !important;
 }
