@@ -148,8 +148,8 @@ pre > code {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(120ch - (30px * 2));
-  max-width: calc(120ch - (30px * 2));
+  max-width: -webkit-calc(80ch - (30px * 2));
+  max-width: calc(80ch - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -157,8 +157,8 @@ pre > code {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: -webkit-calc(120ch - (30px));
-    max-width: calc(120ch - (30px));
+    max-width: -webkit-calc(80ch - (30px));
+    max-width: calc(80ch - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -767,7 +767,7 @@ a:hover {
   }
 }
 .wrapper {
-  max-width: 120ch;
+  max-width: 80ch;
   margin-right: auto;
   margin-left: auto;
   padding-top: 30px;
@@ -777,7 +777,7 @@ a:hover {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: 120ch;
+    max-width: 80ch;
     padding-right: 15px;
     padding-left: 15px;
   }

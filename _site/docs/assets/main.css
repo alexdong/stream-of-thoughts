@@ -1,5 +1,5 @@
 @import url("/assets/css/monospace.css");
-@import url("https://iosevka-webfonts.github.io/iosevka-slab/iosevka-slab.css");
+@import url("https://iosevka-webfonts.github.io/iosevka/iosevka.css");
 /**
  * Reset some basic elements
  */
@@ -14,7 +14,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.6 "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font: 400 16px/1.6 "Iosevka Web", "Courier New", Courier, monospace;
   color: #222222;
   background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
@@ -148,8 +148,8 @@ pre > code {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(80ch - (30px * 2));
-  max-width: calc(80ch - (30px * 2));
+  max-width: -webkit-calc(120ch - (30px * 2));
+  max-width: calc(120ch - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -157,8 +157,8 @@ pre > code {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: -webkit-calc(80ch - (30px));
-    max-width: calc(80ch - (30px));
+    max-width: -webkit-calc(120ch - (30px));
+    max-width: calc(120ch - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -649,7 +649,7 @@ table td {
 }
 
 body {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
 * {
@@ -657,12 +657,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   font-weight: bold;
 }
 
 pre, code {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
 .site-header {
@@ -670,7 +670,7 @@ pre, code {
 }
 
 .site-title {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   font-weight: bold;
   letter-spacing: normal;
   display: block;
@@ -681,33 +681,33 @@ pre, code {
 }
 
 .site-nav {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 .site-nav .page-link {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
 .post-list h3 {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   margin-bottom: 0;
 }
 
 .post-meta {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   color: #666666;
 }
 
 .site-footer {
   border-top: 1px solid #cccccc;
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
 .social-media-list {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
 table {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   border-collapse: collapse;
 }
 table th, table td {
@@ -767,7 +767,7 @@ a:hover {
   }
 }
 .wrapper {
-  max-width: 80ch;
+  max-width: 120ch;
   margin-right: auto;
   margin-left: auto;
   padding-top: 30px;
@@ -777,25 +777,25 @@ a:hover {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: 80ch;
+    max-width: 120ch;
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 
 .ascii-art {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   line-height: 1;
   white-space: pre;
   overflow-x: auto;
 }
 
 .highlight {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   background: transparent !important;
 }
 .highlight pre {
-  font-family: "Iosevka Slab Web", "Courier New", Courier, monospace;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
   overflow-x: visible !important;
   white-space: pre-wrap !important;
   word-wrap: break-word !important;
