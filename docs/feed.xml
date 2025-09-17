@@ -1,46 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-17T21:45:58+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>https://alexdong.com/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-17T22:05:38+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>https://alexdong.com/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
 classification tasks while running 600x faster than LLM-based approaches.</p>
 
-<p>For the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
+<p>While working on the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
 MAP</a>
-competition I’m working on, I’ve had a chance to try out different embedding
-models for text classification tasks.</p>
-
-<p>The setup is pretty simple. A sentence comes in. I’ll use an embedding model to
-encode it into a vector, which is then fed into a 3-layer MLP classifier.</p>
+competition, I’ve been experimenting with different embedding models for text
+classification tasks. The setup is pretty simple. A sentence gets encoded into
+a vector by an embedding model, then the labe and the vector will be used to
+train a 3-layer MLP classifier.</p>
 
 <p>I started with
 <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code class="language-plaintext highlighter-rouge">sentence-transformers/all-MiniLM-L6-v2</code></a>,
 a 22.7M parameter model. It was easy to put together (thanks to the
 <code class="language-plaintext highlighter-rouge">sentence-transformers</code> Python package) and I got a proof of concept working in
 a few hours. After some Optuna hyperparameter search, the system plateaued at
-around 0.908 MAP score. A respectable result but not competitive enough for the
-Kaggle leaderboard.</p>
+around 0.908 MAP score. A respectable result but not competitive enough yet.</p>
 
 <p>Two weeks ago, DeepMind released
 <a href="https://huggingface.co/google/embeddinggemma-300m">embedding-Gemma-300M</a>.
-According to the release note, it outperforms <code class="language-plaintext highlighter-rouge">all-MiniLM-L6-v2</code> on a variety
-of tasks. It even beats <code class="language-plaintext highlighter-rouge">multilingual-e5-large</code>, a model that’s almost twice
-its size, on all <a href="https://developers.googleblog.com/en/introducing-embeddinggemma/">MTEB
-tasks</a>. I did
-see some improvement but it wasn’t significant.</p>
+According to the release note, it outperforms <code class="language-plaintext highlighter-rouge">all-MiniLM-L6-v2</code> on on all
+<a href="https://developers.googleblog.com/en/introducing-embeddinggemma/">MTEB tasks</a>.
+(MTEB is an excellent benchmark suites that measure embedding model’s performance
+over a range of text search, reranking tasks.)</p>
+
+<p>After integrating Embedding Gemma 300M, I did see some improvement from 0.9082
+to 0.9127. But it was a small bump considering the model is 10x larger (300M vs
+32M parameters) and the embedding dimension doubled (768 vs 384). I wasn’t
+impressed.</p>
 
 <p>I thought maybe I had hit the ceiling of what the MLP architecture could do. So I
 started playing around with using the LLM itself as the classifier. It did give me
-a better score, but each inference takes 10-20 seconds—too slow to process
+a better score, but each inference takes 10-20 seconds - way too slow to process
 the entire test dataset within the 9-hour Kaggle time limit.</p>
 
-<p>This past Sunday, it suddenly occurred to me that I could use the Qwen-8B
-model purely as an embedding model. This isn’t supported out of the
-box by <code class="language-plaintext highlighter-rouge">sentence-transformers</code>, but it was easy to vibe code it through the
+<p>This past Sunday, I realised I could use the Qwen-8B
+model purely as an embedding model. While <code class="language-plaintext highlighter-rouge">sentence-transformers</code> doesn’t support
+this out of the box, I was able to quickly implement one using the 
 <code class="language-plaintext highlighter-rouge">llama-cpp-python</code> package.</p>
 
 <p>The result? Extraordinarily good. The MAP score jumped to 0.9439, a significant
-improvement over the previous two models.</p>
-
-<p>As context, the current top score on the Kaggle Leaderboard is 0.952. This
-almost embarrassingly simple MLP approach takes less than 0.03 seconds
-per inference, yet achieves a score remarkably close to the top.</p>
+improvement over the previous two models. For context, the current top score on
+the Kaggle leaderboard is 0.952. This remarkably simple MLP approach
+takes less than 0.03 seconds per inference, yet achieves a score very
+close to the top.</p>
 
 <table>
   <thead>
@@ -73,14 +74,15 @@ per inference, yet achieves a score remarkably close to the top.</p>
   </tbody>
 </table>
 
-<p>I’ve long been aware of the hypothesis that if the representation is good
-enough, downstream tasks can be solved with really simple models. But this
-is the first time I’ve seen it in action and it’s truly impressive to see it
-work so well with so little moving parts. And so fast!</p>
+<p>I’ve long been aware of the hypothesis that good representations enable simple
+models to solve complex tasks. But this is the first time I’ve seen it in
+action, and it’s impressive how well it works with so few moving parts. And so
+fast!</p>
 
-<p>For teams building AI products, I hope this quick note at least gives you an
-alternative architecture to consider. Maybe all we need is just really good
-representations and simple and fast models to get the job done.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an
+<p>For teams building AI products, this approach offers a compelling alternative 
+over paying for LLM API calls. Perhaps, for some use cases, we don’t need 
+complex, expensive models after all. Strong representation + simple model 
+might just do the trick.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an
 existing model is to trade time &amp; token for quality. Through “thinking” for a
 minute or two, Reasoning models produce better results even though the
 underlying foundation model remains the same. So what performance uplift can we
