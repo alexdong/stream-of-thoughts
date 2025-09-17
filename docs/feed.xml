@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-16T23:26:38+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>https://alexdong.com/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-17T21:45:58+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</title><link href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" rel="alternate" type="text/html" title="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" /><published>2025-09-16T22:06:00+12:00</published><updated>2025-09-16T22:06:00+12:00</updated><id>https://alexdong.com/qwen-8b-embedding-model-is-really-strong</id><content type="html" xml:base="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"><![CDATA[<p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
 classification tasks while running 600x faster than LLM-based approaches.</p>
 
 <p>For the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
@@ -80,31 +80,76 @@ work so well with so little moving parts. And so fast!</p>
 
 <p>For teams building AI products, I hope this quick note at least gives you an
 alternative architecture to consider. Maybe all we need is just really good
-representations and simple and fast models to get the job done.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?</p>
+representations and simple and fast models to get the job done.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="https://alexdong.com/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-search-test-time-compute.html"><![CDATA[<p>Once a LLM model is trained, the main way to squeeze extra juice out of an
+existing model is to trade time &amp; token for quality. Through “thinking” for a
+minute or two, Reasoning models produce better results even though the
+underlying foundation model remains the same. So what performance uplift can we
+get if we extend minutes into days? Or even weeks?</p>
 
-<p>This is where evolutionary search comes in. Evolutionary search takes the good old genetic algorithm and uses LLMs to decide on mutation, crossover and selection. DeepMind is the clear leader in this area. Their most recent paper <a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a> shows that the idea has born fruits for many projects within Google: data center scheduling (0.7% total saving), Verilog rewrite for TPUs and a breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s training time and 32.5% speedup for FlashAttention kernel implementation.</p>
+<p>This is where evolutionary search comes in. Evolutionary search takes good
+old genetic algorithms and uses LLMs to decide on mutation, crossover and
+selection. DeepMind is the clear leader in this area. Their most recent paper
+<a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a>
+shows that the idea has borne fruit for many internal projects: data
+center scheduling (0.7% total saving), Verilog rewrite for TPUs and a
+breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s
+training time and 32.5% speedup for FlashAttention kernel implementation.</p>
 
 <p>Very impressive stuff.</p>
 
-<p>As long as the problem/solution pair can be scored, we should be able to just sprinkle this magic powder over all sorts of problems and get impressive results, right? Why it has taken off like CoT or Reasoning models?  Why aren’t more labs doing it?</p>
+<p>Even better, as long as the problem/solution pair can be scored numerically, we
+should be able to just sprinkle this magic powder over all sorts of problems
+and expect impressive results. Then why hasn’t Evolutionary Search taken off
+like CoT or Reasoning models?  Why aren’t more labs doing it?</p>
 
-<p>My conclusion back in May was that this approach is way too expensive. The compute cost required to get a good process going is about 300x what a single pass would cost. Also, the complexity of developing an async, distributed evolution system seems non-trivial. Basically, you need a big problem to worth bringing on the big gun. In the back of my mind, I’ve always wanted to come back and see if I could peel off some of the complexities and get a working system without sinking too much time in it.</p>
+<p>My conclusion back in May was that this approach is way too expensive. The
+compute cost required to have a fair go is about 300x of what a single
+pass would cost. Also, the complexity of developing an async, distributed
+evolution system seems non-trivial. You really need a big problem to warrant
+the cost and effort to bring in the big guns.  In the back of my mind though, I’ve
+always wanted to come back and see if I could peel off some of the complexities
+and get a working system without sinking too much time in it.</p>
 
-<p>Last week, I came across a January 2025 paper from Google on <a href="https://arxiv.org/abs/2501.05952">Mind Evolution</a>. The gem is the Ablation Study section that analyses the performance gains across different components. It turns out that with only three key components, we can capture most of the uplift. These three components are:</p>
+<p>Last week, I came across a January 2025 paper from Google on <a href="https://arxiv.org/abs/2501.05952">Mind
+Evolution</a>. The gem is the Ablation Study
+section where the authors analysed the performance gains from different
+components. It turns out that three key “features” contribute to most of the
+uplift.</p>
+
+<p>They are:</p>
 
 <ol>
   <li>
-    <p>Adopt the Island Model for evolution. Instead of running a single evolution path, the system maintains four parallel “islands” that evolve solutions independently. Best candidates will periodically swim over to other islands to cross pollinate. Performance jumped from 77.4% to 87.5% when moving from one to four islands (while maintaining the same number of total generations) — a 10.1% gain.</p>
+    <p>Adopt the Island Model for Evolution. Instead of running a single evolution
+path, their approach constructs four islands that evolve independently. The
+best candidates from each island will periodically swim over to other
+islands as a cross pollination. The performance jumped from 77.4% to 87.5%
+when increasing the island count from one to four (while controlling
+the total number of generations) — a 10.1% gain.</p>
   </li>
   <li>
-    <p>Contextual feedback. By giving the LLM enough context about what works and a history, it changes the evolution process from random mutation to guided refinement. After each generation, a critical analysis of what worked, what failed and evolution history get added to the next generation’s context. This step adds a 15% improvement, from 76.1% to 91.1%.</p>
+    <p>Contextual feedback. By giving the LLM enough context about previous
+attempts, the evolution process changed from random mutations to guided
+refinements. After each generation, a critical analysis of what worked, what
+failed and the evolutionary history gets added to the next generation’s
+context. This step introduces a further 15% improvement, taking the accuracy
+from 76.1% to 91.1%.</p>
   </li>
   <li>
-    <p>Critique through role separation. Rather than having a single agent both evaluate and revise, the system uses two separated agents to produce the mutations over a handful turns of conversations. The critic agent identifying weaknesses and gaps; the design agent then takes this critique and produces a revised mutation. This seemingly simple step achieved the system’s largest single gain: from 46.1% to 71.1%, a 25 percentage point improvement.</p>
+    <p>Critique through separate agents. Rather than tasking a single agent with
+both evaluation and revision tasks, the system uses two separate agents to
+produce the mutations over 5 turns of conversations. A critic agent focuses
+on identifying weaknesses and gaps; a design agent then takes the feedback
+and produces a revised mutation. This seemingly simple step achieved the
+system’s largest single gain: from 46.1% to 71.1%, a 25 percentage point
+improvement.</p>
   </li>
 </ol>
 
-<p>Intrigued? I certainly am. I’m looking forward to implementing this and see if it can help me with prompt engineering for the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle MAP</a> competition I’m working on.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an existing models is to trade time &amp; token for quality. By “thinking” for a minute or two, CoT and reasoning models get to produce better results even though the underlying model remains the same. So what performance uplift can we get if we extend minutes into days or weeks?]]></summary></entry><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[<p>Larry Wall, the creator of Perl langauge, famously said that laziness,
+<p>Intrigued? I certainly am. I’m looking forward to implementing this and see if
+it can help me with writing better prompts for the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
+MAP</a>
+competition I’m working on.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an existing model is to trade time &amp; token for quality. Through “thinking” for a minute or two, Reasoning models produce better results even though the underlying foundation model remains the same. So what performance uplift can we get if we extend minutes into days? Or even weeks?]]></summary></entry><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="https://alexdong.com/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[<p>Larry Wall, the creator of Perl langauge, famously said that laziness,
 impatience, and hubris are the three great virtues of a programmer. These three
 “virtues” turns out to be a great hiring advice because laziness drove us to
 automate the mundane, which translates to discover new optimisation
