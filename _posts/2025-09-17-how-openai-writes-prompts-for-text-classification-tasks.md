@@ -18,7 +18,7 @@ classification. Here are three examples, progressing from simple to complex:
 
 ## Binary Classification Task
 
-```
+```text
 You are an internal tool that classifies a message from a user to an AI
 chatbot, based on the context of the previous messages before it.
 
@@ -42,7 +42,7 @@ Key techniques:
 
 ## Multi-Class Classification Task
 
-```
+```text
 You are an internal tool that classifies a message from a user to an AI
 chatbot, based on the context of the previous messages before it.
 
@@ -77,7 +77,7 @@ Key techniques:
 
 ## Many-Label Classification Task (24 categories)
 
-```
+```text
 You are an internal tool that classifies a message from a user to an AI chatbot,
 based on the context of the previous messages before it.
 
