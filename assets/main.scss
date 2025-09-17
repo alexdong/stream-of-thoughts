@@ -219,9 +219,8 @@ a {
 
   pre {
     font-family: $base-font-family;
-    overflow-x: visible !important; // Prevent horizontal scrolling
-    white-space: pre-wrap !important; // Wrap long lines instead of scroll
-    word-wrap: break-word !important;
+    overflow-x: auto !important; // Allow horizontal scrolling for code blocks
+    white-space: pre !important; // Preserve formatting but don't wrap
   }
 }
 

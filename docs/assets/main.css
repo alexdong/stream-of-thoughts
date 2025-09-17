@@ -796,9 +796,8 @@ a:hover {
 }
 .highlight pre {
   font-family: "Iosevka Web", "Courier New", Courier, monospace;
-  overflow-x: visible !important;
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
+  overflow-x: auto !important;
+  white-space: pre !important;
 }
 
 .highlighter-rouge .highlight {
