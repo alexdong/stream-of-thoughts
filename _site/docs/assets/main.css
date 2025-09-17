@@ -792,9 +792,17 @@ a:hover {
 
 .highlight {
   font-family: "Courier New", Courier, monospace;
+  background: transparent !important;
 }
 .highlight pre {
   font-family: "Courier New", Courier, monospace;
+  overflow-x: visible !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+}
+
+.highlighter-rouge .highlight {
+  background: transparent !important;
 }
 
 /*# sourceMappingURL=main.css.map */

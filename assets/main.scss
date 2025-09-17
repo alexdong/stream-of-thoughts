@@ -6,9 +6,10 @@
 
 // Import the monospace CSS
 @import url('/assets/css/monospace.css');
+@import url('https://iosevka-webfonts.github.io/iosevka-slab/iosevka-slab.css');
 
 // Override Minima theme variables before importing
-$base-font-family: 'Courier New', Courier, monospace !default;
+$base-font-family: 'Iosevka Slab Web', 'Courier New', Courier, monospace !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -16,7 +17,7 @@ $base-line-height: 1.6 !default;
 
 $spacing-unit:     30px !default;
 
-$text-color:       #000000 !default;
+$text-color:       #222222 !default;
 $background-color: #ffffff !default;
 $brand-color:      #0000ee !default;
 
@@ -52,12 +53,10 @@ h1, h2, h3, h4, h5, h6 {
 // Code blocks should remain monospace
 pre, code {
   font-family: $base-font-family;
-  background-color: #f4f4f4;
 }
 
 // Site header adjustments
 .site-header {
-  border-bottom: 1px solid #cccccc;
   background-color: transparent;
 }
 
@@ -125,7 +124,6 @@ table {
 // Adjust link styling
 a {
   color: $brand-color;
-  text-decoration: underline;
   
   &:visited {
     color: #551a8b;
@@ -134,7 +132,7 @@ a {
   &:hover {
     background-color: $brand-color;
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -193,6 +191,8 @@ a {
   max-width: $content-width;
   margin-right: auto;
   margin-left: auto;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   @extend %clearfix;
@@ -228,4 +228,9 @@ a {
 // Remove background from highlighter-rouge
 .highlighter-rouge .highlight {
   background: transparent !important;
+}
+
+// Override post link font size
+.post-link {
+  font-size: 16px !important;
 }
