@@ -6,10 +6,10 @@
 
 // Import the monospace CSS
 @import url('/assets/css/monospace.css');
-@import url('https://iosevka-webfonts.github.io/iosevka-slab/iosevka-slab.css');
+@import url('https://iosevka-webfonts.github.io/iosevka/iosevka.css');
 
 // Override Minima theme variables before importing
-$base-font-family: 'Iosevka Slab Web', 'Courier New', Courier, monospace !default;
+$base-font-family: 'Iosevka Web', 'Courier New', Courier, monospace !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -26,7 +26,7 @@ $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
 // Width of the content area
-$content-width:    80ch !default;
+$content-width:    120ch !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
