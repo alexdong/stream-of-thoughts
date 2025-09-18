@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-18T22:23:47+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Due to odd JAX issues</title><link href="http://localhost:4000/due-to-odd-jax-issues.html" rel="alternate" type="text/html" title="Due to odd JAX issues" /><published>2025-09-18T21:34:00+12:00</published><updated>2025-09-18T21:34:00+12:00</updated><id>http://localhost:4000/-due-to-odd-jax-issues-</id><content type="html" xml:base="http://localhost:4000/due-to-odd-jax-issues.html"><![CDATA[<p>Anthropic published a <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">blog
-post</a>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-19T00:05:04+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Due to odd JAX issues</title><link href="http://localhost:4000/due-to-odd-jax-issues.html" rel="alternate" type="text/html" title="Due to odd JAX issues" /><published>2025-09-18T21:34:00+12:00</published><updated>2025-09-18T21:34:00+12:00</updated><id>http://localhost:4000/-due-to-odd-jax-issues-</id><content type="html" xml:base="http://localhost:4000/due-to-odd-jax-issues.html"><![CDATA[Anthropic published a [blog
+post](https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues)
 detailing three recent issues that affected a significant portion of their API users.
 This technical postmortem provides rare insight into the challenges of running
 large-scale AI services, and I appreciate their transparency. However, the details
-raised serious concerns about Anthropic’s engineering rigor.</p>
+raised serious concerns about Anthropic's engineering rigor.
 
-<p>Consider this code snippet from their postmortem:</p>
+Consider this code snippet from their postmortem:
 
-<p><img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fefee0d3d25f6b03cbfc57e70e0e364dcd8b82fe0-2000x500.png&amp;w=2048&amp;q=75" alt="December 2024 patching jax's dropping token bug issue" /></p>
+![December 2024 patching jax's dropping token bug issue](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fefee0d3d25f6b03cbfc57e70e0e364dcd8b82fe0-2000x500.png&w=2048&q=75)
 
-<p>What a crude way to patch a third-party library bug!</p>
+What a crude way to patch a third-party library bug!
 
-<p>After eight months, the team deployed a rewrite to address the root cause that
+After eight months, the team deployed a rewrite to address the root cause that
 necessitated this patch, which unfortunately exposed a deeper bug that had been
-masked by the temporary fix.</p>
+masked by the temporary fix. 
 
-<p>This cascade of failures reveals both inadequate testing infrastructure and
+This cascade of failures reveals both inadequate testing infrastructure and
 insufficient post-deployment monitoring. They mention implementing more
 sensitive evaluations and expanding quality checks, but this reads like a car
-manufacturer promising to watch for accidents more carefully.</p>
+manufacturer promising to watch for accidents more carefully.
 
-<p>I’ve been a paying 20x Max member since the program
-launched. Despite the postmortem’s openness, I’m not convinced
+I've been a paying 20x Max member since the program
+launched. Despite the postmortem's openness, I'm not convinced
 these issues have been resolved. In fact, I received several disappointing
-responses from Claude Code today that made me question my subscription.</p>
+responses from Claude Code today that made me question my subscription.
 
-<p>Starting tomorrow, I’m switching to GPT-5-Codex as my main coding assistant, based on
+Starting tomorrow, I'm switching to GPT-5-Codex as my main coding assistant, based on
 strong recommendations from engineers I trust. Time to see if the grass really is
-greener on the other side.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Anthropic published a blog post detailing three recent issues that affected a significant portion of their API users. This technical postmortem provides rare insight into the challenges of running large-scale AI services, and I appreciate their transparency. However, the details raised serious concerns about Anthropic’s engineering rigor.]]></summary></entry><entry><title type="html">How OpenAI writes prompts for text classification</title><link href="http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks.html" rel="alternate" type="text/html" title="How OpenAI writes prompts for text classification" /><published>2025-09-17T22:10:00+12:00</published><updated>2025-09-17T22:10:00+12:00</updated><id>http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks</id><content type="html" xml:base="http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks.html"><![CDATA[The US National Bureau of Economic Research (NBER) recently published a working
+greener on the other side.]]></content><author><name></name></author><summary type="html"><![CDATA[Anthropic published a blog post detailing three recent issues that affected a significant portion of their API users. This technical postmortem provides rare insight into the challenges of running large-scale AI services, and I appreciate their transparency. However, the details raised serious concerns about Anthropic’s engineering rigor.]]></summary></entry><entry><title type="html">How OpenAI writes prompts for text classification</title><link href="http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks.html" rel="alternate" type="text/html" title="How OpenAI writes prompts for text classification" /><published>2025-09-17T22:10:00+12:00</published><updated>2025-09-17T22:10:00+12:00</updated><id>http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks</id><content type="html" xml:base="http://localhost:4000/how-openai-writes-prompts-for-text-classification-tasks.html"><![CDATA[The US National Bureau of Economic Research (NBER) recently published a working
 paper titled ["How People Use
 ChatGPT"](https://www.nber.org/system/files/working_papers/w34255/w34255.pdf).
 While the paper provides interesting usage statistics, what fascinated me most
@@ -397,70 +397,88 @@ fast!
 For teams building AI products, this approach offers a compelling alternative 
 over paying for LLM API calls. Perhaps, for some use cases, we don't need 
 complex, expensive models after all. Strong representation + simple model 
-might just do the trick.]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute</title><link href="http://localhost:4000/llm-evolutionary-search-test-time-compute.html" rel="alternate" type="text/html" title="LLM-driven Evolutionary Search to squeeze even more value out of Test-Time Compute" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>http://localhost:4000/llm-evolutionary-search-test-time-compute</id><content type="html" xml:base="http://localhost:4000/llm-evolutionary-search-test-time-compute.html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an
-existing model is to trade time & token for quality. Through "thinking" for a
-minute or two, Reasoning models produce better results even though the
-underlying foundation model remains the same. So what performance uplift can we
-get if we extend minutes into days? Or even weeks? 
+might just do the trick.]]></content><author><name></name></author><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">Evolutionary Test-Time Compute: trade time &amp;amp; token for creativity</title><link href="http://localhost:4000/llm-evolutionary-test-time-compute.html" rel="alternate" type="text/html" title="Evolutionary Test-Time Compute: trade time &amp;amp; token for creativity" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>http://localhost:4000/llm-evolutionary-test-time-compute</id><content type="html" xml:base="http://localhost:4000/llm-evolutionary-test-time-compute.html"><![CDATA[[Jeremy
+Berman](https://jeremyberman.substack.com/p/how-i-got-the-highest-score-on-arc-agi-again)
+just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating
+the previous record by over 4 percentage points. At just $8.42 per task, his
+approach was 25× more cost-efficient than previous solutions while delivering
+better results. He credits "Multi-Agent Collaboration with Evolutionary
+Test-Time Compute" as a key factor.  
 
-This is where evolutionary search comes in. Evolutionary search takes good
-old genetic algorithms and uses LLMs to decide on mutation, crossover and
-selection. DeepMind is the clear leader in this area. Their most recent paper
+Once an LLM model is trained, the main way to extract extra value is to trade
+time and tokens for quality. Through "thinking" for a minute or two, reasoning
+models produce better results even though the underlying foundation model
+remains the same. But what performance uplift can we get if we extend minutes
+into days? Or even weeks?
+
+This is where Evolutionary Test-Time Compute (ETTC) comes in. It combines
+classic genetic algorithms with LLMs to guide mutation, crossover, and
+selection. 
+
+DeepMind has published three papers on this topic. Their most recent paper
 [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
-shows that the idea has borne fruit for many internal projects: data
+shows that the idea has borne fruit for many internal projects at Google: data
 center scheduling (0.7% total saving), Verilog rewrite for TPUs and a
 breakthrough in matrix multiplication that leads to 1% reduction in Gemini's
 training time and 32.5% speedup for FlashAttention kernel implementation.
 
-Very impressive stuff. 
+Impressive results. 
 
 Even better, as long as the problem/solution pair can be scored numerically, we
-should be able to just sprinkle this magic powder over all sorts of problems
-and expect impressive results. Then why hasn't Evolutionary Search taken off
-like CoT or Reasoning models?  Why aren't more labs doing it? 
+should be able to sprinkle this magic powder on all sorts of problems. So why hasn't
+ETTC taken off like CoT or reasoning models? Why aren't more labs doing it?
 
-My conclusion back in May was that this approach is way too expensive. The
-compute cost required to have a fair go is about 300x of what a single
-pass would cost. Also, the complexity of developing an async, distributed
-evolution system seems non-trivial. You really need a big problem to warrant
-the cost and effort to bring in the big guns.  In the back of my mind though, I've
-always wanted to come back and see if I could peel off some of the complexities
-and get a working system without sinking too much time in it.
+When I first read about AlphaEvolve, I didn't pursue it further. ETTC is
+expensive. The compute cost is about 300x that of a single pass. Plus,
+developing an async, distributed evolution system is non-trivial. You need a
+sufficiently large problem to warrant the investment. Still, I've always wanted
+to revisit this and see if I could strip away the complexities to build
+something practical.
 
-Last week, I came across a January 2025 paper from Google on [Mind
-Evolution](https://arxiv.org/abs/2501.05952). The gem is the Ablation Study
-section where the authors analysed the performance gains from different
-components. It turns out that three key "features" contribute to most of the
-uplift.
+A few days ago, I came across Google's [Mind
+Evolution](https://arxiv.org/abs/2501.05952) paper. Building on their earlier
+[FunSearch](https://www.nature.com/articles/s41586-023-06924-6) work (published
+in Nature, December 2023), Mind Evolution fills in crucial technical details.
+The real gem is the Ablation Study section, which analyzes performance gains
+from different components. Three key features contribute most of the uplift:
 
-They are:
 
-1. Adopt the Island Model for Evolution. Instead of running a single evolution
-   path, their approach constructs four islands that evolve independently. The
-   best candidates from each island will periodically swim over to other
-   islands as a cross pollination. The performance jumped from 77.4% to 87.5%
-   when increasing the island count from one to four (while controlling
-   the total number of generations) — a 10.1% gain. 
+1. **Island Model for Evolution**: Instead of a single evolution path, the
+   approach uses four islands that evolve independently. Top candidates
+   periodically migrate between islands for cross-pollination. Performance
+   jumped from 77.4% to 87.5% when increasing from one to four islands.
 
-2. Contextual feedback. By giving the LLM enough context about previous
-   attempts, the evolution process changed from random mutations to guided
-   refinements. After each generation, a critical analysis of what worked, what
-   failed and the evolutionary history gets added to the next generation's
-   context. This step introduces a further 15% improvement, taking the accuracy
-   from 76.1% to 91.1%. 
+2. **Contextual Feedback**: By providing the LLM with context about previous
+   attempts, the evolution process turns random mutations into guided
+   refinements. Each generation receives a critical analysis of what worked,
+   what failed, and the evolutionary history. This adds 15% improvement,
+   boosting accuracy from 76.1% to 91.1%.
 
-3. Critique through separate agents. Rather than tasking a single agent with
-   both evaluation and revision tasks, the system uses two separate agents to
-   produce the mutations over 5 turns of conversations. A critic agent focuses
-   on identifying weaknesses and gaps; a design agent then takes the feedback
-   and produces a revised mutation. This seemingly simple step achieved the
-   system's largest single gain: from 46.1% to 71.1%, a 25 percentage point
-   improvement. 
+3. **Separate Critique Agents**: Rather than using a single agent for both
+   evaluation and revision, the system employs two agents over 4 conversational
+   turns. A critic agent identifies weaknesses; a design agent produces
+   mutations. This simple change achieved the largest single gain: from 46.1%
+   to 71.1%, a 25% improvement.
 
-Intrigued? I certainly am. I'm looking forward to implementing this and see if
-it can help me with writing better prompts for the [Kaggle
+
+[OpenEvolve](https://github.com/codelion/openevolve) is an open-source
+implementation of AlphaEvolve. I'm planning to use it for the [Kaggle
 MAP](https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings)
-competition I'm working on.]]></content><author><name></name></author><summary type="html"><![CDATA[Once a LLM model is trained, the main way to squeeze extra juice out of an existing model is to trade time &amp; token for quality. Through “thinking” for a minute or two, Reasoning models produce better results even though the underlying foundation model remains the same. So what performance uplift can we get if we extend minutes into days? Or even weeks?]]></summary></entry><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness,
+competition I'm working on. 
+
+The challenge involves identifying specific misconceptions in student math
+responses—tricky because student language can be ambiguous, incomplete, or
+subtly off-topic. While I've achieved 94% accuracy using an MLP approach for
+most problems, that leaves about 1,000 hard cases where I'd like to use
+an LLM. 
+
+I'm thinking of using OpenEvolve to evolve better prompts for these cases, which 
+seems like a good fit. The OpenEvolve repo includes an [LLM Prompt
+Optimization](https://github.com/codelion/openevolve/tree/main/examples/llm_prompt_optimization)
+example that achieved a 10.69% improvement on the multi-hop
+reasoning benchmark HotpotQA. If ETTC can squeeze that kind of
+performance from prompt engineering, it might be exactly what I need to crack
+those stubborn misconception cases.]]></content><author><name></name></author><summary type="html"><![CDATA[Jeremy Berman just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating the previous record by over 4 percentage points. At just $8.42 per task, his approach was 25× more cost-efficient than previous solutions while delivering better results. He credits “Multi-Agent Collaboration with Evolutionary Test-Time Compute” as a key factor.]]></summary></entry><entry><title type="html">Three great virtues of an AI-assisted programmer</title><link href="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html" rel="alternate" type="text/html" title="Three great virtues of an AI-assisted programmer" /><published>2025-08-04T14:00:00+12:00</published><updated>2025-08-04T14:00:00+12:00</updated><id>http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer</id><content type="html" xml:base="http://localhost:4000/three-great-virtues-of-an-ai-assisted-programmer.html"><![CDATA[Larry Wall, the creator of Perl langauge, famously said that laziness,
 impatience, and hubris are the three great virtues of a programmer. These three
 "virtues" turns out to be a great hiring advice because laziness drove us to
 automate the mundane, which translates to discover new optimisation
