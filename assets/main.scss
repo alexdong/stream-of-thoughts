@@ -119,6 +119,10 @@ table {
     background-color: #f4f4f4;
     font-weight: bold;
   }
+
+  tr:nth-child(even) {
+    background-color: #222222;
+  }
 }
 
 // Adjust link styling

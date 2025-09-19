@@ -51,7 +51,7 @@ Here is ChatGPT Pro's explanation of how this could be possible:
 > parameter).
 
 I'm not sure if the explanation fully accounts for the performance difference,
-but it seems plausible that the memory headroom might have played a more
+but it seems plausible that the memory headroom might have played a far more
 significant role compared to the precision difference. I'm curious to see if
 others have observed similar results with different models or setups. If you
 have, please drop me an email. I'd love to hear about it!
