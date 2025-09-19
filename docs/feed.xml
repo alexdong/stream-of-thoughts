@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-19T00:05:19+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Due to odd JAX issues</title><link href="https://alexdong.com/due-to-odd-jax-issues.html" rel="alternate" type="text/html" title="Due to odd JAX issues" /><published>2025-09-18T21:34:00+12:00</published><updated>2025-09-18T21:34:00+12:00</updated><id>https://alexdong.com/-due-to-odd-jax-issues-</id><content type="html" xml:base="https://alexdong.com/due-to-odd-jax-issues.html"><![CDATA[<p>Anthropic published a <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">blog
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-19T22:49:40+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Surprising GPT-OSS 20B 2-bit Quantization Performance</title><link href="https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance.html" rel="alternate" type="text/html" title="Surprising GPT-OSS 20B 2-bit Quantization Performance" /><published>2025-09-19T22:13:00+12:00</published><updated>2025-09-19T22:13:00+12:00</updated><id>https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance</id><content type="html" xml:base="https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance.html"><![CDATA[<p>Today I benchmarked the GPT-OSS 20B model at different quantization levels using <a href="https://huggingface.co/unsloth/gpt-oss-20b-GGUF">unsloth/gpt-oss-20b-GGUF</a>. I was quite surprised by the results. Here are the details:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Quantization</th>
+      <th>Size</th>
+      <th>MAP@3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gpt-oss-20b</td>
+      <td>Q2_K_L</td>
+      <td>11.8 GB</td>
+      <td>0.68</td>
+    </tr>
+    <tr>
+      <td>gpt-oss-20b</td>
+      <td>Q5_K_M</td>
+      <td>11.7 GB</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <td>gpt-oss-20b</td>
+      <td>Q3_K_M</td>
+      <td>11.5 GB</td>
+      <td>0.41</td>
+    </tr>
+    <tr>
+      <td>gpt-oss-20b</td>
+      <td>Q4_K_M</td>
+      <td>11.6 GB</td>
+      <td>0.41</td>
+    </tr>
+    <tr>
+      <td>gpt-oss-20b</td>
+      <td>Q4_K_XL</td>
+      <td>11.9 GB</td>
+      <td>0.61</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As a reminder, <code class="language-plaintext highlighter-rouge">Q2_K_L</code> means 2-bit quantization with large context, <code class="language-plaintext highlighter-rouge">Q5_K_M</code>
+means 5-bit quantization with medium context, and so on. <code class="language-plaintext highlighter-rouge">MAP@3</code> is the metric
+I use to evaluate classification performance. Further, the GPU I was using was an
+NVIDIA RTX 3000 with 14GB VRAM.</p>
+
+<p>It’s somewhat understandable that lower precision models (like <code class="language-plaintext highlighter-rouge">Q2_K_L</code>)
+perform better in tasks requiring long context, as they can handle more tokens.
+However, I was really surprised to see that <code class="language-plaintext highlighter-rouge">Q2_K_L</code> outperformed even
+<code class="language-plaintext highlighter-rouge">Q4_K_XL</code>, which has both higher precision AND a larger context window.</p>
+
+<p>Here is ChatGPT Pro’s explanation of how this could be possible:</p>
+
+<blockquote>
+  <h3 id="1-hardware-specific-optimizations">1. <strong>Hardware-Specific Optimizations</strong></h3>
+
+  <p>At very long context lengths, performance becomes memory-bandwidth-bound
+rather than compute-bound - the GPU constantly reads the entire KV cache from
+VRAM, and a larger cache means more data to move, which can slow down
+tokens-per-second output. With 2-bit quantization, you’re moving less data
+per operation, which can result in:</p>
+  <ul>
+    <li><strong>Better cache utilization</strong>: Smaller models fit better in CPU/GPU cache
+hierarchies</li>
+    <li><strong>Reduced memory bandwidth pressure</strong>: Less data transfer between memory
+and compute units</li>
+    <li><strong>Higher throughput</strong> on memory-constrained systems</li>
+  </ul>
+
+  <h3 id="2-special-properties-of-gpt-oss-architecture">2. <strong>Special Properties of GPT-OSS Architecture</strong></h3>
+
+  <p>According to Unsloth documentation, any quant smaller than F16, including
+2-bit, has minimal accuracy loss for GPT-OSS models because only some parts
+(e.g., attention layers) are lower bit while most remain full-precision. This
+is unique to the MoE architecture where over 90% of the models’ total
+parameter count consists of MoE layers using MXFP4 format (4.25 bits per
+parameter).</p>
+</blockquote>
+
+<p>I’m not sure if the explanation fully accounts for the performance difference,
+but it seems plausible that the memory headroom might have played a more
+significant role compared to the precision difference. I’m curious to see if
+others have observed similar results with different models or setups. If you
+have, please drop me an email. I’d love to hear about it!</p>
+
+<p>I suppose the key takeaway is that we really need to benchmark models in the
+specific context and task we care about, rather than relying on general 
+assumptions about precision and context size.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. I was quite surprised by the results. Here are the details:]]></summary></entry><entry><title type="html">Due to odd JAX issues</title><link href="https://alexdong.com/due-to-odd-jax-issues.html" rel="alternate" type="text/html" title="Due to odd JAX issues" /><published>2025-09-18T21:34:00+12:00</published><updated>2025-09-18T21:34:00+12:00</updated><id>https://alexdong.com/-due-to-odd-jax-issues-</id><content type="html" xml:base="https://alexdong.com/due-to-odd-jax-issues.html"><![CDATA[<p>Anthropic published a <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">blog
 post</a>
 detailing three recent issues that affected a significant portion of their API users.
 This technical postmortem provides rare insight into the challenges of running
