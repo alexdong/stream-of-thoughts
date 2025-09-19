@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-Today I benchmarked the GPT-OSS 20B model at different quantization levels using [unsloth/gpt-oss-20b-GGUF](https://huggingface.co/unsloth/gpt-oss-20b-GGUF). I was quite surprised by the results. Here are the details:
+Today I benchmarked the GPT-OSS 20B model at different quantization levels using [unsloth/gpt-oss-20b-GGUF](https://huggingface.co/unsloth/gpt-oss-20b-GGUF). The results caught me off guard. Here are the details:
 
 | Model       | Quantization | Size    | MAP@3 |
 |-------------|--------------|---------|-------|
@@ -18,13 +18,12 @@ Today I benchmarked the GPT-OSS 20B model at different quantization levels using
 
 As a reminder, `Q2_K_L` means 2-bit quantization with large context, `Q5_K_M`
 means 5-bit quantization with medium context, and so on. `MAP@3` is the metric
-I use to evaluate classification performance. Further, the GPU I was using was an
-NVIDIA RTX 3000 with 14GB VRAM.
+I use to evaluate classification performance. I ran these tests on an NVIDIA RTX 3000 with 14GB VRAM.
 
 It's somewhat understandable that lower precision models (like `Q2_K_L`)
 perform better in tasks requiring long context, as they can handle more tokens.
-However, I was really surprised to see that `Q2_K_L` outperformed even
-`Q4_K_XL`, which has both higher precision AND a larger context window.
+Still, `Q2_K_L` managed to outperform `Q4_K_XL`, which has higher precision and
+a larger context window.
 
 Here is ChatGPT Pro's explanation of how this could be possible:
 
@@ -39,7 +38,8 @@ Here is ChatGPT Pro's explanation of how this could be possible:
 >   hierarchies
 > - **Reduced memory bandwidth pressure**: Less data transfer between memory
 >   and compute units
-> - **Higher throughput** on memory-constrained systems
+> - **Higher throughput** on memory-constrained systems, which can translate into
+>   better MAP@3 scores in practice
 > 
 > ### 2. **Special Properties of GPT-OSS Architecture**
 > 
@@ -57,5 +57,5 @@ others have observed similar results with different models or setups. If you
 have, please drop me an email. I'd love to hear about it!
 
 I suppose the key takeaway is that we really need to benchmark models in the
-specific context and task we care about, rather than relying on general 
+specific context and task we care about, rather than relying on general
 assumptions about precision and context size.

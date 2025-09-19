@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Surprising GPT-OSS 20B 2-bit Quantization Performance" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. I was quite surprised by the results. Here are the details:" />
-<meta property="og:description" content="Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. I was quite surprised by the results. Here are the details:" />
+<meta name="description" content="Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:" />
+<meta property="og:description" content="Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:" />
 <link rel="canonical" href="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html" />
 <meta property="og:url" content="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html" />
 <meta property="og:site_name" content="Alex Dong’s Blog" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Surprising GPT-OSS 20B 2-bit Quantization Performance" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-19T22:13:00+12:00","datePublished":"2025-09-19T22:13:00+12:00","description":"Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. I was quite surprised by the results. Here are the details:","headline":"Surprising GPT-OSS 20B 2-bit Quantization Performance","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"},"url":"http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-19T22:13:00+12:00","datePublished":"2025-09-19T22:13:00+12:00","description":"Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:","headline":"Surprising GPT-OSS 20B 2-bit Quantization Performance","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"},"url":"http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
@@ -40,7 +40,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Today I benchmarked the GPT-OSS 20B model at different quantization levels using <a href="https://huggingface.co/unsloth/gpt-oss-20b-GGUF">unsloth/gpt-oss-20b-GGUF</a>. I was quite surprised by the results. Here are the details:</p>
+    <p>Today I benchmarked the GPT-OSS 20B model at different quantization levels using <a href="https://huggingface.co/unsloth/gpt-oss-20b-GGUF">unsloth/gpt-oss-20b-GGUF</a>. The results caught me off guard. Here are the details:</p>
 
 <table>
   <thead>
@@ -87,13 +87,12 @@
 
 <p>As a reminder, <code class="language-plaintext highlighter-rouge">Q2_K_L</code> means 2-bit quantization with large context, <code class="language-plaintext highlighter-rouge">Q5_K_M</code>
 means 5-bit quantization with medium context, and so on. <code class="language-plaintext highlighter-rouge">MAP@3</code> is the metric
-I use to evaluate classification performance. Further, the GPU I was using was an
-NVIDIA RTX 3000 with 14GB VRAM.</p>
+I use to evaluate classification performance. I ran these tests on an NVIDIA RTX 3000 with 14GB VRAM.</p>
 
 <p>It’s somewhat understandable that lower precision models (like <code class="language-plaintext highlighter-rouge">Q2_K_L</code>)
 perform better in tasks requiring long context, as they can handle more tokens.
-However, I was really surprised to see that <code class="language-plaintext highlighter-rouge">Q2_K_L</code> outperformed even
-<code class="language-plaintext highlighter-rouge">Q4_K_XL</code>, which has both higher precision AND a larger context window.</p>
+Still, <code class="language-plaintext highlighter-rouge">Q2_K_L</code> managed to outperform <code class="language-plaintext highlighter-rouge">Q4_K_XL</code>, which has higher precision and
+a larger context window.</p>
 
 <p>Here is ChatGPT Pro’s explanation of how this could be possible:</p>
 
@@ -110,7 +109,8 @@ per operation, which can result in:</p>
 hierarchies</li>
     <li><strong>Reduced memory bandwidth pressure</strong>: Less data transfer between memory
 and compute units</li>
-    <li><strong>Higher throughput</strong> on memory-constrained systems</li>
+    <li><strong>Higher throughput</strong> on memory-constrained systems, which can translate into
+better MAP@3 scores in practice</li>
   </ul>
 
   <h3 id="2-special-properties-of-gpt-oss-architecture">2. <strong>Special Properties of GPT-OSS Architecture</strong></h3>
@@ -130,7 +130,7 @@ others have observed similar results with different models or setups. If you
 have, please drop me an email. I’d love to hear about it!</p>
 
 <p>I suppose the key takeaway is that we really need to benchmark models in the
-specific context and task we care about, rather than relying on general 
+specific context and task we care about, rather than relying on general
 assumptions about precision and context size.</p>
 
   </div><a class="u-url" href="/surprising-gpt-oss-20b-2-bit-quantization-performance.html" hidden></a>
