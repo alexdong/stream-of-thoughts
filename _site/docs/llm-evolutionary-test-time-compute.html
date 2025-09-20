@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Evolutionary Test-Time Compute: trade time &amp; token for creativity | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Evolutionary Test-Time Compute: trade time &amp; token for creativity" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jeremy Berman just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating the previous record by over 4 percentage points. At just $8.42 per task, his approach was 25× more cost-efficient than previous solutions while delivering better results. He credits “Multi-Agent Collaboration with Evolutionary Test-Time Compute” as a key factor." />
+<meta property="og:description" content="Jeremy Berman just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating the previous record by over 4 percentage points. At just $8.42 per task, his approach was 25× more cost-efficient than previous solutions while delivering better results. He credits “Multi-Agent Collaboration with Evolutionary Test-Time Compute” as a key factor." />
+<link rel="canonical" href="https://alexdong.com/llm-evolutionary-test-time-compute.html" />
+<meta property="og:url" content="https://alexdong.com/llm-evolutionary-test-time-compute.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-15T23:29:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Evolutionary Test-Time Compute: trade time &amp; token for creativity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-15T23:29:00+12:00","datePublished":"2025-09-15T23:29:00+12:00","description":"Jeremy Berman just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating the previous record by over 4 percentage points. At just $8.42 per task, his approach was 25× more cost-efficient than previous solutions while delivering better results. He credits “Multi-Agent Collaboration with Evolutionary Test-Time Compute” as a key factor.","headline":"Evolutionary Test-Time Compute: trade time &amp; token for creativity","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/llm-evolutionary-test-time-compute.html"},"url":"https://alexdong.com/llm-evolutionary-test-time-compute.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Evolutionary Test-Time Compute: trade time &amp; token for creativity</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-15T23:29:00+12:00" itemprop="datePublished">Sep 15, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://jeremyberman.substack.com/p/how-i-got-the-highest-score-on-arc-agi-again">Jeremy
+Berman</a>
+just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating
+the previous record by over 4 percentage points. At just $8.42 per task, his
+approach was 25× more cost-efficient than previous solutions while delivering
+better results. He credits “Multi-Agent Collaboration with Evolutionary
+Test-Time Compute” as a key factor.</p>
+
+<p>Once an LLM model is trained, the main way to extract extra value is to trade
+time and tokens for quality. Through “thinking” for a minute or two, reasoning
+models produce better results even though the underlying foundation model
+remains the same. But what performance uplift can we get if we extend minutes
+into days? Or even weeks?</p>
+
+<p>This is where Evolutionary Test-Time Compute (ETTC) comes in. It combines
+classic genetic algorithms with LLMs to guide mutation, crossover, and
+selection.</p>
+
+<p>DeepMind has published three papers on this topic. Their most recent paper
+<a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a>
+shows that the idea has borne fruit for many internal projects at Google: data
+center scheduling (0.7% total saving), Verilog rewrite for TPUs and a
+breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s
+training time and 32.5% speedup for FlashAttention kernel implementation.</p>
+
+<p>Impressive results.</p>
+
+<p>Even better, as long as the problem/solution pair can be scored numerically, we
+should be able to sprinkle this magic powder on all sorts of problems. So why hasn’t
+ETTC taken off like CoT or reasoning models? Why aren’t more labs doing it?</p>
+
+<p>When I first read about AlphaEvolve, I didn’t pursue it further. ETTC is
+expensive. The compute cost is about 300x that of a single pass. Plus,
+developing an async, distributed evolution system is non-trivial. You need a
+sufficiently large problem to warrant the investment. Still, I’ve always wanted
+to revisit this and see if I could strip away the complexities to build
+something practical.</p>
+
+<p>A few days ago, I came across Google’s <a href="https://arxiv.org/abs/2501.05952">Mind
+Evolution</a> paper. Building on their earlier
+<a href="https://www.nature.com/articles/s41586-023-06924-6">FunSearch</a> work (published
+in Nature, December 2023), Mind Evolution fills in crucial technical details.
+The real gem is the Ablation Study section, which analyzes performance gains
+from different components. Three key features contribute most of the uplift:</p>
+
+<ol>
+  <li>
+    <p><strong>Island Model for Evolution</strong>: Instead of a single evolution path, the
+approach uses four islands that evolve independently. Top candidates
+periodically migrate between islands for cross-pollination. Performance
+jumped from 77.4% to 87.5% when increasing from one to four islands.</p>
+  </li>
+  <li>
+    <p><strong>Contextual Feedback</strong>: By providing the LLM with context about previous
+attempts, the evolution process turns random mutations into guided
+refinements. Each generation receives a critical analysis of what worked,
+what failed, and the evolutionary history. This adds 15% improvement,
+boosting accuracy from 76.1% to 91.1%.</p>
+  </li>
+  <li>
+    <p><strong>Separate Critique Agents</strong>: Rather than using a single agent for both
+evaluation and revision, the system employs two agents over 4 conversational
+turns. A critic agent identifies weaknesses; a design agent produces
+mutations. This simple change achieved the largest single gain: from 46.1%
+to 71.1%, a 25% improvement.</p>
+  </li>
+</ol>
+
+<p><a href="https://github.com/codelion/openevolve">OpenEvolve</a> is an open-source
+implementation of AlphaEvolve. I’m planning to use it for the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
+MAP</a>
+competition I’m working on.</p>
+
+<p>The challenge involves identifying specific misconceptions in student math
+responses—tricky because student language can be ambiguous, incomplete, or
+subtly off-topic. While I’ve achieved 94% accuracy using an MLP approach for
+most problems, that leaves about 1,000 hard cases where I’d like to use
+an LLM.</p>
+
+<p>I’m thinking of using OpenEvolve to evolve better prompts for these cases, which 
+seems like a good fit. The OpenEvolve repo includes an <a href="https://github.com/codelion/openevolve/tree/main/examples/llm_prompt_optimization">LLM Prompt
+Optimization</a>
+example that achieved a 10.69% improvement on the multi-hop
+reasoning benchmark HotpotQA. If ETTC can squeeze that kind of
+performance from prompt engineering, it might be exactly what I need to crack
+those stubborn misconception cases.</p>
+
+  </div><a class="u-url" href="/llm-evolutionary-test-time-compute.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
