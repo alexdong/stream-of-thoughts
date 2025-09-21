@@ -1,12 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-20T12:29:54+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant</title><link href="http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html" rel="alternate" type="text/html" title="Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant" /><published>2025-09-20T12:27:00+12:00</published><updated>2025-09-20T12:27:00+12:00</updated><id>http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant</id><content type="html" xml:base="http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html"><![CDATA[<p>Ants are amazing. From <a href="https://www.smithsonianmag.com/smart-news/these-ant-queens-seem-to-defy-biology-they-lay-eggs-that-hatch-into-another-species-180987292/">Smithsonian Magazine</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-21T20:38:28+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Resist the tempatation to anthropomorphizing LLM</title><link href="http://localhost:4000/resist-the-tempatation-to-anthropomorphizing-llm.html" rel="alternate" type="text/html" title="Resist the tempatation to anthropomorphizing LLM" /><published>2025-09-21T20:33:00+12:00</published><updated>2025-09-21T20:33:00+12:00</updated><id>http://localhost:4000/resist-the-tempatation-to-anthropomorphizing-llm</id><content type="html" xml:base="http://localhost:4000/resist-the-tempatation-to-anthropomorphizing-llm.html"><![CDATA[<p><a href="https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering">Chollet</a> 
+writes a great piece on why we even need prompt engineering and what’s the right 
+mental model to have when we write prompts.</p>
+
+<p>Instead of thinking of LLMs as intelligent agents that understand our intent,
+we should think of them as massive databases of programs, and our prompts are
+just keys to look up those programs.  (Emphasis mine.)</p>
 
 <blockquote>
-  <p>the M. ibericus queens store the M. structor male’s sperm, then use it to fertilize some of the eggs they lay. Researchers think the M. ibericus queens remove their own genetic material from the eggs’ nuclei, so that when those eggs hatch, they effectively turn out to be M. structor male clones.
-…
-Even more perplexing is the fact that M. ibericus and M. structor are not closely related, evolutionarily speaking. The two species diverged more than five million years ago
-…
-Even more intriguing, the males of both species shared M. ibericus mitochondrial DNA, which is inherited from the mother, suggesting they had all been born from M. ibericus queens.</p>
-</blockquote>]]></content><author><name></name></author><summary type="html"><![CDATA[Ants are amazing. From Smithsonian Magazine]]></summary></entry><entry><title type="html">Surprising GPT-OSS 20B 2-bit Quantization Performance</title><link href="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html" rel="alternate" type="text/html" title="Surprising GPT-OSS 20B 2-bit Quantization Performance" /><published>2025-09-19T22:13:00+12:00</published><updated>2025-09-19T22:13:00+12:00</updated><id>http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance</id><content type="html" xml:base="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using [unsloth/gpt-oss-20b-GGUF](https://huggingface.co/unsloth/gpt-oss-20b-GGUF). The results caught me off guard. Here are the details:
+  <p>There are thousands of variations you could have used, each resulting in a
+similar-yet-slightly-different program. And that’s why prompt engineering is
+needed. There is no a-priori reason why your first, naive program key would
+result in the optimal program for the task. The LLM is not going to
+“understand” what you meant and then perform it in the best possible way —
+it’s merely going to fetch the program that your prompt points to, among many
+possible locations you could have landed on.</p>
+
+  <p><strong>Prompt engineering is the process of searching through program space to find
+the program that empirically seems to perform best on your target task.</strong> It’s
+no different than trying different keywords when doing a Google search for a
+piece of software.</p>
+
+  <p>If LLMs actually understood what you told them, there would be no need for
+this search process, since the amount of information conveyed about your
+target task does not change whether your prompt uses the word “rewrite”
+instead “rephrase”, or whether you prefix your prompt with “think steps by
+steps”. Never assume that the LLM “gets it” the first time — keep in mind
+that your prompt is but an address in an infinite ocean of programs, all
+captured as a by-product of organizing tokens into a vector space via an
+autoregressive optimization objective.</p>
+
+  <p>As always, the most important principle for understanding LLMs is that you
+should resist the temptation of anthropomorphizing them.</p>
+</blockquote>]]></content><author><name></name></author><summary type="html"><![CDATA[Chollet writes a great piece on why we even need prompt engineering and what’s the right mental model to have when we write prompts.]]></summary></entry><entry><title type="html">Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant</title><link href="http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html" rel="alternate" type="text/html" title="Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant" /><published>2025-09-20T12:27:00+12:00</published><updated>2025-09-20T12:27:00+12:00</updated><id>http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant</id><content type="html" xml:base="http://localhost:4000/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html"><![CDATA[Ants are amazing. From [Smithsonian Magazine](
+https://www.smithsonianmag.com/smart-news/these-ant-queens-seem-to-defy-biology-they-lay-eggs-that-hatch-into-another-species-180987292/)
+
+> the M. ibericus queens store the M. structor male’s sperm, then use it to fertilize some of the eggs they lay. Researchers think the M. ibericus queens remove their own genetic material from the eggs’ nuclei, so that when those eggs hatch, they effectively turn out to be M. structor male clones.
+> ...
+> Even more perplexing is the fact that M. ibericus and M. structor are not closely related, evolutionarily speaking. The two species diverged more than five million years ago
+> ...
+> Even more intriguing, the males of both species shared M. ibericus mitochondrial DNA, which is inherited from the mother, suggesting they had all been born from M. ibericus queens.]]></content><author><name></name></author><summary type="html"><![CDATA[Ants are amazing. From Smithsonian Magazine]]></summary></entry><entry><title type="html">Surprising GPT-OSS 20B 2-bit Quantization Performance</title><link href="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html" rel="alternate" type="text/html" title="Surprising GPT-OSS 20B 2-bit Quantization Performance" /><published>2025-09-19T22:13:00+12:00</published><updated>2025-09-19T22:13:00+12:00</updated><id>http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance</id><content type="html" xml:base="http://localhost:4000/surprising-gpt-oss-20b-2-bit-quantization-performance.html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using [unsloth/gpt-oss-20b-GGUF](https://huggingface.co/unsloth/gpt-oss-20b-GGUF). The results caught me off guard. Here are the details:
 
 | Model       | Quantization | Size    | MAP@3 |
 |-------------|--------------|---------|-------|
@@ -776,13 +808,4 @@ AI's capabilities remain frustratingly jagged—brilliant at some tasks,
 unreliable at others. But perhaps that's exactly why red team AI works: 
 it sidesteps AI's weaknesses while amplifying what it does well. Maybe the 
 companies building critique tools today might discover a more constructive
-path through the AI landscape than those chasing perfect generation.]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry><entry><title type="html">This is to have succeeded.</title><link href="http://localhost:4000/Emerson-quote-this-is-to-have-succeeded.html" rel="alternate" type="text/html" title="This is to have succeeded." /><published>2022-10-31T14:38:00+13:00</published><updated>2022-10-31T14:38:00+13:00</updated><id>http://localhost:4000/Emerson-quote-this-is-to-have-succeeded</id><content type="html" xml:base="http://localhost:4000/Emerson-quote-this-is-to-have-succeeded.html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge 
-so we can all look at it everyday.
-
-> To laugh often and much; to win the respect of intelligent people and
-> the affection of children; to earn the appreciation of honest critics
-> and endure the betrayal of false friends; to appreciate beauty; to
-> find the best in others; to leave the world a bit better, whether by a
-> healthy child, a garden patch, or a redeemed social condition; to know
-> even one life has breathed easier because you have lived. This is to
-> have succeeded."]]></content><author><name></name></author><category term="life" /><summary type="html"><![CDATA[Today, I printed out a quote from Emerson and put onto our fridge so we can all look at it everyday.]]></summary></entry></feed>
+path through the AI landscape than those chasing perfect generation.]]></content><author><name></name></author><summary type="html"><![CDATA[Terence Tao’s blue and red teams post crystalised several insights about software testing and a different class of AI product that I have been building but hadn’t found the language to articulate until now.]]></summary></entry></feed>
