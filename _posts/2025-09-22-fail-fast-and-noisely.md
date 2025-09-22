@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Fail fast and noisely creates more resilient software"
+title: "Fail fast and noisily creates more resilient software"
 date: 2025-09-23 16:07
 comments: true
 categories: 
 ---
 
-If you ask me what is the **one** single secret of writing realiable and 
-maintainable software, I'd say "Let your code crash noisely and fast". A
-corrollary of this is "defensive programming is a practice that is wrong".
+If you ask me what is the **one** single secret of writing reliable and
+maintainable software, I'd say "Let your code crash noisily and fast." A
+corollary of this is "defensive programming is a practice that is wrong."
 
-Erlang is the programming langauge that Ericsson created to build the telecom
+Erlang is the programming language that Ericsson created to build the telecom
 systems that needed to be always available. Counterintuitively, one of the key
 principles of Erlang is ["let it crash"](https://wiki.c2.com/?LetItCrash),
 which means that instead of trying to handle every possible error, you should
@@ -31,7 +31,19 @@ supervision hierarchy is well-designed, you can end up with an extremely
 fault-tolerant system. That's in addition to other fault-tolerance techniques
 such as hardware redundancy.
 
-In the AI of age, with a clear traceback of what went wrong, and with the AI
-automatically adding tests and fixing bugs, the "fail fast and noisely"
+In Joe Armstrong, the creator of Erlang's [words](https://joearms.github.io/published/2013-04-28-Fail-fast-noisely-and-politely.html):
+
+> When applications fail, the programmer should provide two error messages. Not
+> one. The first error message, the “noisy” message is intended for the
+> programmer. It should provide a heck of a lot of information, which should be
+> put into a permanent log file, and from which it should be possible to do a
+> post-mortem debugging of the program to see what went wrong.
+>
+> The second error message should obey the “fail politely” rule. A polite error
+> message should be shown to the poor unsuspecting user of the program,
+> preferably with a grovelling apology for wasting their time.
+
+In the age of AI, with a clear traceback of what went wrong, and with the AI
+automatically adding tests and fixing bugs, the "fail fast and noisily"
 approach enables resilient systems that are easy to maintain. You just need to
 get the architecture pieces right, and watch the AI do its magic.
