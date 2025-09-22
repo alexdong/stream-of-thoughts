@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tests for Fit and Tests for Correctness | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Tests for Fit and Tests for Correctness" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of the foundational practices for me for years: write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am finding myself changing the kinds of tests I write and when I write them." />
+<meta property="og:description" content="AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of the foundational practices for me for years: write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am finding myself changing the kinds of tests I write and when I write them." />
+<link rel="canonical" href="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html" />
+<meta property="og:url" content="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-22T08:51:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tests for Fit and Tests for Correctness" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-22T08:51:00+12:00","datePublished":"2025-09-22T08:51:00+12:00","description":"AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of the foundational practices for me for years: write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am finding myself changing the kinds of tests I write and when I write them.","headline":"Tests for Fit and Tests for Correctness","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html"},"url":"https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tests for Fit and Tests for Correctness</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-22T08:51:00+12:00" itemprop="datePublished">Sep 22, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>AI has nudged me to rethink how I practice test-driven development (TDD). TDD
+has been one of the foundational practices for me for years: write the test, then write the
+code that makes it pass. That rhythm still holds, but with an AI assistant in
+the loop, I am finding myself changing the kinds of tests I write and when I
+write them.</p>
+
+<p>The loop still starts with tests, but now I make these tests part of the planning
+session. I use them as a sketch of the interface I want. I sometimes hand-write 
+those interface code, sometimes ask AI to suggest 3-5 options, focusing on
+the shape of the data, how the code will be called, and the timing how how the 
+API works hand-in-hand with other parts of the system.</p>
+
+<p>When the generated tests look wrong, it often means that my description was off 
+or I haven’t really captured the essence of what I want to achieve. So I will go 
+back and rewrite the prompt until the test code reads right.</p>
+
+<p>I call these “Tests for Fit”. Their job is to help me think through the
+interface before I write the implementation. They are not meant to be exhaustive
+or cover every edge case. They are a sketch of the happy path and a few common
+error cases. They help me validate that the API I am imagining is usable and
+makes sense.</p>
+
+<p>With that first batch of tests lives in the plan .md file, I would kick off the
+implementation process with AI. The AI will run through a checklist, context to
+keep in mind, guardrails I care about. Once the AI writes the code, it will
+automatically run style checkers, type checkers and those first tests. Those
+initial tests prevents the AI from drifting into its own hallucination land.</p>
+
+<p>Once the code is in a good place, I will move to the next set of tests. These
+are “Tests for Correctness”. Their job is to, referring to the internal
+implemnetation, for the AI to probe the code for edge cases, error handling
+within the constraints of the interface we designed.</p>
+
+<p>To do this, I often start a new session with the AI, feeding it the public API
+and the implementation and ask it to break the code through the interface. The
+goal is not so much about optimising code coverage. Left to itself, the AI will
+happily generate piles of mocked, repetitive tests. They look impressive, but
+they are miserable to maintain.</p>
+
+<p>Rather, the goal is to create a <strong>minimal</strong> set of tests that proves that the
+code handles the expected inputs correctly. Further, instead of worrying about
+edge cases, I very much prefer to sprinkle a generous amount of logging and
+<code class="language-plaintext highlighter-rouge">assert</code> statements in the implementation so I know that any unexpected inputs
+will cause immediate crashes. <a href="/2025/09/22/fail-fast-and-noisely-creates-more-resilient-software/">Fail fast and noisely creates resilient software</a></p>
+
+  </div><a class="u-url" href="/two-kinds-of-tests-you-should-ask-ai-to-write.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
