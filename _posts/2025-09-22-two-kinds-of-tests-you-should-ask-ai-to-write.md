@@ -48,4 +48,4 @@ Rather, the goal is to create a **minimal** set of tests that prove that the
 code handles the expected inputs correctly. Further, instead of worrying about
 edge cases, I very much prefer to sprinkle a generous amount of logging and
 `assert` statements in the implementation so I know that any unexpected inputs
-will cause immediate crashes. [Fail fast and noisily creates resilient software](/2025/09/22/fail-fast-and-noisely-creates-more-resilient-software/)
+will cause immediate crashes. [Fail fast and noisily creates resilient software](/fail-fast-and-noisely-creates-more-resilient-software.html)
