@@ -5,7 +5,7 @@ date: 2025-09-24 15:46
 comments: true
 categories:
   - python
-  - ai-optimization=
+  - ai-optimization
   - optuna
 ---
 
