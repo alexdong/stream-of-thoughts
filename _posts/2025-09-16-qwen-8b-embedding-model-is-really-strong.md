@@ -4,6 +4,10 @@ title: "Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed"
 date: 2025-09-16 22:06
 comments: true
 categories:
+  - embeddings
+  - local-ai
+  - text-classification
+  - ai-optimization
 ---
 
 TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text

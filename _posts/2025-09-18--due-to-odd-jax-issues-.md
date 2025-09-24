@@ -3,7 +3,8 @@ layout: post
 title: "Due to odd JAX issues"
 date: 2025-09-18 21:34
 comments: true
-categories: 
+categories:
+  - software-engineering
 ---
 
 Anthropic published a [blog

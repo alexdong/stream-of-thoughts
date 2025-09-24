@@ -3,7 +3,9 @@ layout: post
 title: "Three great virtues of an AI-assisted programmer"
 date: 2025-08-04 14:00
 comments: true
-categories: 
+categories:
+  - quotes
+  - software-engineering
 ---
 
 

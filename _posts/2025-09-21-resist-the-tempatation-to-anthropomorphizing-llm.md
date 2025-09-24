@@ -3,7 +3,9 @@ layout: post
 title: "Resist the tempatation to anthropomorphizing LLM"
 date: 2025-09-21 20:33
 comments: true
-categories: 
+categories:
+  - quotes
+  - prompt-engineering
 ---
 
 [Chollet](https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering) 

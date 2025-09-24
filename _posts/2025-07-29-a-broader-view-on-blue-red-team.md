@@ -3,7 +3,10 @@ layout: post
 title: "Two Insights from Tao's Blue/Red Teams Metaphor: Software Testing's Future and AI as a Coach"
 date: 2025-07-29 09:17
 comments: true
-categories: 
+categories:
+  - software-engineering
+  - quotes
+  - testing
 ---
 
 Terence Tao's [blue and red

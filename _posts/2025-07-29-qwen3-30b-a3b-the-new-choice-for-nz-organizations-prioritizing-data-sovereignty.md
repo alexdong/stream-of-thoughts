@@ -3,7 +3,9 @@ layout: post
 title: "Qwen3-30B: The first AI model that is good enough for local deployment"
 date: 2025-08-01 14:30
 comments: true
-categories: local-ai
+categories:
+  - local-ai
+  - data-sovereignty
 ---
 
 ## Finally good enough

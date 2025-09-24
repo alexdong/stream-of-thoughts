@@ -3,7 +3,9 @@ layout: post
 title: "Tests for Fit and Tests for Correctness"
 date: 2025-09-22 08:51
 comments: true
-categories: 
+categories:
+  - testing
+  - software-engineering
 ---
 
 AI has nudged me to rethink how I practice test-driven development (TDD). TDD

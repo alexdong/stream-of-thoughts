@@ -3,7 +3,10 @@ layout: post
 title: "Surprising GPT-OSS 20B 2-bit Quantization Performance"
 date: 2025-09-19 22:13
 comments: true
-categories: 
+categories:
+  - local-ai
+  - open-ai
+  - ai-optimization
 ---
 
 Today I benchmarked the GPT-OSS 20B model at different quantization levels using [unsloth/gpt-oss-20b-GGUF](https://huggingface.co/unsloth/gpt-oss-20b-GGUF). The results caught me off guard. Here are the details:

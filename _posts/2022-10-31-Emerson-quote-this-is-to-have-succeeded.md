@@ -3,7 +3,9 @@ layout: post
 title: "This is to have succeeded."
 date: 2022-10-31 14:38
 comments: true
-categories: life
+categories:
+  - life
+  - quotes
 ---
 
 Today, I printed out a quote from Emerson and put onto our fridge 

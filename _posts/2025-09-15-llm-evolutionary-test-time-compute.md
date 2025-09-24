@@ -4,6 +4,8 @@ title: "Evolutionary Test-Time Compute: trade time & token for creativity"
 date: 2025-09-15 23:29
 comments: true
 categories:
+  - evolutionary-test-time-compute
+  - ai-optimization
 ---
 
 [Jeremy

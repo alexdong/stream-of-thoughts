@@ -4,6 +4,9 @@ title: "How OpenAI writes prompts for text classification"
 date: 2025-09-17 22:10
 comments: true
 categories:
+  - prompt-engineering
+  - open-ai
+  - text-classification
 ---
 
 The US National Bureau of Economic Research (NBER) recently published a working

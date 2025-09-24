@@ -3,7 +3,8 @@ layout: post
 title: "Fail fast and noisily creates more resilient software"
 date: 2025-09-22 16:07
 comments: true
-categories: 
+categories:
+  - software-engineering
 ---
 
 If you ask me what is the **one** single secret of writing reliable and
