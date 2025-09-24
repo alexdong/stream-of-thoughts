@@ -18,6 +18,7 @@
 
   /* Spacing */
   --spacing-unit: 1.5rem;
+  --content-max-width: min(120ch, 95vw);
 }
 
 /* Reset and base styles */
@@ -38,7 +39,7 @@ body {
   background-color: var(--bg-color);
   margin: 0;
   padding: 2rem 1rem;
-  max-width: 650px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
@@ -193,7 +194,7 @@ button:hover {
 
 /* Layout helpers */
 .container {
-  max-width: 650px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 0 1rem;
 }

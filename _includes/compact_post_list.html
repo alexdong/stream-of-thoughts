@@ -1,0 +1,21 @@
+{%- assign date_format = include.date_format | default: site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- assign extra_classes = include.ul_class | default: "" -%}
+{%- assign show_excerpts_param = include.show_excerpts -%}
+{%- if show_excerpts_param == nil -%}
+  {%- assign show_excerpts = site.show_excerpts -%}
+{%- elsif show_excerpts_param == true or show_excerpts_param == 'true' -%}
+  {%- assign show_excerpts = true -%}
+{%- else -%}
+  {%- assign show_excerpts = false -%}
+{%- endif -%}
+<ul class="compact-post-list{% if extra_classes != "" %} {{ extra_classes }}{% endif %}">
+  {%- for post in include.posts -%}
+    <li>
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      {%- if show_excerpts -%}
+        <div class="post-excerpt">{{ post.excerpt }}</div>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

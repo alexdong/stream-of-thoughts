@@ -13,14 +13,8 @@ permalink: /categories/
       {%- assign slug = category_name | slugify -%}
       <section id="{{ slug }}" class="category-group">
         <h2><a href="{{ '/categories/' | relative_url }}{{ slug }}/">{{ category_name }}</a></h2>
-        <ul>
-          {%- for post in category[1] -%}
-            <li>
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-            </li>
-          {%- endfor -%}
-        </ul>
+        {%- assign posts_in_category = category[1] -%}
+        {%- include compact_post_list.html posts=posts_in_category show_excerpts=false date_format=date_format -%}
       </section>
     {%- endfor -%}
   </div>

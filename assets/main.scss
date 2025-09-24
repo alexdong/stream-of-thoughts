@@ -26,7 +26,7 @@ $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
 // Width of the content area
-$content-width:    80ch !default;
+$content-width:    120ch !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
@@ -81,12 +81,39 @@ pre, code {
   }
 }
 
-// Post list
-.post-list {
-  h3 {
-    font-family: $base-font-family;
+// Compact post list styling shared by home + categories
+.compact-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
     margin-bottom: 0;
   }
+
+  .post-meta {
+    flex: 0 0 auto;
+    min-width: 12ch;
+    font-family: $base-font-family;
+    color: $grey-color;
+    white-space: nowrap;
+  }
+
+  .post-link {
+    flex: 1 1 auto;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Preserve legacy hook for minima overrides
+.post-list {
+  @extend .compact-post-list;
 }
 
 .post-meta {
@@ -192,7 +219,7 @@ a {
 
 // Character-based grid for post layout
 .wrapper {
-  max-width: $content-width;
+  max-width: min($content-width, 90vw);
   margin-right: auto;
   margin-left: auto;
   padding-top: $spacing-unit;
@@ -202,7 +229,7 @@ a {
   @extend %clearfix;
 
   @include media-query($on-laptop) {
-    max-width: $content-width;
+    max-width: min($content-width, 95vw);
     padding-right: calc($spacing-unit / 2);
     padding-left: calc($spacing-unit / 2);
   }

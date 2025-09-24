@@ -148,8 +148,8 @@ pre > code {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(80ch - (30px * 2));
-  max-width: calc(80ch - (30px * 2));
+  max-width: -webkit-calc(120ch - (30px * 2));
+  max-width: calc(120ch - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -157,8 +157,8 @@ pre > code {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: -webkit-calc(80ch - (30px));
-    max-width: calc(80ch - (30px));
+    max-width: -webkit-calc(120ch - (30px));
+    max-width: calc(120ch - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -687,9 +687,30 @@ pre, code {
   font-family: "Iosevka Web", "Courier New", Courier, monospace;
 }
 
-.post-list h3 {
-  font-family: "Iosevka Web", "Courier New", Courier, monospace;
+.compact-post-list, .post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.compact-post-list > li, .post-list > li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
   margin-bottom: 0;
+}
+.compact-post-list .post-meta, .post-list .post-meta {
+  flex: 0 0 auto;
+  min-width: 12ch;
+  font-family: "Iosevka Web", "Courier New", Courier, monospace;
+  color: #666666;
+  white-space: nowrap;
+}
+.compact-post-list .post-link, .post-list .post-link {
+  flex: 1 1 auto;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post-meta {
@@ -770,7 +791,7 @@ a:hover {
   }
 }
 .wrapper {
-  max-width: 80ch;
+  max-width: min(120ch, 90vw);
   margin-right: auto;
   margin-left: auto;
   padding-top: 30px;
@@ -780,7 +801,7 @@ a:hover {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: 80ch;
+    max-width: min(120ch, 95vw);
     padding-right: 15px;
     padding-left: 15px;
   }

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tests for Fit and Tests for Correctness"
-date: 2025-09-22 08:51
+date: 2025-09-23 08:51
 comments: true
 categories:
   - testing

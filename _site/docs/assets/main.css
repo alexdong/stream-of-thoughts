@@ -691,6 +691,14 @@ pre, code {
   font-family: "Iosevka Web", "Courier New", Courier, monospace;
   margin-bottom: 0;
 }
+.post-list a {
+  display: inline;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+.post-list > li {
+  margin-bottom: 0.3em;
+}
 
 .post-meta {
   font-family: "Iosevka Web", "Courier New", Courier, monospace;

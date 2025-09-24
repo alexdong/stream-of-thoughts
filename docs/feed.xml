@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-24T16:23:25+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="https://alexdong.com/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>https://alexdong.com/release-pydantic-optuna-bridge-</id><content type="html" xml:base="https://alexdong.com/release-pydantic-optuna-bridge.html"><![CDATA[<p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-24T16:38:31+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="https://alexdong.com/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>https://alexdong.com/release-pydantic-optuna-bridge-</id><content type="html" xml:base="https://alexdong.com/release-pydantic-optuna-bridge.html"><![CDATA[<p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
 <a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html">Optuna search spaces</a>
 in sync with an underlying Pydantic model. The library is now on
 <a href="https://pypi.org/project/pydantic-optuna-bridge/">PyPI at version 0.1.1</a> and
@@ -53,35 +53,7 @@ and it really does not care about the objective function.</li>
 
 <p>If you use Optuna and already lean on Pydantic to validate configs, this bridge
 keeps the two sources of truth from drifting apart. Feedback and pull requests
-are welcome.</p>]]></content><author><name></name></author><category term="python" /><category term="ai-optimization" /><category term="optuna" /><summary type="html"><![CDATA[Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge.]]></summary></entry><entry><title type="html">Fail fast and noisily creates more resilient software</title><link href="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html" rel="alternate" type="text/html" title="Fail fast and noisily creates more resilient software" /><published>2025-09-22T16:07:00+12:00</published><updated>2025-09-22T16:07:00+12:00</updated><id>https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software</id><content type="html" xml:base="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html"><![CDATA[<p>If you ask me what is the <strong>one</strong> single secret of writing reliable and
-maintainable software, I’d say “Let your code crash noisily and fast.” A
-corollary of this is “defensive programming is a practice that is wrong.”</p>
-
-<p>Erlang is the programming language that Ericsson created to build the telecom
-systems that needed to be always available. Counterintuitively, one of the key
-principles of Erlang is “let it crash”, which means that instead of trying to
-handle every possible error, you should let your processes fail and restart
-them in a known good state.</p>
-
-<p>The view is that you don’t need to program defensively. If there are any
-errors, the process is automatically terminated, and this is reported to any
-processes that were monitoring the crashed process. In fact, defensive
-programming in Erlang is frowned upon. This is a very different approach from
-most programming languages, where the common advice is to “fail silently” and
-handle errors gracefully.</p>
-
-<p>The philosophy is not just to write code without error checks and expect
-higher-level supervisors to save the day; it is to avoid defensive coding,
-namely to detect and correct what is appropriate, and allow other errors to
-cause process termination and propagate up to the supervisor. If the
-supervision hierarchy is well-designed, you can end up with an extremely
-fault-tolerant system. That’s in addition to other fault-tolerance techniques
-such as hardware redundancy.</p>
-
-<p>In the age of AI, with a clear traceback of what went wrong, and with the AI
-automatically adding tests and fixing bugs, the “fail fast and noisily”
-approach enables resilient systems that are easy to maintain. You just need to
-get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry><entry><title type="html">Tests for Fit and Tests for Correctness</title><link href="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html" rel="alternate" type="text/html" title="Tests for Fit and Tests for Correctness" /><published>2025-09-22T08:51:00+12:00</published><updated>2025-09-22T08:51:00+12:00</updated><id>https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write</id><content type="html" xml:base="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html"><![CDATA[<p>AI has nudged me to rethink how I practice test-driven development (TDD). TDD
+are welcome.</p>]]></content><author><name></name></author><category term="python" /><category term="ai-optimization" /><category term="optuna" /><summary type="html"><![CDATA[Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge.]]></summary></entry><entry><title type="html">Tests for Fit and Tests for Correctness</title><link href="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html" rel="alternate" type="text/html" title="Tests for Fit and Tests for Correctness" /><published>2025-09-23T08:51:00+12:00</published><updated>2025-09-23T08:51:00+12:00</updated><id>https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write</id><content type="html" xml:base="https://alexdong.com/two-kinds-of-tests-you-should-ask-ai-to-write.html"><![CDATA[<p>AI has nudged me to rethink how I practice test-driven development (TDD). TDD
 has been one of my foundational practices for years. Write the test, then write
 the code that makes it pass. That rhythm still holds, but with an AI assistant
 in the loop, I am changing the kinds of tests I write and when I write them.</p>
@@ -123,7 +95,35 @@ they are miserable to maintain.</p>
 code handles the expected inputs correctly. Further, instead of worrying about
 edge cases, I very much prefer to sprinkle a generous amount of logging and
 <code class="language-plaintext highlighter-rouge">assert</code> statements in the implementation so I know that any unexpected inputs
-will cause immediate crashes. <a href="/fail-fast-and-noisely-creates-more-resilient-software.html">Fail fast and noisily creates resilient software</a></p>]]></content><author><name></name></author><category term="testing" /><category term="software-engineering" /><summary type="html"><![CDATA[AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of my foundational practices for years. Write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am changing the kinds of tests I write and when I write them.]]></summary></entry><entry><title type="html">Resist the tempatation to anthropomorphizing LLM</title><link href="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html" rel="alternate" type="text/html" title="Resist the tempatation to anthropomorphizing LLM" /><published>2025-09-21T20:33:00+12:00</published><updated>2025-09-21T20:33:00+12:00</updated><id>https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm</id><content type="html" xml:base="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html"><![CDATA[<p><a href="https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering">Chollet</a> 
+will cause immediate crashes. <a href="/fail-fast-and-noisely-creates-more-resilient-software.html">Fail fast and noisily creates resilient software</a></p>]]></content><author><name></name></author><category term="testing" /><category term="software-engineering" /><summary type="html"><![CDATA[AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of my foundational practices for years. Write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am changing the kinds of tests I write and when I write them.]]></summary></entry><entry><title type="html">Fail fast and noisily creates more resilient software</title><link href="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html" rel="alternate" type="text/html" title="Fail fast and noisily creates more resilient software" /><published>2025-09-22T16:07:00+12:00</published><updated>2025-09-22T16:07:00+12:00</updated><id>https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software</id><content type="html" xml:base="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html"><![CDATA[<p>If you ask me what is the <strong>one</strong> single secret of writing reliable and
+maintainable software, I’d say “Let your code crash noisily and fast.” A
+corollary of this is “defensive programming is a practice that is wrong.”</p>
+
+<p>Erlang is the programming language that Ericsson created to build the telecom
+systems that needed to be always available. Counterintuitively, one of the key
+principles of Erlang is “let it crash”, which means that instead of trying to
+handle every possible error, you should let your processes fail and restart
+them in a known good state.</p>
+
+<p>The view is that you don’t need to program defensively. If there are any
+errors, the process is automatically terminated, and this is reported to any
+processes that were monitoring the crashed process. In fact, defensive
+programming in Erlang is frowned upon. This is a very different approach from
+most programming languages, where the common advice is to “fail silently” and
+handle errors gracefully.</p>
+
+<p>The philosophy is not just to write code without error checks and expect
+higher-level supervisors to save the day; it is to avoid defensive coding,
+namely to detect and correct what is appropriate, and allow other errors to
+cause process termination and propagate up to the supervisor. If the
+supervision hierarchy is well-designed, you can end up with an extremely
+fault-tolerant system. That’s in addition to other fault-tolerance techniques
+such as hardware redundancy.</p>
+
+<p>In the age of AI, with a clear traceback of what went wrong, and with the AI
+automatically adding tests and fixing bugs, the “fail fast and noisily”
+approach enables resilient systems that are easy to maintain. You just need to
+get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry><entry><title type="html">Resist the tempatation to anthropomorphizing LLM</title><link href="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html" rel="alternate" type="text/html" title="Resist the tempatation to anthropomorphizing LLM" /><published>2025-09-21T20:33:00+12:00</published><updated>2025-09-21T20:33:00+12:00</updated><id>https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm</id><content type="html" xml:base="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html"><![CDATA[<p><a href="https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering">Chollet</a> 
 writes a great piece on why we even need prompt engineering and what’s the right 
 mental model to have when we write prompts.</p>
 
