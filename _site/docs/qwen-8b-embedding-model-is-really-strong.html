@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches." />
+<meta property="og:description" content="TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches." />
+<link rel="canonical" href="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" />
+<meta property="og:url" content="https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-16T22:06:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-16T22:06:00+12:00","datePublished":"2025-09-16T22:06:00+12:00","description":"TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.","headline":"Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"},"url":"https://alexdong.com/qwen-8b-embedding-model-is-really-strong.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Qwen-8B Embeddings: Near-SOTA Performance at 600x the Speed</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-16T22:06:00+12:00" itemprop="datePublished">Sep 16, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text
+classification tasks while running 600x faster than LLM-based approaches.</p>
+
+<p>While working on the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
+MAP</a>
+competition, I’ve been experimenting with different embedding models for text
+classification tasks. The setup is pretty simple. A sentence gets encoded into
+a vector by an embedding model, then the labe and the vector will be used to
+train a 3-layer MLP classifier.</p>
+
+<p>I started with
+<a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"><code class="language-plaintext highlighter-rouge">sentence-transformers/all-MiniLM-L6-v2</code></a>,
+a 22.7M parameter model. It was easy to put together (thanks to the
+<code class="language-plaintext highlighter-rouge">sentence-transformers</code> Python package) and I got a proof of concept working in
+a few hours. After some Optuna hyperparameter search, the system plateaued at
+around 0.908 MAP score. A respectable result but not competitive enough yet.</p>
+
+<p>Two weeks ago, DeepMind released
+<a href="https://huggingface.co/google/embeddinggemma-300m">embedding-Gemma-300M</a>.
+According to the release note, it outperforms <code class="language-plaintext highlighter-rouge">all-MiniLM-L6-v2</code> on on all
+<a href="https://developers.googleblog.com/en/introducing-embeddinggemma/">MTEB tasks</a>.
+(MTEB is an excellent benchmark suites that measure embedding model’s performance
+over a range of text search, reranking tasks.)</p>
+
+<p>After integrating Embedding Gemma 300M, I did see some improvement from 0.9082
+to 0.9127. But it was a small bump considering the model is 10x larger (300M vs
+32M parameters) and the embedding dimension doubled (768 vs 384). I wasn’t
+impressed.</p>
+
+<p>I thought maybe I had hit the ceiling of what the MLP architecture could do. So I
+started playing around with using the LLM itself as the classifier. It did give me
+a better score, but each inference takes 10-20 seconds - way too slow to process
+the entire test dataset within the 9-hour Kaggle time limit.</p>
+
+<p>This past Sunday, I realised I could use the Qwen-8B
+model purely as an embedding model. While <code class="language-plaintext highlighter-rouge">sentence-transformers</code> doesn’t support
+this out of the box, I was able to quickly implement one using the 
+<code class="language-plaintext highlighter-rouge">llama-cpp-python</code> package.</p>
+
+<p>The result? Extraordinarily good. The MAP score jumped to 0.9439, a significant
+improvement over the previous two models. For context, the current top score on
+the Kaggle leaderboard is 0.952. This remarkably simple MLP approach
+takes less than 0.03 seconds per inference, yet achieves a score very
+close to the top.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Parameters</th>
+      <th>Embedding Dimensions</th>
+      <th>MAP@3 Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all-MiniLM-L6-v2</td>
+      <td>32M</td>
+      <td>384</td>
+      <td>0.9082</td>
+    </tr>
+    <tr>
+      <td>Gemma-300M</td>
+      <td>300M</td>
+      <td>768</td>
+      <td>0.9101</td>
+    </tr>
+    <tr>
+      <td>Qwen3-8B</td>
+      <td>8B</td>
+      <td>4096</td>
+      <td>0.9439</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I’ve long been aware of the hypothesis that good representations enable simple
+models to solve complex tasks. But this is the first time I’ve seen it in
+action, and it’s impressive how well it works with so few moving parts. And so
+fast!</p>
+
+<p>For teams building AI products, this approach offers a compelling alternative 
+over paying for LLM API calls. Perhaps, for some use cases, we don’t need 
+complex, expensive models after all. Strong representation + simple model 
+might just do the trick.</p>
+
+
+  </div><footer class="post-footer">
+      <nav class="post-categories" aria-label="Categories"><a class="post-category p-category" rel="tag" href="/categories/ai-optimization/">ai-optimization</a><span aria-hidden="true"> | </span><a class="post-category p-category" rel="tag" href="/categories/embeddings/">embeddings</a><span aria-hidden="true"> | </span><a class="post-category p-category" rel="tag" href="/categories/local-ai/">local-ai</a><span aria-hidden="true"> | </span><a class="post-category p-category" rel="tag" href="/categories/text-classification/">text-classification</a></nav>
+    </footer><a class="u-url" href="/qwen-8b-embedding-model-is-really-strong.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
