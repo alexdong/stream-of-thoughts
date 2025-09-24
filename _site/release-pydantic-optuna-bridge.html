@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Release pydantic-optuna-bridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Today I shipped pydantic-optuna-bridge, a tiny helper that keeps my Optuna search spaces and Pydantic models in sync. I extracted the metadata helpers from the kaggle-map project where I was hand-rolling the same glue on every experiment. The library is now on PyPI at version 0.1.1." />
-<meta property="og:description" content="Today I shipped pydantic-optuna-bridge, a tiny helper that keeps my Optuna search spaces and Pydantic models in sync. I extracted the metadata helpers from the kaggle-map project where I was hand-rolling the same glue on every experiment. The library is now on PyPI at version 0.1.1." />
+<meta name="description" content="Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge." />
+<meta property="og:description" content="Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge." />
 <link rel="canonical" href="http://localhost:4000/release-pydantic-optuna-bridge.html" />
 <meta property="og:url" content="http://localhost:4000/release-pydantic-optuna-bridge.html" />
 <meta property="og:site_name" content="Alex Dong’s Blog" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Release pydantic-optuna-bridge" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-24T15:46:00+12:00","datePublished":"2025-09-24T15:46:00+12:00","description":"Today I shipped pydantic-optuna-bridge, a tiny helper that keeps my Optuna search spaces and Pydantic models in sync. I extracted the metadata helpers from the kaggle-map project where I was hand-rolling the same glue on every experiment. The library is now on PyPI at version 0.1.1.","headline":"Release pydantic-optuna-bridge","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/release-pydantic-optuna-bridge.html"},"url":"http://localhost:4000/release-pydantic-optuna-bridge.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-24T15:46:00+12:00","datePublished":"2025-09-24T15:46:00+12:00","description":"Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge.","headline":"Release pydantic-optuna-bridge","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/release-pydantic-optuna-bridge.html"},"url":"http://localhost:4000/release-pydantic-optuna-bridge.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
@@ -36,23 +36,34 @@
     <h1 class="post-title p-name" itemprop="name headline">Release `pydantic-optuna-bridge`</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2025-09-24T15:46:00+12:00" itemprop="datePublished">Sep 24, 2025
-      </time><span class="post-categories"><span class="post-category p-category">ai-optimization</span><span aria-hidden="true"> | </span><span class="post-category p-category">open-source</span><span aria-hidden="true"> | </span><span class="post-category p-category">python</span></span></p>
+      </time><span class="post-categories"><span class="post-category p-category">ai-optimization=</span><span aria-hidden="true"> | </span><span class="post-category p-category">optuna</span><span aria-hidden="true"> | </span><span class="post-category p-category">python</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a tiny helper that keeps my Optuna
-search spaces and Pydantic models in sync. I extracted the metadata helpers
-from the <code class="language-plaintext highlighter-rouge">kaggle-map</code> project where I was hand-rolling the same glue on every
-experiment. The library is now on PyPI at version 0.1.1.</p>
+    <p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
+<a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html">Optuna search spaces</a>
+in sync with an underlying Pydantic model. The library is now on
+<a href="https://pypi.org/project/pydantic-optuna-bridge/">PyPI at version 0.1.1</a> and
+available via <code class="language-plaintext highlighter-rouge">uv add pydantic-optuna-bridge</code>.</p>
 
-<p>The core idea: describe the hyperparameters once in Pydantic, decorate the
-model, and let the bridge derive the matching Optuna distributions. Constrained
-fields (<code class="language-plaintext highlighter-rouge">Gt</code>, <code class="language-plaintext highlighter-rouge">Lt</code>, <code class="language-plaintext highlighter-rouge">Ge</code>, <code class="language-plaintext highlighter-rouge">Le</code>, <code class="language-plaintext highlighter-rouge">Annotated</code>) become bounded numeric searches,
-enums stay enums, and I can control log-scaling or categorical weights without
-any extra wiring. Optuna never sees the raw metadata—it just receives
-<code class="language-plaintext highlighter-rouge">trial.suggest_*</code> calls that <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code> generates on the fly.</p>
+<p>The core idea is a reflection of the Single Responsibility Principle.</p>
 
-<p>Here is the end-to-end flow I keep coming back to:</p>
+<ol>
+  <li>Describe the hyperparameters, their types, and available options once in
+Pydantic. This way we can leverage Pydantic to validate configs loaded from
+JSON, YAML, environment variables, or a CLI.</li>
+  <li>Decorate the model with <code class="language-plaintext highlighter-rouge">@optuna_config</code> to generate an Optuna search space.
+Let the bridge derive the matching Optuna distributions. Constrained fields
+(<code class="language-plaintext highlighter-rouge">Gt</code>, <code class="language-plaintext highlighter-rouge">Lt</code>, <code class="language-plaintext highlighter-rouge">Ge</code>, <code class="language-plaintext highlighter-rouge">Le</code>, <code class="language-plaintext highlighter-rouge">Annotated</code>) become bounded numeric searches, enums
+stay enums. (Log-scaling or categorical weights are also supported as optional
+parameters in the decorator.)</li>
+  <li>In Optuna’s <code class="language-plaintext highlighter-rouge">objective</code> function, the code can call
+<code class="language-plaintext highlighter-rouge">Model.from_optuna_trial(trial)</code> to receive the <code class="language-plaintext highlighter-rouge">trial.suggest_*</code> calls from
+the bridge on the fly. The bridge never sees the results of the training runs
+and it really does not care about the objective function.</li>
+</ol>
+
+<p>Here is the end-to-end flow you may find useful to refer to:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
@@ -80,13 +91,6 @@ any extra wiring. Optuna never sees the raw metadata—it just receives
 <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">:</span> <span class="n">optuna</span><span class="p">.</span><span class="n">trial</span><span class="p">.</span><span class="n">Trial</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">TrainingConfig</span><span class="p">.</span><span class="n">from_optuna_trial</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">do_training_run</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>The decorator attaches everything to <code class="language-plaintext highlighter-rouge">json_schema_extra</code>, so the metadata is
-available for docs, validation reports, or a CLI. Install the optional
-<code class="language-plaintext highlighter-rouge">[cli]</code> extra to get a quick inspection command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uv run <span class="nt">-m</span> pydantic_optuna_bridge
 </code></pre></div></div>
 
 <p>If you use Optuna and already lean on Pydantic to validate configs, this bridge

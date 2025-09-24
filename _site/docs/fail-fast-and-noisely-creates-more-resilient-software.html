@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fail fast and noisily creates more resilient software | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Fail fast and noisily creates more resilient software" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”" />
+<meta property="og:description" content="If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”" />
+<link rel="canonical" href="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html" />
+<meta property="og:url" content="https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-22T16:07:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fail fast and noisily creates more resilient software" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-22T16:07:00+12:00","datePublished":"2025-09-22T16:07:00+12:00","description":"If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”","headline":"Fail fast and noisily creates more resilient software","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html"},"url":"https://alexdong.com/fail-fast-and-noisely-creates-more-resilient-software.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fail fast and noisily creates more resilient software</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-22T16:07:00+12:00" itemprop="datePublished">Sep 22, 2025
+      </time><span class="post-categories"><span class="post-category p-category">software-engineering</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>If you ask me what is the <strong>one</strong> single secret of writing reliable and
+maintainable software, I’d say “Let your code crash noisily and fast.” A
+corollary of this is “defensive programming is a practice that is wrong.”</p>
+
+<p>Erlang is the programming language that Ericsson created to build the telecom
+systems that needed to be always available. Counterintuitively, one of the key
+principles of Erlang is “let it crash”, which means that instead of trying to
+handle every possible error, you should let your processes fail and restart
+them in a known good state.</p>
+
+<p>The view is that you don’t need to program defensively. If there are any
+errors, the process is automatically terminated, and this is reported to any
+processes that were monitoring the crashed process. In fact, defensive
+programming in Erlang is frowned upon. This is a very different approach from
+most programming languages, where the common advice is to “fail silently” and
+handle errors gracefully.</p>
+
+<p>The philosophy is not just to write code without error checks and expect
+higher-level supervisors to save the day; it is to avoid defensive coding,
+namely to detect and correct what is appropriate, and allow other errors to
+cause process termination and propagate up to the supervisor. If the
+supervision hierarchy is well-designed, you can end up with an extremely
+fault-tolerant system. That’s in addition to other fault-tolerance techniques
+such as hardware redundancy.</p>
+
+<p>In the age of AI, with a clear traceback of what went wrong, and with the AI
+automatically adding tests and fixing bugs, the “fail fast and noisily”
+approach enables resilient systems that are easy to maintain. You just need to
+get the architecture pieces right, and watch the AI do its magic.</p>
+
+  </div><a class="u-url" href="/fail-fast-and-noisely-creates-more-resilient-software.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
