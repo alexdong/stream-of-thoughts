@@ -13,20 +13,23 @@ layout: default
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
-      {%- if page.categories and page.categories != empty -%}
-        {%- assign sorted_categories = page.categories | sort -%}
-        <span class="post-categories">
-          {%- for category in sorted_categories -%}
-            <span class="post-category p-category">{{ category }}</span>{%- unless forloop.last -%}<span aria-hidden="true"> | </span>{%- endunless -%}
-          {%- endfor -%}
-        </span>
-      {%- endif -%}
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  {%- if page.categories and page.categories != empty -%}
+    {%- assign sorted_categories = page.categories | sort -%}
+    <footer class="post-footer">
+      <nav class="post-categories" aria-label="Categories">
+        {%- for category in sorted_categories -%}
+          <a class="post-category p-category" rel="tag" href="{{ '/categories/' | relative_url }}{{ category | slugify }}/">{{ category }}</a>{%- unless forloop.last -%}<span aria-hidden="true"> | </span>{%- endunless -%}
+        {%- endfor -%}
+      </nav>
+    </footer>
+  {%- endif -%}
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
