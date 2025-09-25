@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-24T16:40:29+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="https://alexdong.com/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>https://alexdong.com/release-pydantic-optuna-bridge-</id><content type="html" xml:base="https://alexdong.com/release-pydantic-optuna-bridge.html"><![CDATA[<p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-25T22:02:42+12:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">How Prompt Writing Style Shapes GPT-5 and Codex</title><link href="https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex.html" rel="alternate" type="text/html" title="How Prompt Writing Style Shapes GPT-5 and Codex" /><published>2025-09-25T21:06:00+12:00</published><updated>2025-09-25T21:06:00+12:00</updated><id>https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex</id><content type="html" xml:base="https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex.html"><![CDATA[<p>Of many things that impresses me about OpenAI GPT-5-Codex, one was how
+responsive and “light” it feels to use. Compared to the pages of
+outputs from <a href="/due-to-odd-jax-issues.html">Claude Code</a>, GPT-5-Codex feels more
+efficient, more to the point and much more steerable. Some of these would come
+from the <code class="language-plaintext highlighter-rouge">gpt-5-codex</code> model itself, but I suspect a lot of it comes from the
+prompt engineering that OpenAI has done.</p>
+
+<p>Tonight, I compared the <a href="https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md">system prompt for
+codex</a>
+against the <a href="https://www.reddit.com/r/PromptEngineering/comments/1mknun8/i_have_extracted_the_gpt5_system_prompt/">leaked system prompt for
+GPT-5</a> and I noticed the following differences:</p>
+
+<ol>
+  <li>
+    <p>The codex sentences are much <strong>denser</strong>. The GPT-5 language is warm,
+supportive, lightly humorous, encouraging curiorsity. Explicitly focuses on
+emotional presence and teaching style. The GPT-5-Codex prompt is
+neutral, concise, factural, collaborative. It intentionally strips
+personality to maintain clarity and consistency.</p>
+
+    <p>I ran a “clause density” analysis on both prompts. The codex prompt has
+4.8 average clauses per sentence, whereas the GPT-5 prompt has 2.1. Which 
+is why the codex prompts are so much more packed, routinely carrying 5-8
+clauses via semicolons and commas.</p>
+  </li>
+  <li>
+    <p>The codex seems to have a much <strong>less constrained dialogue flow</strong>. The
+prompt focuses entirely on the structure of the answers, not interaction
+dynamics. The GPT-5 prompt is more restrictive. It limits the number of
+clarifying questions to one at the start of the conversation. It also
+encourages taking initiative when the next step is obvious.</p>
+
+    <p>I also noticed that the codex prompt has lower imperative ratio
+(commands/sentences) and yet higher negation frequency (don’ts), an analysis
+that baffled me.</p>
+  </li>
+  <li>
+    <p>The codex content guidance emphasises <strong>brevity</strong> and <strong>scanability</strong>. It
+encourages the use of headers, bullets, and grouping related points. The
+GPT-5 prompt is more focused on <strong>tone</strong> and <strong>engagement</strong> with
+instructions like “Supportive thoroughness”, “Lighthearted interactions”,
+“Adaptive teaching”, and “Confidence-building”.</p>
+  </li>
+  <li>
+    <p>The codex adapts based on <strong>task</strong> type (code explanations, simple tasks,
+big changes, casual one-offs) whereas the GPT-5 prompt adjusts based on <strong>user</strong>
+proficiency and emotional needs.</p>
+  </li>
+  <li>
+    <p>Based on the Readability analysis, the codex is written for university
+graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt is
+written for high school (Flesch-Kincaid Grade Level 10).</p>
+  </li>
+</ol>
+
+<p>Here is a summary of the quantitative differences between the two prompts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>GPT-5-Codex (Prompt B)</th>
+      <th>GPT-5 (Prompt A)</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Lexical Density</strong></td>
+      <td>0.82</td>
+      <td>0.78</td>
+      <td>Codex is more content-word heavy</td>
+    </tr>
+    <tr>
+      <td><strong>Type–Token Ratio (TTR)</strong></td>
+      <td>0.77</td>
+      <td>0.68</td>
+      <td>Codex uses more varied vocabulary</td>
+    </tr>
+    <tr>
+      <td><strong>Flesch Reading Ease</strong></td>
+      <td>29.0</td>
+      <td>42.1</td>
+      <td>Codex is harder to read (graduate level)</td>
+    </tr>
+    <tr>
+      <td><strong>Flesch–Kincaid Grade</strong></td>
+      <td>14.1</td>
+      <td>10.4</td>
+      <td>Codex ≈ college sophomore; GPT-5 ≈ high school</td>
+    </tr>
+    <tr>
+      <td><strong>Gunning Fog Index</strong></td>
+      <td>16.6</td>
+      <td>13.9</td>
+      <td>Codex significantly denser, more technical</td>
+    </tr>
+    <tr>
+      <td><strong>SMOG Index</strong></td>
+      <td>15.0</td>
+      <td>12.6</td>
+      <td>Codex ~Grade 15 vs. GPT-5 ~Grade 12</td>
+    </tr>
+    <tr>
+      <td><strong>Punctuation Load</strong></td>
+      <td>3.2</td>
+      <td>0.9</td>
+      <td>Codex has ~3.5× more commas/semicolons</td>
+    </tr>
+    <tr>
+      <td><strong>Imperative Ratio</strong></td>
+      <td>0.10</td>
+      <td>0.25</td>
+      <td>GPT-5 gives more direct instructions</td>
+    </tr>
+    <tr>
+      <td><strong>Negation Frequency</strong></td>
+      <td>6</td>
+      <td>3</td>
+      <td>Codex has more “don’ts” and negatives</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>One higher-level take-away from studying these prompts is that just how
+steerable a model is depends a lot on the prompt engineering.</p>
+
+<hr />
+
+<p>GPT-5-Codex System Prompt</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Final answer structure and style guidelines
+
+- Plain text; CLI handles styling. Use structure only when it helps scanability.
+- Headers: optional; short Title Case (1-3 words) wrapped in **…**; no blank line before the first bullet; add only if they truly help.
+- Bullets: use - ; merge related points; keep to one line when possible; 4–6 per list ordered by importance; keep phrasing consistent.
+- Monospace: backticks for commands/paths/env vars/code ids and inline examples; use for literal keyword bullets; never combine with **.
+- Code samples or multi-line snippets should be wrapped in fenced code blocks; add a language hint whenever obvious.
+- Structure: group related bullets; order sections general → specific → supporting; for subsections, start with a bolded keyword bullet, then items; match complexity to the task.
+- Tone: collaborative, concise, factual; present tense, active voice; self‑contained; no "above/below"; parallel wording.
+- Don'ts: no nested bullets/hierarchies; no ANSI codes; don't cram unrelated keywords; keep keyword lists short—wrap/reformat if long; avoid naming formatting styles in answers.
+- Adaptation: code explanations → precise, structured with code refs; simple tasks → lead with outcome; big changes → logical walkthrough + rationale + next actions; casual one-offs → plain sentences, no headers/bullets.
+</code></pre></div></div>
+
+<hr />
+
+<p>GPT-5 System Prompt</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Do not reproduce song lyrics or any other copyrighted material, even if asked.
+
+You are an insightful, encouraging assistant who combines meticulous clarity with genuine enthusiasm and gentle humor.
+
+Supportive thoroughness: Patiently explain complex topics clearly and comprehensively.
+
+Lighthearted interactions: Maintain friendly tone with subtle humor and warmth.
+
+Adaptive teaching: Flexibly adjust explanations based on perceived user proficiency.
+
+Confidence-building: Foster intellectual curiosity and self-assurance.
+
+Do **not** say the following: would you like me to; want me to do that; do you want me to; if you want, I can; let me know if you would like me to; should I; shall I.
+
+Ask at most one necessary clarifying question at the start, not the end.
+
+If the next step is obvious, do it. Example of bad: I can write playful examples. would you like me to? Example of good: Here are three playful examples:..
+</code></pre></div></div>]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[Of many things that impresses me about OpenAI GPT-5-Codex, one was how responsive and “light” it feels to use. Compared to the pages of outputs from Claude Code, GPT-5-Codex feels more efficient, more to the point and much more steerable. Some of these would come from the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="https://alexdong.com/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>https://alexdong.com/release-pydantic-optuna-bridge-</id><content type="html" xml:base="https://alexdong.com/release-pydantic-optuna-bridge.html"><![CDATA[<p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
 <a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html">Optuna search spaces</a>
 in sync with an underlying Pydantic model. The library is now on
 <a href="https://pypi.org/project/pydantic-optuna-bridge/">PyPI at version 0.1.1</a> and
@@ -675,89 +840,4 @@ fast!</p>
 <p>For teams building AI products, this approach offers a compelling alternative 
 over paying for LLM API calls. Perhaps, for some use cases, we don’t need 
 complex, expensive models after all. Strong representation + simple model 
-might just do the trick.</p>]]></content><author><name></name></author><category term="embeddings" /><category term="local-ai" /><category term="text-classification" /><category term="ai-optimization" /><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry><entry><title type="html">Evolutionary Test-Time Compute: trade time &amp;amp; token for creativity</title><link href="https://alexdong.com/llm-evolutionary-test-time-compute.html" rel="alternate" type="text/html" title="Evolutionary Test-Time Compute: trade time &amp;amp; token for creativity" /><published>2025-09-15T23:29:00+12:00</published><updated>2025-09-15T23:29:00+12:00</updated><id>https://alexdong.com/llm-evolutionary-test-time-compute</id><content type="html" xml:base="https://alexdong.com/llm-evolutionary-test-time-compute.html"><![CDATA[<p><a href="https://jeremyberman.substack.com/p/how-i-got-the-highest-score-on-arc-agi-again">Jeremy
-Berman</a>
-just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating
-the previous record by over 4 percentage points. At just $8.42 per task, his
-approach was 25× more cost-efficient than previous solutions while delivering
-better results. He credits “Multi-Agent Collaboration with Evolutionary
-Test-Time Compute” as a key factor.</p>
-
-<p>Once an LLM model is trained, the main way to extract extra value is to trade
-time and tokens for quality. Through “thinking” for a minute or two, reasoning
-models produce better results even though the underlying foundation model
-remains the same. But what performance uplift can we get if we extend minutes
-into days? Or even weeks?</p>
-
-<p>This is where Evolutionary Test-Time Compute (ETTC) comes in. It combines
-classic genetic algorithms with LLMs to guide mutation, crossover, and
-selection.</p>
-
-<p>DeepMind has published three papers on this topic. Their most recent paper
-<a href="https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a>
-shows that the idea has borne fruit for many internal projects at Google: data
-center scheduling (0.7% total saving), Verilog rewrite for TPUs and a
-breakthrough in matrix multiplication that leads to 1% reduction in Gemini’s
-training time and 32.5% speedup for FlashAttention kernel implementation.</p>
-
-<p>Impressive results.</p>
-
-<p>Even better, as long as the problem/solution pair can be scored numerically, we
-should be able to sprinkle this magic powder on all sorts of problems. So why hasn’t
-ETTC taken off like CoT or reasoning models? Why aren’t more labs doing it?</p>
-
-<p>When I first read about AlphaEvolve, I didn’t pursue it further. ETTC is
-expensive. The compute cost is about 300x that of a single pass. Plus,
-developing an async, distributed evolution system is non-trivial. You need a
-sufficiently large problem to warrant the investment. Still, I’ve always wanted
-to revisit this and see if I could strip away the complexities to build
-something practical.</p>
-
-<p>A few days ago, I came across Google’s <a href="https://arxiv.org/abs/2501.05952">Mind
-Evolution</a> paper. Building on their earlier
-<a href="https://www.nature.com/articles/s41586-023-06924-6">FunSearch</a> work (published
-in Nature, December 2023), Mind Evolution fills in crucial technical details.
-The real gem is the Ablation Study section, which analyzes performance gains
-from different components. Three key features contribute most of the uplift:</p>
-
-<ol>
-  <li>
-    <p><strong>Island Model for Evolution</strong>: Instead of a single evolution path, the
-approach uses four islands that evolve independently. Top candidates
-periodically migrate between islands for cross-pollination. Performance
-jumped from 77.4% to 87.5% when increasing from one to four islands.</p>
-  </li>
-  <li>
-    <p><strong>Contextual Feedback</strong>: By providing the LLM with context about previous
-attempts, the evolution process turns random mutations into guided
-refinements. Each generation receives a critical analysis of what worked,
-what failed, and the evolutionary history. This adds 15% improvement,
-boosting accuracy from 76.1% to 91.1%.</p>
-  </li>
-  <li>
-    <p><strong>Separate Critique Agents</strong>: Rather than using a single agent for both
-evaluation and revision, the system employs two agents over 4 conversational
-turns. A critic agent identifies weaknesses; a design agent produces
-mutations. This simple change achieved the largest single gain: from 46.1%
-to 71.1%, a 25% improvement.</p>
-  </li>
-</ol>
-
-<p><a href="https://github.com/codelion/openevolve">OpenEvolve</a> is an open-source
-implementation of AlphaEvolve. I’m planning to use it for the <a href="https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings">Kaggle
-MAP</a>
-competition I’m working on.</p>
-
-<p>The challenge involves identifying specific misconceptions in student math
-responses—tricky because student language can be ambiguous, incomplete, or
-subtly off-topic. While I’ve achieved 94% accuracy using an MLP approach for
-most problems, that leaves about 1,000 hard cases where I’d like to use
-an LLM.</p>
-
-<p>I’m thinking of using OpenEvolve to evolve better prompts for these cases, which 
-seems like a good fit. The OpenEvolve repo includes an <a href="https://github.com/codelion/openevolve/tree/main/examples/llm_prompt_optimization">LLM Prompt
-Optimization</a>
-example that achieved a 10.69% improvement on the multi-hop
-reasoning benchmark HotpotQA. If ETTC can squeeze that kind of
-performance from prompt engineering, it might be exactly what I need to crack
-those stubborn misconception cases.</p>]]></content><author><name></name></author><category term="evolutionary-test-time-compute" /><category term="ai-optimization" /><summary type="html"><![CDATA[Jeremy Berman just achieved a new state-of-the-art on ARC-AGI v2 with a 29.4% score, beating the previous record by over 4 percentage points. At just $8.42 per task, his approach was 25× more cost-efficient than previous solutions while delivering better results. He credits “Multi-Agent Collaboration with Evolutionary Test-Time Compute” as a key factor.]]></summary></entry></feed>
+might just do the trick.</p>]]></content><author><name></name></author><category term="embeddings" /><category term="local-ai" /><category term="text-classification" /><category term="ai-optimization" /><summary type="html"><![CDATA[TLDR: The Qwen-8B embedding model delivers near state-of-the-art performance on text classification tasks while running 600x faster than LLM-based approaches.]]></summary></entry></feed>

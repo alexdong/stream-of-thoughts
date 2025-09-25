@@ -739,9 +739,6 @@ table th {
   background-color: #f4f4f4;
   font-weight: bold;
 }
-table tr:nth-child(even) {
-  background-color: #222222;
-}
 
 a {
   color: #0000ee;
