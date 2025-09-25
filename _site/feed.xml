@@ -1,76 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-25T22:02:43+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">How Prompt Writing Style Shapes GPT-5 and Codex</title><link href="http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex.html" rel="alternate" type="text/html" title="How Prompt Writing Style Shapes GPT-5 and Codex" /><published>2025-09-25T21:06:00+12:00</published><updated>2025-09-25T21:06:00+12:00</updated><id>http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex</id><content type="html" xml:base="http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex.html"><![CDATA[Of many things that impresses me about OpenAI GPT-5-Codex, one was how
-responsive and "light" it feels to use. Compared to the pages of
-outputs from [Claude Code](/due-to-odd-jax-issues.html), GPT-5-Codex feels more
-efficient, more to the point and much more steerable. Some of these would come
-from the `gpt-5-codex` model itself, but I suspect a lot of it comes from the
-prompt engineering that OpenAI has done.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-25T22:18:17+12:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">How Prompt Writing Style Shapes GPT-5 and Codex</title><link href="http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex.html" rel="alternate" type="text/html" title="How Prompt Writing Style Shapes GPT-5 and Codex" /><published>2025-09-25T21:06:00+12:00</published><updated>2025-09-25T21:06:00+12:00</updated><id>http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex</id><content type="html" xml:base="http://localhost:4000/how-prompt-writing-style-shapes-gpt-5-and-codex.html"><![CDATA[<p>One of the things that impresses me about OpenAI GPT-5-Codex is how responsive
+and “light” it feels to use. Compared with the page-long dumps from
+<a href="/due-to-odd-jax-issues.html">Claude Code</a>, GPT-5-Codex stays efficient,
+more to the point, and much more steerable. Some of that is the
+<code class="language-plaintext highlighter-rouge">gpt-5-codex</code> model itself, but I suspect a lot of it comes from the prompt
+engineering that OpenAI has done.</p>
 
-Tonight, I compared the [system prompt for
-codex](https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md)
-against the [leaked system prompt for
-GPT-5](https://www.reddit.com/r/PromptEngineering/comments/1mknun8/i_have_extracted_the_gpt5_system_prompt/) and I noticed the following differences:
+<p>So I pulled up the <a href="https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md">system prompt for
+Codex</a>
+and set it beside the <a href="https://www.reddit.com/r/PromptEngineering/comments/1mknun8/i_have_extracted_the_gpt5_system_prompt/">leaked system prompt for
+GPT-5</a> and I noticed the following differences:</p>
 
-1. The codex sentences are much **denser**. The GPT-5 language is warm,
-   supportive, lightly humorous, encouraging curiorsity. Explicitly focuses on
-   emotional presence and teaching style. The GPT-5-Codex prompt is
-   neutral, concise, factural, collaborative. It intentionally strips
-   personality to maintain clarity and consistency. 
+<ol>
+  <li>
+    <p>The Codex sentences are much <strong>denser</strong>. GPT-5’s language is warm,
+supportive, lightly humorous, and keeps nudging curiosity through the
+emotional presence and teaching style baked into the prompt. Codex is
+neutral, concise, factual, and collaborative. It intentionally strips
+personality to stay clear. I ran a “clause density” check on both prompts:
+Codex averages 4.8 clauses per sentence, GPT-5 comes in at 2.1.</p>
+  </li>
+  <li>
+    <p>Codex seems to have a much <strong>less constrained dialogue flow</strong>. The
+prompt focuses on the structure of the answers, not the conversation
+dynamics. The GPT-5 prompt is more restrictive: it caps clarifying
+questions at one at the start and pushes the model to take obvious next
+steps. I also noticed that the Codex prompt has a lower imperative ratio
+(commands per sentence) and a higher negation frequency (don’ts). That mix is
+odd, and I need to think more about what it means.</p>
+  </li>
+  <li>
+    <p>The Codex content guidance emphasizes <strong>brevity</strong> and <strong>scanability</strong>. It
+pushes headers, bullets, and grouped points. The GPT-5 prompt emphasizes
+<strong>tone</strong> and <strong>engagement</strong> with instructions like “Supportive
+thoroughness”, “Lighthearted interactions”, “Adaptive teaching”, and
+“Confidence-building”.</p>
+  </li>
+  <li>
+    <p>Codex adapts based on <strong>task</strong> type (code explanations, simple tasks,
+big changes, casual one-offs) whereas the GPT-5 prompt adjusts based on <strong>user</strong>
+proficiency and emotional needs. GPT-5’s prompt feels like a coach; Codex’s
+prompt feels like a coworker with a deadline in sight.</p>
+  </li>
+  <li>
+    <p>Based on the readability analysis, the Codex prompt is written for
+university graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt
+comes in at high school level (Flesch-Kincaid Grade Level 10).</p>
+  </li>
+</ol>
 
-   I ran a "clause density" analysis on both prompts. The codex prompt has
-   4.8 average clauses per sentence, whereas the GPT-5 prompt has 2.1. Which 
-   is why the codex prompts are so much more packed, routinely carrying 5-8
-   clauses via semicolons and commas.
+<p>Here’s what that looks like in the numbers:</p>
 
-2. The codex seems to have a much **less constrained dialogue flow**. The
-   prompt focuses entirely on the structure of the answers, not interaction
-   dynamics. The GPT-5 prompt is more restrictive. It limits the number of
-   clarifying questions to one at the start of the conversation. It also
-   encourages taking initiative when the next step is obvious. 
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>GPT-5-Codex (Prompt B)</th>
+      <th>GPT-5 (Prompt A)</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Lexical Density</strong></td>
+      <td>0.82</td>
+      <td>0.78</td>
+      <td>Codex is more content-word heavy</td>
+    </tr>
+    <tr>
+      <td><strong>Type–Token Ratio (TTR)</strong></td>
+      <td>0.77</td>
+      <td>0.68</td>
+      <td>Codex uses more varied vocabulary</td>
+    </tr>
+    <tr>
+      <td><strong>Flesch Reading Ease</strong></td>
+      <td>29.0</td>
+      <td>42.1</td>
+      <td>Codex is harder to read (graduate level)</td>
+    </tr>
+    <tr>
+      <td><strong>Flesch–Kincaid Grade</strong></td>
+      <td>14.1</td>
+      <td>10.4</td>
+      <td>Codex ≈ college sophomore; GPT-5 ≈ high school</td>
+    </tr>
+    <tr>
+      <td><strong>Gunning Fog Index</strong></td>
+      <td>16.6</td>
+      <td>13.9</td>
+      <td>Codex significantly denser, more technical</td>
+    </tr>
+    <tr>
+      <td><strong>SMOG Index</strong></td>
+      <td>15.0</td>
+      <td>12.6</td>
+      <td>Codex ~Grade 15 vs. GPT-5 ~Grade 12</td>
+    </tr>
+    <tr>
+      <td><strong>Punctuation Load</strong></td>
+      <td>3.2</td>
+      <td>0.9</td>
+      <td>Codex has ~3.5× more commas/semicolons</td>
+    </tr>
+    <tr>
+      <td><strong>Imperative Ratio</strong></td>
+      <td>0.10</td>
+      <td>0.25</td>
+      <td>GPT-5 gives more direct instructions</td>
+    </tr>
+    <tr>
+      <td><strong>Negation Frequency</strong></td>
+      <td>6</td>
+      <td>3</td>
+      <td>Codex has more “don’ts” and negatives</td>
+    </tr>
+  </tbody>
+</table>
 
-   I also noticed that the codex prompt has lower imperative ratio
-   (commands/sentences) and yet higher negation frequency (don'ts), an analysis
-   that baffled me.
+<hr />
 
-3. The codex content guidance emphasises **brevity** and **scanability**. It
-   encourages the use of headers, bullets, and grouping related points. The
-   GPT-5 prompt is more focused on **tone** and **engagement** with
-   instructions like "Supportive thoroughness", "Lighthearted interactions",
-   "Adaptive teaching", and "Confidence-building".
+<p>GPT-5-Codex System Prompt</p>
 
-4. The codex adapts based on **task** type (code explanations, simple tasks,
-   big changes, casual one-offs) whereas the GPT-5 prompt adjusts based on **user**
-   proficiency and emotional needs.
-
-5. Based on the Readability analysis, the codex is written for university
-   graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt is
-   written for high school (Flesch-Kincaid Grade Level 10).
-
-
-Here is a summary of the quantitative differences between the two prompts:
-
-| Metric | GPT-5-Codex (Prompt B) | GPT-5 (Prompt A) | Interpretation |
-|--------|-------------------------|------------------|----------------|
-| **Lexical Density** | 0.82 | 0.78 | Codex is more content-word heavy |
-| **Type–Token Ratio (TTR)** | 0.77 | 0.68 | Codex uses more varied vocabulary |
-| **Flesch Reading Ease** | 29.0 | 42.1 | Codex is harder to read (graduate level) |
-| **Flesch–Kincaid Grade** | 14.1 | 10.4 | Codex ≈ college sophomore; GPT-5 ≈ high school |
-| **Gunning Fog Index** | 16.6 | 13.9 | Codex significantly denser, more technical |
-| **SMOG Index** | 15.0 | 12.6 | Codex ~Grade 15 vs. GPT-5 ~Grade 12 |
-| **Punctuation Load** | 3.2 | 0.9 | Codex has ~3.5× more commas/semicolons |
-| **Imperative Ratio** | 0.10 | 0.25 | GPT-5 gives more direct instructions |
-| **Negation Frequency** | 6 | 3 | Codex has more “don’ts” and negatives |
-
-
-One higher-level take-away from studying these prompts is that just how
-steerable a model is depends a lot on the prompt engineering. 
-
-
---------
-
-GPT-5-Codex System Prompt
-
-```
-### Final answer structure and style guidelines
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Final answer structure and style guidelines
 
 - Plain text; CLI handles styling. Use structure only when it helps scanability.
 - Headers: optional; short Title Case (1-3 words) wrapped in **…**; no blank line before the first bullet; add only if they truly help.
@@ -81,14 +132,13 @@ GPT-5-Codex System Prompt
 - Tone: collaborative, concise, factual; present tense, active voice; self‑contained; no "above/below"; parallel wording.
 - Don'ts: no nested bullets/hierarchies; no ANSI codes; don't cram unrelated keywords; keep keyword lists short—wrap/reformat if long; avoid naming formatting styles in answers.
 - Adaptation: code explanations → precise, structured with code refs; simple tasks → lead with outcome; big changes → logical walkthrough + rationale + next actions; casual one-offs → plain sentences, no headers/bullets.
-```
+</code></pre></div></div>
 
---------
+<hr />
 
-GPT-5 System Prompt
+<p>GPT-5 System Prompt</p>
 
-```
-Do not reproduce song lyrics or any other copyrighted material, even if asked.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Do not reproduce song lyrics or any other copyrighted material, even if asked.
 
 You are an insightful, encouraging assistant who combines meticulous clarity with genuine enthusiasm and gentle humor.
 
@@ -105,7 +155,7 @@ Do **not** say the following: would you like me to; want me to do that; do you w
 Ask at most one necessary clarifying question at the start, not the end.
 
 If the next step is obvious, do it. Example of bad: I can write playful examples. would you like me to? Example of good: Here are three playful examples:..
-```]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[Of many things that impresses me about OpenAI GPT-5-Codex, one was how responsive and “light” it feels to use. Compared to the pages of outputs from Claude Code, GPT-5-Codex feels more efficient, more to the point and much more steerable. Some of these would come from the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="http://localhost:4000/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>http://localhost:4000/release-pydantic-optuna-bridge-</id><content type="html" xml:base="http://localhost:4000/release-pydantic-optuna-bridge.html"><![CDATA[Today I shipped `pydantic-optuna-bridge`, a helper library that keeps the
+</code></pre></div></div>]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[One of the things that impresses me about OpenAI GPT-5-Codex is how responsive and “light” it feels to use. Compared with the page-long dumps from Claude Code, GPT-5-Codex stays efficient, more to the point, and much more steerable. Some of that is the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="http://localhost:4000/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>http://localhost:4000/release-pydantic-optuna-bridge-</id><content type="html" xml:base="http://localhost:4000/release-pydantic-optuna-bridge.html"><![CDATA[Today I shipped `pydantic-optuna-bridge`, a helper library that keeps the
 [Optuna search spaces](https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html)
 in sync with an underlying Pydantic model. The library is now on
 [PyPI at version 0.1.1](https://pypi.org/project/pydantic-optuna-bridge/) and

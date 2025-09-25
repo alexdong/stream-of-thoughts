@@ -8,55 +8,50 @@ categories:
 - open-ai
 ---
 
-Of many things that impresses me about OpenAI GPT-5-Codex, one was how
-responsive and "light" it feels to use. Compared to the pages of
-outputs from [Claude Code](/due-to-odd-jax-issues.html), GPT-5-Codex feels more
-efficient, more to the point and much more steerable. Some of these would come
-from the `gpt-5-codex` model itself, but I suspect a lot of it comes from the
-prompt engineering that OpenAI has done.
+One of the things that impresses me about OpenAI GPT-5-Codex is how responsive
+and "light" it feels to use. Compared with the page-long dumps from
+[Claude Code](/due-to-odd-jax-issues.html), GPT-5-Codex stays efficient,
+more to the point, and much more steerable. Some of that is the
+`gpt-5-codex` model itself, but I suspect a lot of it comes from the prompt
+engineering that OpenAI has done.
 
-Tonight, I compared the [system prompt for
-codex](https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md)
-against the [leaked system prompt for
+So I pulled up the [system prompt for
+Codex](https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md)
+and set it beside the [leaked system prompt for
 GPT-5](https://www.reddit.com/r/PromptEngineering/comments/1mknun8/i_have_extracted_the_gpt5_system_prompt/) and I noticed the following differences:
 
-1. The codex sentences are much **denser**. The GPT-5 language is warm,
-   supportive, lightly humorous, encouraging curiorsity. Explicitly focuses on
-   emotional presence and teaching style. The GPT-5-Codex prompt is
-   neutral, concise, factural, collaborative. It intentionally strips
-   personality to maintain clarity and consistency. 
+1. The Codex sentences are much **denser**. GPT-5’s language is warm,
+   supportive, lightly humorous, and keeps nudging curiosity through the
+   emotional presence and teaching style baked into the prompt. Codex is
+   neutral, concise, factual, and collaborative. It intentionally strips
+   personality to stay clear. I ran a "clause density" check on both prompts:
+   Codex averages 4.8 clauses per sentence, GPT-5 comes in at 2.1.
 
-   I ran a "clause density" analysis on both prompts. The codex prompt has
-   4.8 average clauses per sentence, whereas the GPT-5 prompt has 2.1. Which 
-   is why the codex prompts are so much more packed, routinely carrying 5-8
-   clauses via semicolons and commas.
+2. Codex seems to have a much **less constrained dialogue flow**. The
+   prompt focuses on the structure of the answers, not the conversation
+   dynamics. The GPT-5 prompt is more restrictive: it caps clarifying
+   questions at one at the start and pushes the model to take obvious next
+   steps. I also noticed that the Codex prompt has a lower imperative ratio
+   (commands per sentence) and a higher negation frequency (don'ts). That mix is
+   odd, and I need to think more about what it means.
 
-2. The codex seems to have a much **less constrained dialogue flow**. The
-   prompt focuses entirely on the structure of the answers, not interaction
-   dynamics. The GPT-5 prompt is more restrictive. It limits the number of
-   clarifying questions to one at the start of the conversation. It also
-   encourages taking initiative when the next step is obvious. 
+3. The Codex content guidance emphasizes **brevity** and **scanability**. It
+   pushes headers, bullets, and grouped points. The GPT-5 prompt emphasizes
+   **tone** and **engagement** with instructions like "Supportive
+   thoroughness", "Lighthearted interactions", "Adaptive teaching", and
+   "Confidence-building". 
 
-   I also noticed that the codex prompt has lower imperative ratio
-   (commands/sentences) and yet higher negation frequency (don'ts), an analysis
-   that baffled me.
-
-3. The codex content guidance emphasises **brevity** and **scanability**. It
-   encourages the use of headers, bullets, and grouping related points. The
-   GPT-5 prompt is more focused on **tone** and **engagement** with
-   instructions like "Supportive thoroughness", "Lighthearted interactions",
-   "Adaptive teaching", and "Confidence-building".
-
-4. The codex adapts based on **task** type (code explanations, simple tasks,
+4. Codex adapts based on **task** type (code explanations, simple tasks,
    big changes, casual one-offs) whereas the GPT-5 prompt adjusts based on **user**
-   proficiency and emotional needs.
+   proficiency and emotional needs. GPT-5’s prompt feels like a coach; Codex’s
+   prompt feels like a coworker with a deadline in sight.
 
-5. Based on the Readability analysis, the codex is written for university
-   graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt is
-   written for high school (Flesch-Kincaid Grade Level 10).
+5. Based on the readability analysis, the Codex prompt is written for
+   university graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt
+   comes in at high school level (Flesch-Kincaid Grade Level 10).
 
 
-Here is a summary of the quantitative differences between the two prompts:
+Here’s what that looks like in the numbers:
 
 | Metric | GPT-5-Codex (Prompt B) | GPT-5 (Prompt A) | Interpretation |
 |--------|-------------------------|------------------|----------------|
@@ -70,9 +65,6 @@ Here is a summary of the quantitative differences between the two prompts:
 | **Imperative Ratio** | 0.10 | 0.25 | GPT-5 gives more direct instructions |
 | **Negation Frequency** | 6 | 3 | Codex has more “don’ts” and negatives |
 
-
-One higher-level take-away from studying these prompts is that just how
-steerable a model is depends a lot on the prompt engineering. 
 
 
 --------
