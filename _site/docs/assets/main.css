@@ -200,9 +200,6 @@ table {
   border-collapse: collapse;
   border: 1px solid #cccccc;
 }
-table tr:nth-child(even) {
-  background-color: #dbdbdb;
-}
 table th, table td {
   padding: 10px 15px;
 }
