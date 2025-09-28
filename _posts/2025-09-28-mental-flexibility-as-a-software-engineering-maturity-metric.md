@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mental Flexibility as a Software Engineering Maturity Metric" 
-date: 2025-09-28 18:23
+date: 2025-09-29 06:23
 comments: true
 categories: 
 - software-engineering
