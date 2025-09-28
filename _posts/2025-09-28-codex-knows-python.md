@@ -9,20 +9,21 @@ categories:
 ---
 
 I have been using [Codex instead of Claude Code](/due-to-odd-jax-issues.html)
-for over a week now. One nice surprise is how ubiquitously Python is used
-as a sidekick, a common scripting language to build task-specific tools.
+for over a week now. One nice surprise is seeing how ubiquitously Python shows
+up as a sidekick, the scripting language Codex reaches for when it needs
+task-specific tools.
 
-Here are two examples where, instead of reaching for pre-built MCP servers,
-Codex creates its own tools by writing purpose-built Python scripts.
+Here are two examples showing Codex writing purpose-built Python scripts
+rather than reaching for pre-built MCP servers.
 
 ## Example 1: What are the types of a Python package
 
 Many Python packages don't have type annotations. If I want to know how to call
-a function in a package, I either try to find the answer in the documentation
-or read the source code. Below is a Codex-generated script that does this
-without me asking. It first installs the package in the system temporary
-directory, then uses `inspect` to extract type information from a package.
-Codex then picks up the output from the script to answer my question.
+a function in one, I either try to find the answer in the documentation or read
+the source code. Below is a Codex-generated script that stepped in without
+prompting. It first installs the package into the system temporary directory,
+then uses `inspect` to extract type information from that package. Codex then
+picks up the output from the script to answer my question.
 
 ```bash
 pip install openevolve --target /tmp/openevolve
@@ -41,8 +42,8 @@ PY
 
 I asked Codex to find all links on the topic of "Batch Processing" in Modal's
 docs. Instead of using a web search tool, Codex wrote a quick Python script to
-scrape the links from `https://modal.com/docs` and then use regular expressions
-to find the topics I was looking for.
+scrape the links from `https://modal.com/docs` and then used regular
+expressions to find the topics I was looking for.
 
 
 ```python
@@ -95,13 +96,13 @@ if __name__ == "__main__":
       print(f"  {snippet}")
 ```
 
-Groundbreaking? Not really. But it does point to a potential future where LLMs
-increasingly build its own deterministic tools to augment its capabilities and
-interact with the physical world. Our job as a hybrid human-AI team is to
-provide the right abstractions, libraries or even SDKs that LLM can use to
-build its own tools. 
+Groundbreaking? Not really. Yet it points to a potential future where LLMs
+increasingly build their own deterministic tools to augment their capabilities
+and interact with the physical world. Our job as a hybrid human-AI team is to
+provide the right abstractions, libraries, or even SDKs that LLMs can use to
+build those tools themselves.
 
-Maybe in the not so far future, instead of [Software Tools
+Maybe in the not-too-distant future, in addition to [Software Tools
 Engineer](https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer)
 who builds software for other humans, we'll have a new position called
-`AI Tools Engineer` who builds libraries mainly for LLMs.
+`AI Tools Engineer` who builds libraries primarily for LLMs.

@@ -1,18 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-28T21:36:19+13:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Codex knows Python</title><link href="http://localhost:4000/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>http://localhost:4000/codex-knows-python</id><content type="html" xml:base="http://localhost:4000/codex-knows-python.html"><![CDATA[<p>I have been using <a href="/due-to-odd-jax-issues.html">Codex instead of Claude Code</a>
-for over a week now. One nice surprise is how ubiquitously Python is used
-as a sidekick, a common scripting language to build task-specific tools.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-28T21:42:17+13:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Codex knows Python</title><link href="http://localhost:4000/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>http://localhost:4000/codex-knows-python</id><content type="html" xml:base="http://localhost:4000/codex-knows-python.html"><![CDATA[<p>I have been using <a href="/due-to-odd-jax-issues.html">Codex instead of Claude Code</a>
+for over a week now. One nice surprise is seeing how ubiquitously Python shows
+up as a sidekick, the scripting language Codex reaches for when it needs
+task-specific tools.</p>
 
-<p>Here are two examples where, instead of reaching for pre-built MCP servers,
-Codex creates its own tools by writing purpose-built Python scripts.</p>
+<p>Here are two examples showing Codex writing purpose-built Python scripts
+rather than reaching for pre-built MCP servers.</p>
 
 <h2 id="example-1-what-are-the-types-of-a-python-package">Example 1: What are the types of a Python package</h2>
 
 <p>Many Python packages don’t have type annotations. If I want to know how to call
-a function in a package, I either try to find the answer in the documentation
-or read the source code. Below is a Codex-generated script that does this
-without me asking. It first installs the package in the system temporary
-directory, then uses <code class="language-plaintext highlighter-rouge">inspect</code> to extract type information from a package.
-Codex then picks up the output from the script to answer my question.</p>
+a function in one, I either try to find the answer in the documentation or read
+the source code. Below is a Codex-generated script that stepped in without
+prompting. It first installs the package into the system temporary directory,
+then uses <code class="language-plaintext highlighter-rouge">inspect</code> to extract type information from that package. Codex then
+picks up the output from the script to answer my question.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>openevolve <span class="nt">--target</span> /tmp/openevolve
 
@@ -30,8 +31,8 @@ print(inspect.getsource(OpenEvolve.run))
 
 <p>I asked Codex to find all links on the topic of “Batch Processing” in Modal’s
 docs. Instead of using a web search tool, Codex wrote a quick Python script to
-scrape the links from <code class="language-plaintext highlighter-rouge">https://modal.com/docs</code> and then use regular expressions
-to find the topics I was looking for.</p>
+scrape the links from <code class="language-plaintext highlighter-rouge">https://modal.com/docs</code> and then used regular
+expressions to find the topics I was looking for.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
 </span><span class="s">"""Quick-and-dirty Modal docs link lister."""</span>
@@ -82,16 +83,16 @@ to find the topics I was looking for.</p>
       <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Groundbreaking? Not really. But it does point to a potential future where LLMs
-increasingly build its own deterministic tools to augment its capabilities and
-interact with the physical world. Our job as a hybrid human-AI team is to
-provide the right abstractions, libraries or even SDKs that LLM can use to
-build its own tools.</p>
+<p>Groundbreaking? Not really. Yet it points to a potential future where LLMs
+increasingly build their own deterministic tools to augment their capabilities
+and interact with the physical world. Our job as a hybrid human-AI team is to
+provide the right abstractions, libraries, or even SDKs that LLMs can use to
+build those tools themselves.</p>
 
-<p>Maybe in the not so far future, instead of <a href="https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer">Software Tools
+<p>Maybe in the not-too-distant future, in addition to <a href="https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer">Software Tools
 Engineer</a>
 who builds software for other humans, we’ll have a new position called
-<code class="language-plaintext highlighter-rouge">AI Tools Engineer</code> who builds libraries mainly for LLMs.</p>]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is how ubiquitously Python is used as a sidekick, a common scripting language to build task-specific tools.]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+12:00</published><updated>2025-09-27T21:56:00+12:00</updated><id>http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[[Richard Sutton](https://www.dwarkesh.com/p/richard-sutton) is a Turing Award
+<code class="language-plaintext highlighter-rouge">AI Tools Engineer</code> who builds libraries primarily for LLMs.</p>]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is seeing how ubiquitously Python shows up as a sidekick, the scripting language Codex reaches for when it needs task-specific tools.]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+12:00</published><updated>2025-09-27T21:56:00+12:00</updated><id>http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[[Richard Sutton](https://www.dwarkesh.com/p/richard-sutton) is a Turing Award
 winner and one of the founding fathers of Reinforcement Learning, so I listened
 to his interview on [Dwarkesh
 Podcast](https://www.dwarkesh.com/p/richard-sutton) three times, and what
