@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mental Flexibility as a Software Engineering Maturity Metric | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Mental Flexibility as a Software Engineering Maturity Metric" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?" />
+<meta property="og:description" content="There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?" />
+<link rel="canonical" href="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html" />
+<meta property="og:url" content="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-29T06:23:00+13:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mental Flexibility as a Software Engineering Maturity Metric" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-29T06:23:00+13:00","datePublished":"2025-09-29T06:23:00+13:00","description":"There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?","headline":"Mental Flexibility as a Software Engineering Maturity Metric","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html"},"url":"https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Mental Flexibility as a Software Engineering Maturity Metric</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-29T06:23:00+13:00" itemprop="datePublished">Sep 29, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?</p>
+
+<p>Mental flexibility would be at the top of this <em>most wanted</em> list. It’s the ability to know that all “best practices” are context dependent. It helps us hold back opinions until a good-enough understanding of a problem is complete. After all, <a href="https://www.seangoedecke.com/confidence/">nobody knows</a>. This flexibility empowers engineers to shape the technical approaches according to the problem at hand.</p>
+
+<p>Sean Goedecke’s recent essay on <a href="https://seangoedecke.com/taste/">software taste</a> captures this well:</p>
+
+<blockquote>
+  <p>Almost every decision in software engineering is a tradeoff. You’re rarely picking between two options where one is strictly better. Instead, each option has its own benefits and downsides. Often you have to make hard tradeoffs between engineering values: past a certain point, you cannot easily increase performance without harming readability, for instance.</p>
+
+  <p>Really understanding this point is (in my view) the biggest indicator of maturity in software engineering. Immature engineers are rigid about their decisions. They think it’s always better to do X or Y. Mature engineers are usually willing to consider both sides of a decision, because they know that both sides come with different benefits. The trick is not deciding if technology X is better than Y, but whether the benefits of X outweigh Y in this particular case.</p>
+</blockquote>
+
+<p>It’s well worth reading in full.</p>
+
+<p>Now, one thing I believe we should all be doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Once the value trade-offs are explicitly defined and documented, we can reorient our technical decisions and define our standard of <strong>good taste</strong> accordingly. Lastly, these values and standards should be documented in an <code class="language-plaintext highlighter-rouge">AGENTS.md</code> file so they can be communicated to both the humans and, increasingly, the AI agents that are part of the engineering process.</p>
+
+<p>To make that reflection concrete, here is a simple questionnaire to get started (quoted from Sean’s essay):</p>
+
+<blockquote>
+  <ul>
+    <li>Resiliency. If an infrastructure component fails (a service dies, a network connection becomes unavailable), does the system remain functional? Can it recover without human intervention?</li>
+    <li>Speed. How fast is the software, compared to the theoretical limit? Is work being done in the hot path that isn’t strictly necessary?</li>
+    <li>Readability. Is the software easy to take in at a glance and to onboard new engineers to? Are functions relatively short and named well? Is the system well-documented?</li>
+    <li>Correctness. Is it possible to represent an invalid state in the system? How locked-down is the system with tests, types, and asserts? Do the tests use techniques like fuzzing? In the extreme case, has the program been proven correct by formal methods like Alloy?</li>
+    <li>Flexibility. Can the system be trivially extended? How easy is it to make a change? If I need to change something, how many different parts of the program do I need to touch in order to do so?</li>
+    <li>Portability. Is the system tied down to a particular operational environment (say, Microsoft Windows, or AWS)? If the system needs to be redeployed elsewhere, can that happen without a lot of engineering work?</li>
+    <li>Scalability. If traffic goes up 10x, will the system fall over? What about 100x? Does the system have to be over-provisioned or can it scale automatically? What bottlenecks will require engineering intervention?</li>
+    <li>Development speed. If I need to extend the system, how fast can it be done? Can most engineers work on it, or does it require a domain expert?</li>
+  </ul>
+</blockquote>
+
+  </div><footer class="post-footer">
+      <nav class="post-categories" aria-label="Categories"><a class="post-category p-category" rel="tag" href="/categories/mastery-assessment/">mastery-assessment</a><span aria-hidden="true"> | </span><a class="post-category p-category" rel="tag" href="/categories/software-engineering/">software-engineering</a></nav>
+    </footer><a class="u-url" href="/mental-flexibility-as-a-software-engineering-maturity-metric.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>
