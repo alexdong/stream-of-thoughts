@@ -20,7 +20,7 @@ In Sean’s most recent essay on [software taste](https://seangoedecke.com/taste
 
 Go ahead and read the full essay, it’s a great one. 
 
-Now, one thing I believe we should all start doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Then re-orient our technical decisions and the standard of **good taste** accordingly. Further, these values should be made explicit and communicated to both the humans and increasingly the AI agents that are part of the engineering process.
+Now, one thing I believe we should all be doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Once the values trade-offs are explicitly defined and documented, we should then proceed to re-orient our technical decisions and define our standard of **good taste** accordingly. Lastly, these values and standards should be documented into a `AGENTS.md` file so it can be communicated to both the humans and, increasingly, the AI agents that are part of the engineering process.
 
 Here is a simple questionaire to get started (quoted from Sean’s essay):
 
