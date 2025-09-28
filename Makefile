@@ -1,4 +1,4 @@
-.PHONY: new publish dev clean help
+.PHONY: new publish dev clean help build
 
 # Default editor (can be overridden by environment variable)
 EDITOR ?= vim
@@ -43,6 +43,12 @@ publish: ## Build and deploy the site
 	git commit -m "new post"
 	git push
 	@echo "Site published successfully!"
+
+build: ## Build the site into docs/ without deploying
+	@echo "Building site into docs/..."
+	bundle exec jekyll build -d docs
+	echo "alexdong.com" > docs/CNAME
+	@echo "Site built at docs/"
 
 dev: ## Start development server
 	@echo "Starting Jekyll development server..."

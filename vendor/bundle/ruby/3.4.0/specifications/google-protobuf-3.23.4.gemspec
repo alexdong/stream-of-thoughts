@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.0.8".freeze
   s.summary = "Protocol Buffers".freeze
 
-  s.installed_by_version = "3.7.1".freeze
+  s.installed_by_version = "3.6.2".freeze
 
   s.specification_version = 4
 

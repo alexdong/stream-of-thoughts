@@ -17,28 +17,24 @@ This is a Jekyll-based personal website (alexdong.com) that implements "The Mono
 - `assets/css/monospace.css`: Core monospace styling implementation
 - `assets/main.scss`: Main SCSS file that imports Minima theme and applies monospace overrides
 
-## Development Commands
+## Development Workflow
 
-Since this is a Jekyll site, use the following commands:
+### Makefile Targets
+The repository ships with a Makefile that wraps the most common Jekyll tasks. Prefer these commands so the expected flags and post-processing steps run consistently:
 
-```bash
-# Install dependencies (if Gemfile exists in parent directory)
-bundle install
+- `make install` – Install Ruby gems via Bundler.
+- `make dev` – Start the incremental Jekyll server with LiveReload enabled (`bundle exec jekyll serve --livereload --incremental`).
+- `make new` – Scaffold a new post in `_posts/` using the current date, prompt for a title, and open it in the `$EDITOR` (defaults to `vim`).
+- `make build` – Build the site into `docs/` and refresh the `CNAME` file without touching git state.
+- `make publish` – Build the site into `docs/`, write the `CNAME`, stage all changes, commit with the message "new post", and push to the current branch.
+- `make clean` – Run `jekyll clean` and wipe the generated `docs/` artifacts.
+- `make help` – List available targets and descriptions.
 
-# Serve the site locally with auto-reload
-bundle exec jekyll serve
-
-# Build the site for production
-bundle exec jekyll build
-
-# Build with production environment
-JEKYLL_ENV=production bundle exec jekyll build
-```
+When publishing, remember the automated commit message is fixed. If you need a different message or additional git steps, run them manually after `make publish` or perform the build/push yourself. For quick experiments without committing, prefer `make build` followed by any manual git workflow you need.
 
 ## Design System
 
 The site uses a monospace-first design with:
-- Font: 'Courier New', Courier, monospace
 - Max content width: 80 characters
 - Character-based spacing units
 - Dark mode support via CSS media queries
