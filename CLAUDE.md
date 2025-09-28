@@ -1,8 +1,4 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Project Overview
+# Project Overview
 
 This is a Jekyll-based personal website (alexdong.com) that implements "The Monospace Web" aesthetic. The repository contains custom CSS styling for a monospace-themed design.
 
