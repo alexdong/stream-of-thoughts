@@ -63,4 +63,7 @@ install: ## Install dependencies
 	@echo "Installing Jekyll dependencies..."
 	sudo apt-get install -y ruby-full build-essential
 	sudo apt-get install -y bundler
+	sudo apt-get install -y git-lfs
+	git lfs install
+	git lfs update --force
 	bundle install
