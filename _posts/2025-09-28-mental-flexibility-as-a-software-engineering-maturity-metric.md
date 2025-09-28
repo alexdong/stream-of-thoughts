@@ -5,7 +5,7 @@ date: 2025-09-28 18:23
 comments: true
 categories: 
 - software-engineering
-- 
+- skill-acquisition
 ---
 
 There are a few orthogonal axis one can use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge, whether they have an accurate mental model of the language or technology they use. Do they know intuitively where the boundaries are. Another one is communication skill, whether they can understand and be understood. 
