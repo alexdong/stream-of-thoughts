@@ -8,9 +8,9 @@ categories:
 - skill-acquisition
 ---
 
-There are a few orthogonal axis one can use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge, whether they have an accurate mental model of the language or technology they use. Do they know intuitively where the boundaries are. Another one is communication skill, whether they can understand and be understood. 
+There are a few orthogonal axis one can use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge, whether they have an accurate mental model of the language or technology they use. Can they intuit the boundaries and long-term impact of decisions. Another one is communication skill, whether they can understand and be understood. 
 
-One important axis that often gets overlooked in many technical interviews is mental agility or mental flexibility. The ability to know that all “best practices” are context sensitive. The ability to hold back opinions until a good-enough understanding of a problem is completed because [nobody knows](https://www.seangoedecke.com/confidence/). This flexibility empowers engineers to shape the technical approaches according to the problem on hand. 
+One crucial axis that often gets overlooked is mental flexibility. The ability to know that all “best practices” are context sensitive. To hold back opinions until a good-enough understanding of a problem is completed. Because [nobody knows](https://www.seangoedecke.com/confidence/). This flexibility empowers engineers to shape the technical approaches according to the problem on hand.
 
 In Sean’s most recent essay on [software taste](https://seangoedecke.com/taste/), he mentioned:
 

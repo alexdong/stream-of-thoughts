@@ -61,4 +61,8 @@ clean: ## Clean generated files
 
 install: ## Install dependencies
 	@echo "Installing Jekyll dependencies..."
+	@if [ -d vendor/bundle ]; then \
+		echo "Ensuring vendor/bundle permissions are secure..."; \
+		chmod -R go-w vendor/bundle; \
+	fi
 	bundle install
