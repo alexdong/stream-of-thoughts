@@ -61,6 +61,7 @@ clean: ## Clean generated files
 
 install: ## Install dependencies
 	@echo "Installing Jekyll dependencies..."
+	sudo apt-get update
 	sudo apt-get install -y ruby-full build-essential
 	sudo apt-get install -y bundler
 	sudo apt-get install -y git-lfs
