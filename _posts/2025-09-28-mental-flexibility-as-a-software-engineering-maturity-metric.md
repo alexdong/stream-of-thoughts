@@ -5,6 +5,7 @@ date: 2025-09-28 18:23
 comments: true
 categories: 
 - software-engineering
+- 
 ---
 
 There are a few orthogonal axis one can use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge, whether they have an accurate mental model of the language or technology they use. Do they know intuitively where the boundaries are. Another one is communication skill, whether they can understand and be understood. 
@@ -19,4 +20,15 @@ In Sean’s most recent essay on [software taste](https://seangoedecke.com/taste
 
 Go ahead and read the full essay, it’s a great one. 
 
-Now, One thing I believe we should all start doing, not only at the outset of a project, but also regularly review as the project develops, I think it's worth to regularly reflect on the values for the current projects we are working on and their trade-offs. This practice can help us maintain mental flexibility and adapt our approaches as needed.
+Now, one thing I believe we should all start doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Then re-orient our technical decisions and the standard of **good taste** accordingly. Further, these values should be made explicit and communicated to both the humans and increasingly the AI agents that are part of the engineering process.
+
+Here is a simple questionaire to get started (quoted from Sean’s essay):
+
+> * Resiliency. If an infrastructure component fails (a service dies, a network connection becomes unavailable), does the system remain functional? Can it recover without human intervention?
+> * Speed. How fast is the software, compared to the theoretical limit? Is work being done in the hot path that isn’t strictly necessary?
+> * Readability. Is the software easy to take in at a glance and to onboard new engineers to? Are functions relatively short and named well? Is the system well-documented?
+> * Correctness. Is it possible to represent an invalid state in the system? How locked-down is the system with tests, types, and asserts? Do the tests use techniques like fuzzing? In the extreme case, has the program been proven correct by formal methods like Alloy?
+> * Flexibility. Can the system be trivially extended? How easy is it to make a change? If I need to change something, how many different parts of the program do I need to touch in order to do so?
+> * Portability. Is the system tied down to a particular operational environment (say, Microsoft Windows, or AWS)? If the system needs to be redeployed elsewhere, can that happen without a lot of engineering work?
+> * Scalability. If traffic goes up 10x, will the system fall over? What about 100x? Does the system have to be over-provisioned or can it scale automatically? What bottlenecks will require engineering intervention?
+> * Development speed. If I need to extend the system, how fast can it be done? Can most engineers work on it, or does it require a domain expert?
