@@ -1,33 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-28T19:06:25+00:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Mental Flexibility as a Software Engineering Maturity Metric</title><link href="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html" rel="alternate" type="text/html" title="Mental Flexibility as a Software Engineering Maturity Metric" /><published>2025-09-28T18:23:00+00:00</published><updated>2025-09-28T18:23:00+00:00</updated><id>https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric</id><content type="html" xml:base="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html"><![CDATA[<p>There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?</p>
-
-<p>Mental flexibility would be at the top of this <em>most wanted</em> list. It’s the ability to know that all “best practices” are context dependent. It helps us hold back opinions until a good-enough understanding of a problem is complete. After all, <a href="https://www.seangoedecke.com/confidence/">nobody knows</a>. This flexibility empowers engineers to shape the technical approaches according to the problem at hand.</p>
-
-<p>Sean Goedecke’s recent essay on <a href="https://seangoedecke.com/taste/">software taste</a> captures this well:</p>
-
-<blockquote>
-  <p>Almost every decision in software engineering is a tradeoff. You’re rarely picking between two options where one is strictly better. Instead, each option has its own benefits and downsides. Often you have to make hard tradeoffs between engineering values: past a certain point, you cannot easily increase performance without harming readability, for instance.</p>
-
-  <p>Really understanding this point is (in my view) the biggest indicator of maturity in software engineering. Immature engineers are rigid about their decisions. They think it’s always better to do X or Y. Mature engineers are usually willing to consider both sides of a decision, because they know that both sides come with different benefits. The trick is not deciding if technology X is better than Y, but whether the benefits of X outweigh Y in this particular case.</p>
-</blockquote>
-
-<p>It’s well worth reading in full.</p>
-
-<p>Now, one thing I believe we should all be doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Once the value trade-offs are explicitly defined and documented, we can reorient our technical decisions and define our standard of <strong>good taste</strong> accordingly. Lastly, these values and standards should be documented in an <code class="language-plaintext highlighter-rouge">AGENTS.md</code> file so they can be communicated to both the humans and, increasingly, the AI agents that are part of the engineering process.</p>
-
-<p>To make that reflection concrete, here is a simple questionnaire to get started (quoted from Sean’s essay):</p>
-
-<blockquote>
-  <ul>
-    <li>Resiliency. If an infrastructure component fails (a service dies, a network connection becomes unavailable), does the system remain functional? Can it recover without human intervention?</li>
-    <li>Speed. How fast is the software, compared to the theoretical limit? Is work being done in the hot path that isn’t strictly necessary?</li>
-    <li>Readability. Is the software easy to take in at a glance and to onboard new engineers to? Are functions relatively short and named well? Is the system well-documented?</li>
-    <li>Correctness. Is it possible to represent an invalid state in the system? How locked-down is the system with tests, types, and asserts? Do the tests use techniques like fuzzing? In the extreme case, has the program been proven correct by formal methods like Alloy?</li>
-    <li>Flexibility. Can the system be trivially extended? How easy is it to make a change? If I need to change something, how many different parts of the program do I need to touch in order to do so?</li>
-    <li>Portability. Is the system tied down to a particular operational environment (say, Microsoft Windows, or AWS)? If the system needs to be redeployed elsewhere, can that happen without a lot of engineering work?</li>
-    <li>Scalability. If traffic goes up 10x, will the system fall over? What about 100x? Does the system have to be over-provisioned or can it scale automatically? What bottlenecks will require engineering intervention?</li>
-    <li>Development speed. If I need to extend the system, how fast can it be done? Can most engineers work on it, or does it require a domain expert?</li>
-  </ul>
-</blockquote>]]></content><author><name></name></author><category term="software-engineering" /><category term="mastery-assessment" /><summary type="html"><![CDATA[There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+00:00</published><updated>2025-09-27T21:56:00+00:00</updated><id>https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[<p><a href="https://www.dwarkesh.com/p/richard-sutton">Richard Sutton</a> is a Turing Award
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-28T19:17:54+00:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+00:00</published><updated>2025-09-27T21:56:00+00:00</updated><id>https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[<p><a href="https://www.dwarkesh.com/p/richard-sutton">Richard Sutton</a> is a Turing Award
 winner and one of the founding fathers of Reinforcement Learning, so I listened
 to his interview on <a href="https://www.dwarkesh.com/p/richard-sutton">Dwarkesh
 Podcast</a> three times, and what
@@ -689,4 +660,33 @@ have, please drop me an email. I’d love to hear about it!</p>
 
 <p>I suppose the key takeaway is that we really need to benchmark models in the
 specific context and task we care about, rather than relying on general
-assumptions about precision and context size.</p>]]></content><author><name></name></author><category term="local-ai" /><category term="open-ai" /><category term="ai-optimization" /><summary type="html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:]]></summary></entry></feed>
+assumptions about precision and context size.</p>]]></content><author><name></name></author><category term="local-ai" /><category term="open-ai" /><category term="ai-optimization" /><summary type="html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:]]></summary></entry><entry><title type="html">Due to odd JAX issues</title><link href="https://alexdong.com/due-to-odd-jax-issues.html" rel="alternate" type="text/html" title="Due to odd JAX issues" /><published>2025-09-18T21:34:00+00:00</published><updated>2025-09-18T21:34:00+00:00</updated><id>https://alexdong.com/-due-to-odd-jax-issues-</id><content type="html" xml:base="https://alexdong.com/due-to-odd-jax-issues.html"><![CDATA[<p>Anthropic published a <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">blog
+post</a>
+detailing three recent issues that affected a significant portion of their API users.
+This technical postmortem provides rare insight into the challenges of running
+large-scale AI services, and I appreciate their transparency. However, the details
+raised serious concerns about Anthropic’s engineering rigor.</p>
+
+<p>Consider this code snippet from their postmortem:</p>
+
+<p><img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fefee0d3d25f6b03cbfc57e70e0e364dcd8b82fe0-2000x500.png&amp;w=2048&amp;q=75" alt="December 2024 patching jax's dropping token bug issue" /></p>
+
+<p>What a crude way to patch a third-party library bug!</p>
+
+<p>After eight months, the team deployed a rewrite to address the root cause that
+necessitated this patch, which unfortunately exposed a deeper bug that had been
+masked by the temporary fix.</p>
+
+<p>This cascade of failures reveals both inadequate testing infrastructure and
+insufficient post-deployment monitoring. They mention implementing more
+sensitive evaluations and expanding quality checks, but this reads like a car
+manufacturer promising to watch for accidents more carefully.</p>
+
+<p>I’ve been a paying 20x Max member since the program
+launched. Despite the postmortem’s openness, I’m not convinced
+these issues have been resolved. In fact, I received several disappointing
+responses from Claude Code today that made me question my subscription.</p>
+
+<p>Starting tomorrow, I’m switching to GPT-5-Codex as my main coding assistant, based on
+strong recommendations from engineers I trust. Time to see if the grass really is
+greener on the other side.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[Anthropic published a blog post detailing three recent issues that affected a significant portion of their API users. This technical postmortem provides rare insight into the challenges of running large-scale AI services, and I appreciate their transparency. However, the details raised serious concerns about Anthropic’s engineering rigor.]]></summary></entry></feed>
