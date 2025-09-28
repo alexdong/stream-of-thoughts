@@ -1,0 +1,11 @@
+{
+  "name": "stream-of-thoughts",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "containerEnv": {
+    "TZ": "Pacific/Auckland"
+  },
+  "remoteEnv": {
+    "TZ": "Pacific/Auckland"
+  },
+  "postCreateCommand": "sudo ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ | sudo tee /etc/timezone"
+}
