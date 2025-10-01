@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-30T17:15:06+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Mental models for AI along the ambiguous ladder</title><link href="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html" rel="alternate" type="text/html" title="Mental models for AI along the ambiguous ladder" /><published>2025-09-30T16:45:00+13:00</published><updated>2025-09-30T16:45:00+13:00</updated><id>https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder</id><content type="html" xml:base="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html"><![CDATA[<p>In <a href="https://chrisloy.dev/post/2024/12/12/comfort-with-ambiguity">Chris Loyd’s recent post</a>, he 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-01T22:52:52+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Agentic Loop Design</title><link href="https://alexdong.com/agentic-loop-design.html" rel="alternate" type="text/html" title="Agentic Loop Design" /><published>2025-10-01T22:28:00+13:00</published><updated>2025-10-01T22:28:00+13:00</updated><id>https://alexdong.com/agentic-loop-design</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design.html"><![CDATA[<p>Even if you have defined the <a href="/mental-models-for-ai-along-the-ambiguous-ladder.html">problem, solution, or implementation</a> clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.</p>
+
+<p><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/">Simon Willison’s recent post on Agentic Loop Design</a> gave us a useful framework for thinking about how we can engineer past this obstacle. The core idea is similar to <a href="/llm-evolutionary-test-time-compute.html">Evolutionary Test-Time Compute</a>, both trade time and tokens for quality.</p>
+
+<p>Simon puts it this way:</p>
+
+<blockquote>
+  <p>As is so often the case with modern AI, there is a great deal of depth involved in unlocking the full potential of these new tools.</p>
+
+  <p>A critical new skill to develop is designing agentic loops.</p>
+
+  <p>One way to think about coding agents is that they are brute force tools for finding solutions to coding problems. If you can reduce your problem to a clear goal and a set of tools that can iterate towards that goal a coding agent can often brute force its way to an effective solution.</p>
+</blockquote>
+
+<p>The key is treating this as an iterative process. Instead of expecting the right answer on the first try, you design loops where the AI refines its approach through multiple attempts.</p>
+
+<p>Over the next few days, I’ll share some useful tools/ideas I’m using daily to ground the AI in reality, avoid context poisoning, and improve the overall quality of its outputs.</p>]]></content><author><name></name></author><category term="software-design" /><category term="agentic" /><summary type="html"><![CDATA[Even if you have defined the problem, solution, or implementation clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.]]></summary></entry><entry><title type="html">Mental models for AI along the ambiguous ladder</title><link href="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html" rel="alternate" type="text/html" title="Mental models for AI along the ambiguous ladder" /><published>2025-09-30T16:45:00+13:00</published><updated>2025-09-30T16:45:00+13:00</updated><id>https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder</id><content type="html" xml:base="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html"><![CDATA[<p>In <a href="https://chrisloy.dev/post/2024/12/12/comfort-with-ambiguity">Chris Loyd’s recent post</a>, he 
 mentioned using a “ladder of ambiguity” to frame software engineer career progression in the
 context of comfort with ambiguity.</p>
 
@@ -674,37 +690,4 @@ such as hardware redundancy.</p>
 <p>In the age of AI, with a clear traceback of what went wrong, and with the AI
 automatically adding tests and fixing bugs, the “fail fast and noisily”
 approach enables resilient systems that are easy to maintain. You just need to
-get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry><entry><title type="html">Resist the tempatation to anthropomorphizing LLM</title><link href="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html" rel="alternate" type="text/html" title="Resist the tempatation to anthropomorphizing LLM" /><published>2025-09-21T20:33:00+12:00</published><updated>2025-09-21T20:33:00+12:00</updated><id>https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm</id><content type="html" xml:base="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html"><![CDATA[<p><a href="https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering">Chollet</a> 
-writes a great piece on why we even need prompt engineering and what’s the right 
-mental model to have when we write prompts.</p>
-
-<p>Instead of thinking of LLMs as intelligent agents that understand our intent,
-we should think of them as massive databases of programs, and our prompts are
-just keys to look up those programs.  (Emphasis mine.)</p>
-
-<blockquote>
-  <p>There are thousands of variations you could have used, each resulting in a
-similar-yet-slightly-different program. And that’s why prompt engineering is
-needed. There is no a-priori reason why your first, naive program key would
-result in the optimal program for the task. The LLM is not going to
-“understand” what you meant and then perform it in the best possible way —
-it’s merely going to fetch the program that your prompt points to, among many
-possible locations you could have landed on.</p>
-
-  <p><strong>Prompt engineering is the process of searching through program space to find
-the program that empirically seems to perform best on your target task.</strong> It’s
-no different than trying different keywords when doing a Google search for a
-piece of software.</p>
-
-  <p>If LLMs actually understood what you told them, there would be no need for
-this search process, since the amount of information conveyed about your
-target task does not change whether your prompt uses the word “rewrite”
-instead “rephrase”, or whether you prefix your prompt with “think steps by
-steps”. Never assume that the LLM “gets it” the first time — keep in mind
-that your prompt is but an address in an infinite ocean of programs, all
-captured as a by-product of organizing tokens into a vector space via an
-autoregressive optimization objective.</p>
-
-  <p>As always, the most important principle for understanding LLMs is that you
-should resist the temptation of anthropomorphizing them.</p>
-</blockquote>]]></content><author><name></name></author><category term="quotes" /><category term="prompt-engineering" /><summary type="html"><![CDATA[Chollet writes a great piece on why we even need prompt engineering and what’s the right mental model to have when we write prompts.]]></summary></entry></feed>
+get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry></feed>
