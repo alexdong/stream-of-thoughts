@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-01T14:59:43+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Codex knows Python</title><link href="https://alexdong.com/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>https://alexdong.com/codex-knows-python</id><content type="html" xml:base="https://alexdong.com/codex-knows-python.html"><![CDATA[<p>I have been using <a href="/due-to-odd-jax-issues.html">Codex instead of Claude Code</a>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-30T17:15:06+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Mental models for AI along the ambiguous ladder</title><link href="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html" rel="alternate" type="text/html" title="Mental models for AI along the ambiguous ladder" /><published>2025-09-30T16:45:00+13:00</published><updated>2025-09-30T16:45:00+13:00</updated><id>https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder</id><content type="html" xml:base="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html"><![CDATA[<p>In <a href="https://chrisloy.dev/post/2024/12/12/comfort-with-ambiguity">Chris Loyd’s recent post</a>, he 
+mentioned using a “ladder of ambiguity” to frame software engineer career progression in the
+context of comfort with ambiguity.</p>
+
+<blockquote>
+  <ul>
+    <li>Junior engineer - Clear problem, clear solution, clear implementation</li>
+    <li>Mid-level engineer - Clear problem, clear solution, ambiguous implementation</li>
+    <li>Senior engineer - Clear problem, ambiguous solution, ambiguous implementation</li>
+    <li>Staff engineer - Ambiguous problem, ambiguous solution, ambiguous implementation</li>
+  </ul>
+
+  <p>Your capability to efficiently deliver value in increasingly ambiguous situations - up to the point where even identifying the problem to be solved is unclear - is a primary measure of your career progression, and an important axis of growth.</p>
+</blockquote>
+
+<p>I find this framing quite useful and I’d like to expand on it by discussing the mental models that can help engineers navigate this ambiguity using AI. Let me walk through each level of the ladder and explore how AI can serve different roles depending on the type of ambiguity you’re facing.</p>
+
+<p>At the <strong>staff level</strong>, where problem ambiguity dominates, I find AI most useful as a research assistant and writing collaborator. I’m a big believer in the power of writing to clarify thinking. By writing down my understanding of the problem and asking AI to critique it, I can identify gaps in my understanding and refine my mental model of the problem. I also use AI to research the problem space—asking it to find relevant articles, papers, or code examples that provide additional context and insights.</p>
+
+<p>Moving down to the <strong>senior level</strong>, where solution ambiguity becomes the main challenge, I find AI most helpful as a brainstorming partner and feasibility study expert. I use models like <code class="language-plaintext highlighter-rouge">GPT-5 Pro</code> to generate multiple solution ideas and evaluate their pros and cons. I also ask AI to act as a critic to challenge particular solutions and identifying potential pitfalls early on. When I have access to the codebase, I ask AI to provide feasibility-specific feedback on proposed solutions. This helps me quickly iterate on solution ideas and refine them based on feedback.</p>
+
+<p>Finally, at the <strong>junior to mid-level</strong>, where implementation ambiguity is the primary concern, I treat AI tools as rapid prototyping partners to materialise different implementation ideas. Instead of waiting for one carefully crafted answer, I can quickly generate multiple implementations, compare them, and choose the one that best fits the context. I can also pick one implementation and ask AI to modify it to better suit my needs.</p>
+
+<p>The key idea here is that AI’s role should evolve with the level of ambiguity. By deliberately choosing and matching the right mental model to your current challenge, AI can help you navigate each rung of the ambiguity ladder more effectively.</p>]]></content><author><name></name></author><category term="software-engineering" /><category term="mastery-assessment" /><summary type="html"><![CDATA[In Chris Loyd’s recent post, he mentioned using a “ladder of ambiguity” to frame software engineer career progression in the context of comfort with ambiguity.]]></summary></entry><entry><title type="html">Mental Flexibility as a Software Engineering Maturity Metric</title><link href="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html" rel="alternate" type="text/html" title="Mental Flexibility as a Software Engineering Maturity Metric" /><published>2025-09-29T06:23:00+13:00</published><updated>2025-09-29T06:23:00+13:00</updated><id>https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric</id><content type="html" xml:base="https://alexdong.com/mental-flexibility-as-a-software-engineering-maturity-metric.html"><![CDATA[<p>There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?</p>
+
+<p>Mental flexibility would be at the top of this <em>most wanted</em> list. It’s the ability to know that all “best practices” are context dependent. It helps us hold back opinions until a good-enough understanding of a problem is complete. After all, <a href="https://www.seangoedecke.com/confidence/">nobody knows</a>. This flexibility empowers engineers to shape the technical approaches according to the problem at hand.</p>
+
+<p>Sean Goedecke’s recent essay on <a href="https://seangoedecke.com/taste/">software taste</a> captures this well:</p>
+
+<blockquote>
+  <p>Almost every decision in software engineering is a tradeoff. You’re rarely picking between two options where one is strictly better. Instead, each option has its own benefits and downsides. Often you have to make hard tradeoffs between engineering values: past a certain point, you cannot easily increase performance without harming readability, for instance.</p>
+
+  <p>Really understanding this point is (in my view) the biggest indicator of maturity in software engineering. Immature engineers are rigid about their decisions. They think it’s always better to do X or Y. Mature engineers are usually willing to consider both sides of a decision, because they know that both sides come with different benefits. The trick is not deciding if technology X is better than Y, but whether the benefits of X outweigh Y in this particular case.</p>
+</blockquote>
+
+<p>It’s well worth reading in full.</p>
+
+<p>Now, one thing I believe we should all be doing, not only at the outset of a project, but also regularly every month or every quarter, is to reflect on the values for the current projects we are working on. Once the value trade-offs are explicitly defined and documented, we can reorient our technical decisions and define our standard of <strong>good taste</strong> accordingly. Lastly, these values and standards should be documented in an <code class="language-plaintext highlighter-rouge">AGENTS.md</code> file so they can be communicated to both the humans and, increasingly, the AI agents that are part of the engineering process.</p>
+
+<p>To make that reflection concrete, here is a simple questionnaire to get started (quoted from Sean’s essay):</p>
+
+<blockquote>
+  <ul>
+    <li>Resiliency. If an infrastructure component fails (a service dies, a network connection becomes unavailable), does the system remain functional? Can it recover without human intervention?</li>
+    <li>Speed. How fast is the software, compared to the theoretical limit? Is work being done in the hot path that isn’t strictly necessary?</li>
+    <li>Readability. Is the software easy to take in at a glance and to onboard new engineers to? Are functions relatively short and named well? Is the system well-documented?</li>
+    <li>Correctness. Is it possible to represent an invalid state in the system? How locked-down is the system with tests, types, and asserts? Do the tests use techniques like fuzzing? In the extreme case, has the program been proven correct by formal methods like Alloy?</li>
+    <li>Flexibility. Can the system be trivially extended? How easy is it to make a change? If I need to change something, how many different parts of the program do I need to touch in order to do so?</li>
+    <li>Portability. Is the system tied down to a particular operational environment (say, Microsoft Windows, or AWS)? If the system needs to be redeployed elsewhere, can that happen without a lot of engineering work?</li>
+    <li>Scalability. If traffic goes up 10x, will the system fall over? What about 100x? Does the system have to be over-provisioned or can it scale automatically? What bottlenecks will require engineering intervention?</li>
+    <li>Development speed. If I need to extend the system, how fast can it be done? Can most engineers work on it, or does it require a domain expert?</li>
+  </ul>
+</blockquote>]]></content><author><name></name></author><category term="software-engineering" /><category term="mastery-assessment" /><summary type="html"><![CDATA[There are a few orthogonal axes we use to measure a software engineer’s maturity. The one that easily comes to mind is technical knowledge—whether they have an accurate mental model of the language or technology they use, whether they can intuit the boundaries and long-term impact of decisions. Another axis is communication skill, whether they can understand and be understood. One can’t help but wonder: which ones do we often overlook?]]></summary></entry><entry><title type="html">Codex knows Python</title><link href="https://alexdong.com/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>https://alexdong.com/codex-knows-python</id><content type="html" xml:base="https://alexdong.com/codex-knows-python.html"><![CDATA[<p>I have been using <a href="/due-to-odd-jax-issues.html">Codex instead of Claude Code</a>
 for over a week now. One nice surprise is seeing how ubiquitously Python shows
 up as a sidekick, the scripting language Codex reaches for when it needs
 task-specific tools.</p>
@@ -655,103 +707,4 @@ autoregressive optimization objective.</p>
 
   <p>As always, the most important principle for understanding LLMs is that you
 should resist the temptation of anthropomorphizing them.</p>
-</blockquote>]]></content><author><name></name></author><category term="quotes" /><category term="prompt-engineering" /><summary type="html"><![CDATA[Chollet writes a great piece on why we even need prompt engineering and what’s the right mental model to have when we write prompts.]]></summary></entry><entry><title type="html">Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant</title><link href="https://alexdong.com/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html" rel="alternate" type="text/html" title="Iberian harvester ant queens produce offspring of their own species and of the builder harvester ant" /><published>2025-09-20T12:27:00+12:00</published><updated>2025-09-20T12:27:00+12:00</updated><id>https://alexdong.com/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant</id><content type="html" xml:base="https://alexdong.com/iberian-harvester-ant-queens-produce-offspring-of-their-own-species-and-of-the-builder-harvester-ant.html"><![CDATA[<p>Ants are amazing. From <a href="https://www.smithsonianmag.com/smart-news/these-ant-queens-seem-to-defy-biology-they-lay-eggs-that-hatch-into-another-species-180987292/">Smithsonian Magazine</a></p>
-
-<blockquote>
-  <p>the M. ibericus queens store the M. structor male’s sperm, then use it to fertilize some of the eggs they lay. Researchers think the M. ibericus queens remove their own genetic material from the eggs’ nuclei, so that when those eggs hatch, they effectively turn out to be M. structor male clones.
-…
-Even more perplexing is the fact that M. ibericus and M. structor are not closely related, evolutionarily speaking. The two species diverged more than five million years ago
-…
-Even more intriguing, the males of both species shared M. ibericus mitochondrial DNA, which is inherited from the mother, suggesting they had all been born from M. ibericus queens.</p>
-</blockquote>]]></content><author><name></name></author><category term="quotes" /><category term="ants" /><summary type="html"><![CDATA[Ants are amazing. From Smithsonian Magazine]]></summary></entry><entry><title type="html">Surprising GPT-OSS 20B 2-bit Quantization Performance</title><link href="https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance.html" rel="alternate" type="text/html" title="Surprising GPT-OSS 20B 2-bit Quantization Performance" /><published>2025-09-19T22:13:00+12:00</published><updated>2025-09-19T22:13:00+12:00</updated><id>https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance</id><content type="html" xml:base="https://alexdong.com/surprising-gpt-oss-20b-2-bit-quantization-performance.html"><![CDATA[<p>Today I benchmarked the GPT-OSS 20B model at different quantization levels using <a href="https://huggingface.co/unsloth/gpt-oss-20b-GGUF">unsloth/gpt-oss-20b-GGUF</a>. The results caught me off guard. Here are the details:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Quantization</th>
-      <th>Size</th>
-      <th>MAP@3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>gpt-oss-20b</td>
-      <td>Q2_K_L</td>
-      <td>11.8 GB</td>
-      <td>0.68</td>
-    </tr>
-    <tr>
-      <td>gpt-oss-20b</td>
-      <td>Q5_K_M</td>
-      <td>11.7 GB</td>
-      <td>0.53</td>
-    </tr>
-    <tr>
-      <td>gpt-oss-20b</td>
-      <td>Q3_K_M</td>
-      <td>11.5 GB</td>
-      <td>0.41</td>
-    </tr>
-    <tr>
-      <td>gpt-oss-20b</td>
-      <td>Q4_K_M</td>
-      <td>11.6 GB</td>
-      <td>0.41</td>
-    </tr>
-    <tr>
-      <td>gpt-oss-20b</td>
-      <td>Q4_K_XL</td>
-      <td>11.9 GB</td>
-      <td>0.61</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>As a reminder, <code class="language-plaintext highlighter-rouge">Q2_K_L</code> means 2-bit quantization with large context, <code class="language-plaintext highlighter-rouge">Q5_K_M</code>
-means 5-bit quantization with medium context, and so on. <code class="language-plaintext highlighter-rouge">MAP@3</code> is the metric
-I use to evaluate classification performance. I ran these tests on an NVIDIA RTX 3000 with 14GB VRAM.</p>
-
-<p>It’s somewhat understandable that lower precision models (like <code class="language-plaintext highlighter-rouge">Q2_K_L</code>)
-perform better in tasks requiring long context, as they can handle more tokens.
-Still, <code class="language-plaintext highlighter-rouge">Q2_K_L</code> managed to outperform <code class="language-plaintext highlighter-rouge">Q4_K_XL</code>, which has higher precision and
-a larger context window.</p>
-
-<p>Here is ChatGPT Pro’s explanation of how this could be possible:</p>
-
-<blockquote>
-  <h3 id="1-hardware-specific-optimizations">1. <strong>Hardware-Specific Optimizations</strong></h3>
-
-  <p>At very long context lengths, performance becomes memory-bandwidth-bound
-rather than compute-bound - the GPU constantly reads the entire KV cache from
-VRAM, and a larger cache means more data to move, which can slow down
-tokens-per-second output. With 2-bit quantization, you’re moving less data
-per operation, which can result in:</p>
-  <ul>
-    <li><strong>Better cache utilization</strong>: Smaller models fit better in CPU/GPU cache
-hierarchies</li>
-    <li><strong>Reduced memory bandwidth pressure</strong>: Less data transfer between memory
-and compute units</li>
-    <li><strong>Higher throughput</strong> on memory-constrained systems, which can translate into
-better MAP@3 scores in practice</li>
-  </ul>
-
-  <h3 id="2-special-properties-of-gpt-oss-architecture">2. <strong>Special Properties of GPT-OSS Architecture</strong></h3>
-
-  <p>According to Unsloth documentation, any quant smaller than F16, including
-2-bit, has minimal accuracy loss for GPT-OSS models because only some parts
-(e.g., attention layers) are lower bit while most remain full-precision. This
-is unique to the MoE architecture where over 90% of the models’ total
-parameter count consists of MoE layers using MXFP4 format (4.25 bits per
-parameter).</p>
-</blockquote>
-
-<p>I’m not sure if the explanation fully accounts for the performance difference,
-but it seems plausible that the memory headroom might have played a far more
-significant role compared to the precision difference. I’m curious to see if
-others have observed similar results with different models or setups. If you
-have, please drop me an email. I’d love to hear about it!</p>
-
-<p>I suppose the key takeaway is that we really need to benchmark models in the
-specific context and task we care about, rather than relying on general
-assumptions about precision and context size.</p>]]></content><author><name></name></author><category term="local-ai" /><category term="open-ai" /><category term="ai-optimization" /><summary type="html"><![CDATA[Today I benchmarked the GPT-OSS 20B model at different quantization levels using unsloth/gpt-oss-20b-GGUF. The results caught me off guard. Here are the details:]]></summary></entry></feed>
+</blockquote>]]></content><author><name></name></author><category term="quotes" /><category term="prompt-engineering" /><summary type="html"><![CDATA[Chollet writes a great piece on why we even need prompt engineering and what’s the right mental model to have when we write prompts.]]></summary></entry></feed>
