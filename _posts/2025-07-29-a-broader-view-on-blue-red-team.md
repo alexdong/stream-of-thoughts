@@ -93,12 +93,6 @@ coming from a mathematician rather than a software engineer:
 This suggests a new category of AI products focused on coaching and feedback
 rather than direct output generation. 
 
-[alexdong/high-taste](https://github.com/alexdong/high-taste) is my small
-experiment in this direction—using AI to develop coding judgment rather than
-generate code. Now imagine red team AI across every domain: tools that
-critique your arguments, challenge your assumptions, stress-test your
-strategies. Not to replace expertise, but to forge it.
-
 AI's capabilities remain frustratingly jagged—brilliant at some tasks, 
 unreliable at others. But perhaps that's exactly why red team AI works: 
 it sidesteps AI's weaknesses while amplifying what it does well. Maybe the 

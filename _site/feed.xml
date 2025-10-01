@@ -1,98 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-28T21:42:17+13:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Codex knows Python</title><link href="http://localhost:4000/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>http://localhost:4000/codex-knows-python</id><content type="html" xml:base="http://localhost:4000/codex-knows-python.html"><![CDATA[<p>I have been using <a href="/due-to-odd-jax-issues.html">Codex instead of Claude Code</a>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-01T14:29:15+13:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Codex knows Python</title><link href="http://localhost:4000/codex-knows-python.html" rel="alternate" type="text/html" title="Codex knows Python" /><published>2025-09-28T21:07:00+13:00</published><updated>2025-09-28T21:07:00+13:00</updated><id>http://localhost:4000/codex-knows-python</id><content type="html" xml:base="http://localhost:4000/codex-knows-python.html"><![CDATA[I have been using [Codex instead of Claude Code](/due-to-odd-jax-issues.html)
 for over a week now. One nice surprise is seeing how ubiquitously Python shows
 up as a sidekick, the scripting language Codex reaches for when it needs
-task-specific tools.</p>
+task-specific tools.
 
-<p>Here are two examples showing Codex writing purpose-built Python scripts
-rather than reaching for pre-built MCP servers.</p>
+Here are two examples showing Codex writing purpose-built Python scripts
+rather than reaching for pre-built MCP servers.
 
-<h2 id="example-1-what-are-the-types-of-a-python-package">Example 1: What are the types of a Python package</h2>
+## Example 1: What are the types of a Python package
 
-<p>Many Python packages don’t have type annotations. If I want to know how to call
+Many Python packages don't have type annotations. If I want to know how to call
 a function in one, I either try to find the answer in the documentation or read
 the source code. Below is a Codex-generated script that stepped in without
 prompting. It first installs the package into the system temporary directory,
-then uses <code class="language-plaintext highlighter-rouge">inspect</code> to extract type information from that package. Codex then
-picks up the output from the script to answer my question.</p>
+then uses `inspect` to extract type information from that package. Codex then
+picks up the output from the script to answer my question.
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>openevolve <span class="nt">--target</span> /tmp/openevolve
+```bash
+pip install openevolve --target /tmp/openevolve
 
-<span class="nv">PYTHONPATH</span><span class="o">=</span>/tmp/openevolve python - <span class="o">&lt;&lt;</span><span class="sh">'</span><span class="no">PY</span><span class="sh">'
+PYTHONPATH=/tmp/openevolve python - <<'PY'
 import inspect
 from openevolve import OpenEvolve
 
 print(OpenEvolve)
 print(OpenEvolve.run)
 print(inspect.getsource(OpenEvolve.run))
-</span><span class="no">PY
-</span></code></pre></div></div>
+PY
+```
 
-<h2 id="example-2-quick-and-dirty-docs-link-lister">Example 2: Quick-and-dirty docs link lister</h2>
+## Example 2: Quick-and-dirty docs link lister
 
-<p>I asked Codex to find all links on the topic of “Batch Processing” in Modal’s
+I asked Codex to find all links on the topic of "Batch Processing" in Modal's
 docs. Instead of using a web search tool, Codex wrote a quick Python script to
-scrape the links from <code class="language-plaintext highlighter-rouge">https://modal.com/docs</code> and then used regular
-expressions to find the topics I was looking for.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="s">"""Quick-and-dirty Modal docs link lister."""</span>
-
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">ssl</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
+scrape the links from `https://modal.com/docs` and then used regular
+expressions to find the topics I was looking for.
 
 
-<span class="k">def</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-  <span class="s">"""Download a page as text, skipping certificate checks for convenience."""</span>
-  <span class="n">ssl</span><span class="p">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">_create_unverified_context</span>  <span class="c1"># nosec - CLI helper
-</span>  <span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>  <span class="c1"># noqa: S310 (urllib ok for one-off script)
-</span>      <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span>
+```python
+#!/usr/bin/env python3
+"""Quick-and-dirty Modal docs link lister."""
+
+from __future__ import annotations
+
+import re
+import ssl
+import urllib.request
 
 
-<span class="k">def</span> <span class="nf">list_docs</span><span class="p">(</span><span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-  <span class="s">"""Extract unique documentation links matching `pattern`."""</span>
-  <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
+def fetch_text(url: str) -> str:
+  """Download a page as text, skipping certificate checks for convenience."""
+  ssl._create_default_https_context = ssl._create_unverified_context  # nosec - CLI helper
+  with urllib.request.urlopen(url) as resp:  # noqa: S310 (urllib ok for one-off script)
+      return resp.read().decode("utf-8")
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-  <span class="n">base</span> <span class="o">=</span> <span class="s">"https://modal.com"</span>
-  <span class="n">docs_root</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s">/docs"</span>
+def list_docs(pattern: str, text: str) -> list[str]:
+  """Extract unique documentation links matching `pattern`."""
+  matches = re.findall(pattern, text)
+  return sorted(set(matches))
 
-  <span class="c1"># Fetch the main docs page and pull out top-level /docs/... links.
-</span>  <span class="n">root_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="n">docs_root</span><span class="p">)</span>
-  <span class="n">top_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/[^"]+)"'</span><span class="p">,</span> <span class="n">root_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"Top-level docs links:"</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">top_links</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 
-  <span class="c1"># Drill into the Guide section to enumerate guide topics.
-</span>  <span class="n">guide_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/guide"</span><span class="p">)</span>
-  <span class="n">guide_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/guide/[^"]+)"'</span><span class="p">,</span> <span class="n">guide_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Guide topics:"</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">guide_links</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+if __name__ == "__main__":
+  base = "https://modal.com"
+  docs_root = f"{base}/docs"
 
-  <span class="c1"># Example: fetch the CLI reference page and show any code snippets.
-</span>  <span class="n">cli_app_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/reference/cli/app"</span><span class="p">)</span>
-  <span class="n">code_snippets</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'&lt;code class="[^"]*"&gt;(modal [^&lt;]+)&lt;/code&gt;'</span><span class="p">,</span> <span class="n">cli_app_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">CLI `modal app` snippets:"</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">snippet</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">code_snippets</span><span class="p">)):</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div></div>
+  # Fetch the main docs page and pull out top-level /docs/... links.
+  root_html = fetch_text(docs_root)
+  top_links = list_docs(r'href="(/docs/[^"]+)"', root_html)
+  print("Top-level docs links:")
+  for href in top_links:
+      print(f"  {base}{href}")
 
-<p>Groundbreaking? Not really. Yet it points to a potential future where LLMs
+  # Drill into the Guide section to enumerate guide topics.
+  guide_html = fetch_text(f"{docs_root}/guide")
+  guide_links = list_docs(r'href="(/docs/guide/[^"]+)"', guide_html)
+  print("\nGuide topics:")
+  for href in guide_links:
+      print(f"  {base}{href}")
+
+  # Example: fetch the CLI reference page and show any code snippets.
+  cli_app_html = fetch_text(f"{docs_root}/reference/cli/app")
+  code_snippets = re.findall(r'<code class="[^"]*">(modal [^<]+)</code>', cli_app_html)
+  print("\nCLI `modal app` snippets:")
+  for snippet in sorted(set(code_snippets)):
+      print(f"  {snippet}")
+```
+
+Groundbreaking? Not really. Yet it points to a potential future where LLMs
 increasingly build their own deterministic tools to augment their capabilities
 and interact with the physical world. Our job as a hybrid human-AI team is to
 provide the right abstractions, libraries, or even SDKs that LLMs can use to
-build those tools themselves.</p>
+build those tools themselves.
 
-<p>Maybe in the not-too-distant future, in addition to <a href="https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer">Software Tools
-Engineer</a>
-who builds software for other humans, we’ll have a new position called
-<code class="language-plaintext highlighter-rouge">AI Tools Engineer</code> who builds libraries primarily for LLMs.</p>]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is seeing how ubiquitously Python shows up as a sidekick, the scripting language Codex reaches for when it needs task-specific tools.]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+12:00</published><updated>2025-09-27T21:56:00+12:00</updated><id>http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[[Richard Sutton](https://www.dwarkesh.com/p/richard-sutton) is a Turing Award
+Maybe in the not-too-distant future, in addition to [Software Tools
+Engineer](https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer)
+who builds software for other humans, we'll have a new position called
+`AI Tools Engineer` who builds libraries primarily for LLMs.]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is seeing how ubiquitously Python shows up as a sidekick, the scripting language Codex reaches for when it needs task-specific tools.]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+12:00</published><updated>2025-09-27T21:56:00+12:00</updated><id>http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="http://localhost:4000/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[[Richard Sutton](https://www.dwarkesh.com/p/richard-sutton) is a Turing Award
 winner and one of the founding fathers of Reinforcement Learning, so I listened
 to his interview on [Dwarkesh
 Podcast](https://www.dwarkesh.com/p/richard-sutton) three times, and what
