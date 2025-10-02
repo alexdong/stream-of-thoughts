@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-09-30T17:15:06+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Mental models for AI along the ambiguous ladder</title><link href="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html" rel="alternate" type="text/html" title="Mental models for AI along the ambiguous ladder" /><published>2025-09-30T16:45:00+13:00</published><updated>2025-09-30T16:45:00+13:00</updated><id>https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder</id><content type="html" xml:base="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html"><![CDATA[<p>In <a href="https://chrisloy.dev/post/2024/12/12/comfort-with-ambiguity">Chris Loyd’s recent post</a>, he 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-02T22:41:38+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Make sense of “Codex produces 13x Merged PR than Claude Code”</title><link href="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" rel="alternate" type="text/html" title="Make sense of “Codex produces 13x Merged PR than Claude Code”" /><published>2025-10-02T21:51:00+13:00</published><updated>2025-10-02T21:51:00+13:00</updated><id>https://alexdong.com/pr-from-codex-is-10x-than-claude-code</id><content type="html" xml:base="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"><![CDATA[<p>I just saw these numbers in <a href="https://simonwillison.net/2025/Oct/1/prarena/">Simon Willison’s write-up</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Search term</th>
+      <th>Total PRs</th>
+      <th>Merged PRs</th>
+      <th>% Merged</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Code</td>
+      <td>is:pr in:body “Generated with Claude Code”</td>
+      <td>146,000</td>
+      <td>123,000</td>
+      <td>84.2%</td>
+    </tr>
+    <tr>
+      <td>GitHub Copilot</td>
+      <td>is:pr author:copilot-swe-agent[bot]</td>
+      <td>247,000</td>
+      <td>152,000</td>
+      <td>61.5%</td>
+    </tr>
+    <tr>
+      <td>Codex Cloud</td>
+      <td>is:pr in:body “chatgpt.com” label:codex</td>
+      <td>1,900,000</td>
+      <td>1,600,000</td>
+      <td>84.2%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I <a href="https://alexdong.com/due-to-odd-jax-issues.html">switched from Claude Code to Codex</a> two weeks ago. I do prefer Codex, but seeing it claim 13x more merged PRs than Claude still made me pause.</p>
+
+<p>Before reading that as a productivity verdict, it’s worth sanity-checking the size of each user base. ChatGPT reportedly has 700M weekly users, while Claude draws about 12M (<a href="https://www.zdnet.com/article/how-people-actually-use-chatgpt-vs-claude-and-what-the-differences-tell-us/">ZDNet</a>). Coding is the top use case for Claude at 36%, whereas ChatGPT sits near 4% (<a href="https://decision.substack.com/p/how-does-the-world-use-chatgpt-and">decision.substack.com</a>).</p>
+
+<p>If we use those ratios as a rough proxy, Claude ends up with roughly 3.4M weekly coding users (12M * 36%) and Codex lands closer to 28M (700M * 4%). That would mean Codex has about eight times as many developers creating PRs using it. Even after accounting for that, Codex users would still appear to produce about 60% more Merged PRs than Claude users (13x vs. 8x).</p>
+
+<p>This is the first cross-service metric I’ve seen that hints at Codex users shipping more merged PRs than Claude. Whether that’s down to product quality, distribution, or different usage patterns is still an open question. But it’s a striking data point either way.</p>]]></content><author><name></name></author><category term="open-ai" /><category term="anthropic" /><summary type="html"><![CDATA[I just saw these numbers in Simon Willison’s write-up:]]></summary></entry><entry><title type="html">Mental models for AI along the ambiguous ladder</title><link href="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html" rel="alternate" type="text/html" title="Mental models for AI along the ambiguous ladder" /><published>2025-09-30T16:45:00+13:00</published><updated>2025-09-30T16:45:00+13:00</updated><id>https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder</id><content type="html" xml:base="https://alexdong.com/mental-models-for-ai-along-the-ambiguous-ladder.html"><![CDATA[<p>In <a href="https://chrisloy.dev/post/2024/12/12/comfort-with-ambiguity">Chris Loyd’s recent post</a>, he 
 mentioned using a “ladder of ambiguity” to frame software engineer career progression in the
 context of comfort with ambiguity.</p>
 
@@ -674,37 +717,4 @@ such as hardware redundancy.</p>
 <p>In the age of AI, with a clear traceback of what went wrong, and with the AI
 automatically adding tests and fixing bugs, the “fail fast and noisily”
 approach enables resilient systems that are easy to maintain. You just need to
-get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry><entry><title type="html">Resist the tempatation to anthropomorphizing LLM</title><link href="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html" rel="alternate" type="text/html" title="Resist the tempatation to anthropomorphizing LLM" /><published>2025-09-21T20:33:00+12:00</published><updated>2025-09-21T20:33:00+12:00</updated><id>https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm</id><content type="html" xml:base="https://alexdong.com/resist-the-tempatation-to-anthropomorphizing-llm.html"><![CDATA[<p><a href="https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering">Chollet</a> 
-writes a great piece on why we even need prompt engineering and what’s the right 
-mental model to have when we write prompts.</p>
-
-<p>Instead of thinking of LLMs as intelligent agents that understand our intent,
-we should think of them as massive databases of programs, and our prompts are
-just keys to look up those programs.  (Emphasis mine.)</p>
-
-<blockquote>
-  <p>There are thousands of variations you could have used, each resulting in a
-similar-yet-slightly-different program. And that’s why prompt engineering is
-needed. There is no a-priori reason why your first, naive program key would
-result in the optimal program for the task. The LLM is not going to
-“understand” what you meant and then perform it in the best possible way —
-it’s merely going to fetch the program that your prompt points to, among many
-possible locations you could have landed on.</p>
-
-  <p><strong>Prompt engineering is the process of searching through program space to find
-the program that empirically seems to perform best on your target task.</strong> It’s
-no different than trying different keywords when doing a Google search for a
-piece of software.</p>
-
-  <p>If LLMs actually understood what you told them, there would be no need for
-this search process, since the amount of information conveyed about your
-target task does not change whether your prompt uses the word “rewrite”
-instead “rephrase”, or whether you prefix your prompt with “think steps by
-steps”. Never assume that the LLM “gets it” the first time — keep in mind
-that your prompt is but an address in an infinite ocean of programs, all
-captured as a by-product of organizing tokens into a vector space via an
-autoregressive optimization objective.</p>
-
-  <p>As always, the most important principle for understanding LLMs is that you
-should resist the temptation of anthropomorphizing them.</p>
-</blockquote>]]></content><author><name></name></author><category term="quotes" /><category term="prompt-engineering" /><summary type="html"><![CDATA[Chollet writes a great piece on why we even need prompt engineering and what’s the right mental model to have when we write prompts.]]></summary></entry></feed>
+get the architecture pieces right, and watch the AI do its magic.</p>]]></content><author><name></name></author><category term="software-engineering" /><summary type="html"><![CDATA[If you ask me what is the one single secret of writing reliable and maintainable software, I’d say “Let your code crash noisily and fast.” A corollary of this is “defensive programming is a practice that is wrong.”]]></summary></entry></feed>

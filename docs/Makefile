@@ -40,9 +40,13 @@ publish: ## Build and deploy the site
 	bundle exec jekyll build -d docs
 	echo "alexdong.com" > docs/CNAME
 	git add .
-	git commit -m "new post"
-	git push
-	@echo "Site published successfully!"
+	@if git diff --cached --quiet; then \
+		echo "No changes to publish."; \
+	else \
+		git commit -m "new post"; \
+		git push; \
+		echo "Site published successfully!"; \
+	fi
 
 build: ## Build the site into docs/ without deploying
 	@echo "Building site into docs/..."
