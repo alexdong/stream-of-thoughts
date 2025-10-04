@@ -65,32 +65,32 @@ and it really does not care about the objective function.</li>
 
 <p>Here is the end-to-end flow you may find useful to refer to:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
 
-<span class="kn">import</span> <span class="nn">optuna</span>
-<span class="kn">from</span> <span class="nn">annotated_types</span> <span class="kn">import</span> <span class="n">Gt</span><span class="p">,</span> <span class="n">Lt</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">import</span> <span class="n">optuna</span>
+<span class="kn">from</span> <span class="n">annotated_types</span> <span class="kn">import</span> <span class="n">Gt</span><span class="p">,</span> <span class="n">Lt</span>
+<span class="kn">from</span> <span class="n">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
-<span class="kn">from</span> <span class="nn">pydantic_optuna_bridge</span> <span class="kn">import</span> <span class="n">optuna_config</span>
+<span class="kn">from</span> <span class="n">pydantic_optuna_bridge</span> <span class="kn">import</span> <span class="n">optuna_config</span>
 
 
 <span class="k">class</span> <span class="nc">Optimizer</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-    <span class="n">ADAM</span> <span class="o">=</span> <span class="s">"adam"</span>
-    <span class="n">SGD</span> <span class="o">=</span> <span class="s">"sgd"</span>
-    <span class="n">RMSPROP</span> <span class="o">=</span> <span class="s">"rmsprop"</span>
+    <span class="n">ADAM</span> <span class="o">=</span> <span class="sh">"</span><span class="s">adam</span><span class="sh">"</span>
+    <span class="n">SGD</span> <span class="o">=</span> <span class="sh">"</span><span class="s">sgd</span><span class="sh">"</span>
+    <span class="n">RMSPROP</span> <span class="o">=</span> <span class="sh">"</span><span class="s">rmsprop</span><span class="sh">"</span>
 
 
-<span class="o">@</span><span class="n">optuna_config</span><span class="p">(</span><span class="n">log_scale_fields</span><span class="o">=</span><span class="p">{</span><span class="s">"learning_rate"</span><span class="p">})</span>
+<span class="nd">@optuna_config</span><span class="p">(</span><span class="n">log_scale_fields</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">learning_rate</span><span class="sh">"</span><span class="p">})</span>
 <span class="k">class</span> <span class="nc">TrainingConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">optimizer</span><span class="p">:</span> <span class="n">Optimizer</span>
-    <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Gt</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">),</span> <span class="n">Lt</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)]</span>
-    <span class="n">hidden_units</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Gt</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">Lt</span><span class="p">(</span><span class="mi">256</span><span class="p">)]</span>
+    <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nc">Gt</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">),</span> <span class="nc">Lt</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)]</span>
+    <span class="n">hidden_units</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nc">Gt</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="nc">Lt</span><span class="p">(</span><span class="mi">256</span><span class="p">)]</span>
 
 
 <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">:</span> <span class="n">optuna</span><span class="p">.</span><span class="n">trial</span><span class="p">.</span><span class="n">Trial</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="n">TrainingConfig</span><span class="p">.</span><span class="n">from_optuna_trial</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">do_training_run</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">TrainingConfig</span><span class="p">.</span><span class="nf">from_optuna_trial</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">do_training_run</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If you use Optuna and already lean on Pydantic to validate configs, this bridge

@@ -37,8 +37,8 @@ new: ## Create a new blog post with template
 
 publish: ## Build and deploy the site
 	@echo "Building and deploying site..."
-	bundle exec jekyll build -d docs
-	echo "alexdong.com" > docs/CNAME
+	@SASS_SILENCE_DEPRECATIONS=* bundle exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
+	@echo "alexdong.com" > docs/CNAME
 	git add .
 	@if git diff --cached --quiet; then \
 		echo "No changes to publish."; \
@@ -50,8 +50,8 @@ publish: ## Build and deploy the site
 
 build: ## Build the site into docs/ without deploying
 	@echo "Building site into docs/..."
-	bundle exec jekyll build -d docs
-	echo "alexdong.com" > docs/CNAME
+	@SASS_SILENCE_DEPRECATIONS=* bundle exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
+	@echo "alexdong.com" > docs/CNAME
 	@echo "Site built at docs/"
 
 dev: ## Start development server

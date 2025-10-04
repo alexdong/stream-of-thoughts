@@ -77,52 +77,52 @@ scrape the links from <code class="language-plaintext highlighter-rouge">https:/
 expressions to find the topics I was looking for.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="s">"""Quick-and-dirty Modal docs link lister."""</span>
+</span><span class="sh">"""</span><span class="s">Quick-and-dirty Modal docs link lister.</span><span class="sh">"""</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="n">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">ssl</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="n">re</span>
+<span class="kn">import</span> <span class="n">ssl</span>
+<span class="kn">import</span> <span class="n">urllib.request</span>
 
 
 <span class="k">def</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-  <span class="s">"""Download a page as text, skipping certificate checks for convenience."""</span>
+  <span class="sh">"""</span><span class="s">Download a page as text, skipping certificate checks for convenience.</span><span class="sh">"""</span>
   <span class="n">ssl</span><span class="p">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">_create_unverified_context</span>  <span class="c1"># nosec - CLI helper
-</span>  <span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>  <span class="c1"># noqa: S310 (urllib ok for one-off script)
-</span>      <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span>
+</span>  <span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="nf">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>  <span class="c1"># noqa: S310 (urllib ok for one-off script)
+</span>      <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="nf">read</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">"</span><span class="s">utf-8</span><span class="sh">"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">list_docs</span><span class="p">(</span><span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-  <span class="s">"""Extract unique documentation links matching `pattern`."""</span>
-  <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
+  <span class="sh">"""</span><span class="s">Extract unique documentation links matching `pattern`.</span><span class="sh">"""</span>
+  <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nf">sorted</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-  <span class="n">base</span> <span class="o">=</span> <span class="s">"https://modal.com"</span>
-  <span class="n">docs_root</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s">/docs"</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+  <span class="n">base</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://modal.com</span><span class="sh">"</span>
+  <span class="n">docs_root</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s">/docs</span><span class="sh">"</span>
 
   <span class="c1"># Fetch the main docs page and pull out top-level /docs/... links.
-</span>  <span class="n">root_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="n">docs_root</span><span class="p">)</span>
-  <span class="n">top_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/[^"]+)"'</span><span class="p">,</span> <span class="n">root_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"Top-level docs links:"</span><span class="p">)</span>
+</span>  <span class="n">root_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="n">docs_root</span><span class="p">)</span>
+  <span class="n">top_links</span> <span class="o">=</span> <span class="nf">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">href=</span><span class="sh">"</span><span class="s">(/docs/[^</span><span class="sh">"</span><span class="s">]+)</span><span class="sh">"'</span><span class="p">,</span> <span class="n">root_html</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Top-level docs links:</span><span class="sh">"</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">top_links</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
   <span class="c1"># Drill into the Guide section to enumerate guide topics.
-</span>  <span class="n">guide_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/guide"</span><span class="p">)</span>
-  <span class="n">guide_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/guide/[^"]+)"'</span><span class="p">,</span> <span class="n">guide_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Guide topics:"</span><span class="p">)</span>
+</span>  <span class="n">guide_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/guide</span><span class="sh">"</span><span class="p">)</span>
+  <span class="n">guide_links</span> <span class="o">=</span> <span class="nf">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">href=</span><span class="sh">"</span><span class="s">(/docs/guide/[^</span><span class="sh">"</span><span class="s">]+)</span><span class="sh">"'</span><span class="p">,</span> <span class="n">guide_html</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Guide topics:</span><span class="sh">"</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">guide_links</span><span class="p">:</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
   <span class="c1"># Example: fetch the CLI reference page and show any code snippets.
-</span>  <span class="n">cli_app_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/reference/cli/app"</span><span class="p">)</span>
-  <span class="n">code_snippets</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'&lt;code class="[^"]*"&gt;(modal [^&lt;]+)&lt;/code&gt;'</span><span class="p">,</span> <span class="n">cli_app_html</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">CLI `modal app` snippets:"</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">snippet</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">code_snippets</span><span class="p">)):</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</span>  <span class="n">cli_app_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/reference/cli/app</span><span class="sh">"</span><span class="p">)</span>
+  <span class="n">code_snippets</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">&lt;code class=</span><span class="sh">"</span><span class="s">[^</span><span class="sh">"</span><span class="s">]*</span><span class="sh">"</span><span class="s">&gt;(modal [^&lt;]+)&lt;/code&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="n">cli_app_html</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">CLI `modal app` snippets:</span><span class="sh">"</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">snippet</span> <span class="ow">in</span> <span class="nf">sorted</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">code_snippets</span><span class="p">)):</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Groundbreaking? Not really. Yet it points to a potential future where LLMs
