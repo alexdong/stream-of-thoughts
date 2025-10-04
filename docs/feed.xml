@@ -1,64 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-04T18:44:18+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-04T18:44:40+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
 
 <p>I am a fan.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qjPH9njnaVU?si=JnSWhbkusfcuulmd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.]]></summary></entry><entry><title type="html">Make sense of “Codex produces 13x Merged PR than Claude Code”</title><link href="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" rel="alternate" type="text/html" title="Make sense of “Codex produces 13x Merged PR than Claude Code”" /><published>2025-10-02T21:51:00+13:00</published><updated>2025-10-02T21:51:00+13:00</updated><id>https://alexdong.com/pr-from-codex-is-10x-than-claude-code</id><content type="html" xml:base="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"><![CDATA[<p>I just saw these numbers in <a href="https://simonwillison.net/2025/Oct/1/prarena/">Simon Willison’s write-up</a>:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tool</th>
-      <th>Search term</th>
-      <th>Total PRs</th>
-      <th>Merged PRs</th>
-      <th>% Merged</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Claude Code</td>
-      <td>is:pr in:body “Generated with Claude Code”</td>
-      <td>146,000</td>
-      <td>123,000</td>
-      <td>84.2%</td>
-    </tr>
-    <tr>
-      <td>GitHub Copilot</td>
-      <td>is:pr author:copilot-swe-agent[bot]</td>
-      <td>247,000</td>
-      <td>152,000</td>
-      <td>61.5%</td>
-    </tr>
-    <tr>
-      <td>Codex Cloud</td>
-      <td>is:pr in:body “chatgpt.com” label:codex</td>
-      <td>1,900,000</td>
-      <td>1,600,000</td>
-      <td>84.2%</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>I <a href="https://alexdong.com/due-to-odd-jax-issues.html">switched from Claude Code to Codex</a> two weeks ago. I do prefer Codex, but seeing it claim 13x more merged PRs than Claude still made me pause.</p>
-
-<p>Before reading that as a productivity verdict, it’s worth sanity-checking the size of each user base. ChatGPT reportedly has 700M weekly users, while Claude draws about 12M (<a href="https://www.zdnet.com/article/how-people-actually-use-chatgpt-vs-claude-and-what-the-differences-tell-us/">ZDNet</a>). Coding is the top use case for Claude at 36%, whereas ChatGPT sits near 4% (<a href="https://decision.substack.com/p/how-does-the-world-use-chatgpt-and">decision.substack.com</a>).</p>
-
-<p>If we use those ratios as a rough proxy, Claude ends up with roughly 3.4M weekly coding users (12M * 36%) and Codex lands closer to 28M (700M * 4%). That would mean Codex has about eight times as many developers creating PRs using it. Even after accounting for that, Codex users would still appear to produce about 60% more Merged PRs than Claude users (13x vs. 8x).</p>
-
-<p>This is the first cross-service metric I’ve seen that hints at Codex users shipping more merged PRs than Claude. Whether that’s down to product quality, distribution, or different usage patterns is still an open question. But it’s a striking data point either way.</p>]]></content><author><name></name></author><category term="open-ai" /><category term="anthropic" /><summary type="html"><![CDATA[I just saw these numbers in Simon Willison’s write-up:]]></summary></entry><entry><title type="html">Agentic Loop Design Long Term Memory And Resets</title><link href="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html" rel="alternate" type="text/html" title="Agentic Loop Design Long Term Memory And Resets" /><published>2025-10-02T00:00:00+13:00</published><updated>2025-10-02T00:00:00+13:00</updated><id>https://alexdong.com/agentic-loop-design-long-term-memory-and-resets</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html"><![CDATA[<p>-
-layout: post
-title: “Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets”
-date: 2025-10-03 19:20
-comments: true
-categories:</p>
-<ul>
-  <li>agentic</li>
-  <li>
-    <h2 id="software-design">software-design</h2>
-  </li>
-</ul>
-
-<p>When a session drags on and the context window fills up, I often watch the
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qjPH9njnaVU?si=JnSWhbkusfcuulmd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.]]></summary></entry><entry><title type="html">Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets</title><link href="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html" rel="alternate" type="text/html" title="Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets" /><published>2025-10-03T19:20:00+13:00</published><updated>2025-10-03T19:20:00+13:00</updated><id>https://alexdong.com/agentic-loop-design-long-term-memory-and-resets</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html"><![CDATA[<p>When a session drags on and the context window fills up, I often watch the
 models start to get lazy. They drop earlier decisions, skim the edges, and
 sometimes declare “all tests are passing” after touching only part of the
 suite.</p>
@@ -210,7 +154,50 @@ Execution rules:
 <p>This rhythm, write, compact, reset, load from PLAN.md, keeps the agent
 sharp even on long-running task. Each task gets to benefit from the 
 full context window, and the model never has to guess what it was doing
-last time.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[- layout: post title: “Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets” date: 2025-10-03 19:20 comments: true categories: agentic software-design]]></summary></entry><entry><title type="html">Agentic Loop Design</title><link href="https://alexdong.com/agentic-loop-design.html" rel="alternate" type="text/html" title="Agentic Loop Design" /><published>2025-10-01T22:28:00+13:00</published><updated>2025-10-01T22:28:00+13:00</updated><id>https://alexdong.com/agentic-loop-design</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design.html"><![CDATA[<p>Even if you have defined the <a href="/mental-models-for-ai-along-the-ambiguous-ladder.html">problem, solution, or implementation</a> clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.</p>
+last time.</p>]]></content><author><name></name></author><category term="agentic" /><category term="software-design" /><summary type="html"><![CDATA[When a session drags on and the context window fills up, I often watch the models start to get lazy. They drop earlier decisions, skim the edges, and sometimes declare “all tests are passing” after touching only part of the suite.]]></summary></entry><entry><title type="html">Make sense of “Codex produces 13x Merged PR than Claude Code”</title><link href="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" rel="alternate" type="text/html" title="Make sense of “Codex produces 13x Merged PR than Claude Code”" /><published>2025-10-02T21:51:00+13:00</published><updated>2025-10-02T21:51:00+13:00</updated><id>https://alexdong.com/pr-from-codex-is-10x-than-claude-code</id><content type="html" xml:base="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"><![CDATA[<p>I just saw these numbers in <a href="https://simonwillison.net/2025/Oct/1/prarena/">Simon Willison’s write-up</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Search term</th>
+      <th>Total PRs</th>
+      <th>Merged PRs</th>
+      <th>% Merged</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Code</td>
+      <td>is:pr in:body “Generated with Claude Code”</td>
+      <td>146,000</td>
+      <td>123,000</td>
+      <td>84.2%</td>
+    </tr>
+    <tr>
+      <td>GitHub Copilot</td>
+      <td>is:pr author:copilot-swe-agent[bot]</td>
+      <td>247,000</td>
+      <td>152,000</td>
+      <td>61.5%</td>
+    </tr>
+    <tr>
+      <td>Codex Cloud</td>
+      <td>is:pr in:body “chatgpt.com” label:codex</td>
+      <td>1,900,000</td>
+      <td>1,600,000</td>
+      <td>84.2%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I <a href="https://alexdong.com/due-to-odd-jax-issues.html">switched from Claude Code to Codex</a> two weeks ago. I do prefer Codex, but seeing it claim 13x more merged PRs than Claude still made me pause.</p>
+
+<p>Before reading that as a productivity verdict, it’s worth sanity-checking the size of each user base. ChatGPT reportedly has 700M weekly users, while Claude draws about 12M (<a href="https://www.zdnet.com/article/how-people-actually-use-chatgpt-vs-claude-and-what-the-differences-tell-us/">ZDNet</a>). Coding is the top use case for Claude at 36%, whereas ChatGPT sits near 4% (<a href="https://decision.substack.com/p/how-does-the-world-use-chatgpt-and">decision.substack.com</a>).</p>
+
+<p>If we use those ratios as a rough proxy, Claude ends up with roughly 3.4M weekly coding users (12M * 36%) and Codex lands closer to 28M (700M * 4%). That would mean Codex has about eight times as many developers creating PRs using it. Even after accounting for that, Codex users would still appear to produce about 60% more Merged PRs than Claude users (13x vs. 8x).</p>
+
+<p>This is the first cross-service metric I’ve seen that hints at Codex users shipping more merged PRs than Claude. Whether that’s down to product quality, distribution, or different usage patterns is still an open question. But it’s a striking data point either way.</p>]]></content><author><name></name></author><category term="open-ai" /><category term="anthropic" /><summary type="html"><![CDATA[I just saw these numbers in Simon Willison’s write-up:]]></summary></entry><entry><title type="html">Agentic Loop Design</title><link href="https://alexdong.com/agentic-loop-design.html" rel="alternate" type="text/html" title="Agentic Loop Design" /><published>2025-10-01T22:28:00+13:00</published><updated>2025-10-01T22:28:00+13:00</updated><id>https://alexdong.com/agentic-loop-design</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design.html"><![CDATA[<p>Even if you have defined the <a href="/mental-models-for-ai-along-the-ambiguous-ladder.html">problem, solution, or implementation</a> clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.</p>
 
 <p><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/">Simon Willison’s recent post on Agentic Loop Design</a> gave us a useful framework for thinking about how we can engineer past this obstacle. The core idea is similar to <a href="/llm-evolutionary-test-time-compute.html">Evolutionary Test-Time Compute</a>, both trade time and tokens for quality.</p>
 
