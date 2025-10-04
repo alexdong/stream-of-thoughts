@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Make sense of “Codex produces 13x Merged PR than Claude Code” | Alex Dong’s Blog</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Make sense of “Codex produces 13x Merged PR than Claude Code”" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I just saw these numbers in Simon Willison’s write-up:" />
+<meta property="og:description" content="I just saw these numbers in Simon Willison’s write-up:" />
+<link rel="canonical" href="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" />
+<meta property="og:url" content="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" />
+<meta property="og:site_name" content="Alex Dong’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-02T21:51:00+13:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Make sense of “Codex produces 13x Merged PR than Claude Code”" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-02T21:51:00+13:00","datePublished":"2025-10-02T21:51:00+13:00","description":"I just saw these numbers in Simon Willison’s write-up:","headline":"Make sense of “Codex produces 13x Merged PR than Claude Code”","mainEntityOfPage":{"@type":"WebPage","@id":"https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"},"url":"https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.8/index.min.css">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://alexdong.com/feed.xml" title="Alex Dong&apos;s Blog" /></head><body><header class="site-header" role="banner">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="site-title" rel="author" href="/">Stream of Thoughts from Alex Dong</a>
+      <p style="margin: 0; font-size: 0.875rem; color: var(--meta-color);">What I find interesting, intriguing or insightful</p>
+    </div>
+  </div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Make sense of &quot;Codex produces 13x Merged PR than Claude Code&quot;</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-10-02T21:51:00+13:00" itemprop="datePublished">Oct 2, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I just saw these numbers in <a href="https://simonwillison.net/2025/Oct/1/prarena/">Simon Willison’s write-up</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Search term</th>
+      <th>Total PRs</th>
+      <th>Merged PRs</th>
+      <th>% Merged</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Code</td>
+      <td>is:pr in:body “Generated with Claude Code”</td>
+      <td>146,000</td>
+      <td>123,000</td>
+      <td>84.2%</td>
+    </tr>
+    <tr>
+      <td>GitHub Copilot</td>
+      <td>is:pr author:copilot-swe-agent[bot]</td>
+      <td>247,000</td>
+      <td>152,000</td>
+      <td>61.5%</td>
+    </tr>
+    <tr>
+      <td>Codex Cloud</td>
+      <td>is:pr in:body “chatgpt.com” label:codex</td>
+      <td>1,900,000</td>
+      <td>1,600,000</td>
+      <td>84.2%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I <a href="https://alexdong.com/due-to-odd-jax-issues.html">switched from Claude Code to Codex</a> two weeks ago. I do prefer Codex, but seeing it claim 13x more merged PRs than Claude still made me pause.</p>
+
+<p>Before reading that as a productivity verdict, it’s worth sanity-checking the size of each user base. ChatGPT reportedly has 700M weekly users, while Claude draws about 12M (<a href="https://www.zdnet.com/article/how-people-actually-use-chatgpt-vs-claude-and-what-the-differences-tell-us/">ZDNet</a>). Coding is the top use case for Claude at 36%, whereas ChatGPT sits near 4% (<a href="https://decision.substack.com/p/how-does-the-world-use-chatgpt-and">decision.substack.com</a>).</p>
+
+<p>If we use those ratios as a rough proxy, Claude ends up with roughly 3.4M weekly coding users (12M * 36%) and Codex lands closer to 28M (700M * 4%). That would mean Codex has about eight times as many developers creating PRs using it. Even after accounting for that, Codex users would still appear to produce about 60% more Merged PRs than Claude users (13x vs. 8x).</p>
+
+<p>This is the first cross-service metric I’ve seen that hints at Codex users shipping more merged PRs than Claude. Whether that’s down to product quality, distribution, or different usage patterns is still an open question. But it’s a striking data point either way.</p>
+
+  </div><footer class="post-footer">
+      <nav class="post-categories" aria-label="Categories"><a class="post-category p-category" rel="tag" href="/categories/anthropic/">anthropic</a><span aria-hidden="true"> | </span><a class="post-category p-category" rel="tag" href="/categories/open-ai/">open-ai</a></nav>
+    </footer><a class="u-url" href="/pr-from-codex-is-10x-than-claude-code.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div style="text-align: center;">
+      <a class="u-email" href="mailto:me@alexdong.com">me@alexdong.com</a>
+    </div>
+  </div>
+</footer></body>
+
+</html>

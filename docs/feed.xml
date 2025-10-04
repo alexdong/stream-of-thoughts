@@ -1,8 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-04T18:40:12+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-04T18:42:40+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
 
 <p>I am a fan.</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qjPH9njnaVU?si=JnSWhbkusfcuulmd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.]]></summary></entry><entry><title type="html">Agentic Loop Design</title><link href="https://alexdong.com/agentic-loop-design.html" rel="alternate" type="text/html" title="Agentic Loop Design" /><published>2025-10-01T22:28:00+13:00</published><updated>2025-10-01T22:28:00+13:00</updated><id>https://alexdong.com/agentic-loop-design</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design.html"><![CDATA[<p>Even if you have defined the <a href="/mental-models-for-ai-along-the-ambiguous-ladder.html">problem, solution, or implementation</a> clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qjPH9njnaVU?si=JnSWhbkusfcuulmd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>]]></content><author><name></name></author><summary type="html"><![CDATA[Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.]]></summary></entry><entry><title type="html">Make sense of “Codex produces 13x Merged PR than Claude Code”</title><link href="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html" rel="alternate" type="text/html" title="Make sense of “Codex produces 13x Merged PR than Claude Code”" /><published>2025-10-02T21:51:00+13:00</published><updated>2025-10-02T21:51:00+13:00</updated><id>https://alexdong.com/pr-from-codex-is-10x-than-claude-code</id><content type="html" xml:base="https://alexdong.com/pr-from-codex-is-10x-than-claude-code.html"><![CDATA[<p>I just saw these numbers in <a href="https://simonwillison.net/2025/Oct/1/prarena/">Simon Willison’s write-up</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Search term</th>
+      <th>Total PRs</th>
+      <th>Merged PRs</th>
+      <th>% Merged</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Claude Code</td>
+      <td>is:pr in:body “Generated with Claude Code”</td>
+      <td>146,000</td>
+      <td>123,000</td>
+      <td>84.2%</td>
+    </tr>
+    <tr>
+      <td>GitHub Copilot</td>
+      <td>is:pr author:copilot-swe-agent[bot]</td>
+      <td>247,000</td>
+      <td>152,000</td>
+      <td>61.5%</td>
+    </tr>
+    <tr>
+      <td>Codex Cloud</td>
+      <td>is:pr in:body “chatgpt.com” label:codex</td>
+      <td>1,900,000</td>
+      <td>1,600,000</td>
+      <td>84.2%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I <a href="https://alexdong.com/due-to-odd-jax-issues.html">switched from Claude Code to Codex</a> two weeks ago. I do prefer Codex, but seeing it claim 13x more merged PRs than Claude still made me pause.</p>
+
+<p>Before reading that as a productivity verdict, it’s worth sanity-checking the size of each user base. ChatGPT reportedly has 700M weekly users, while Claude draws about 12M (<a href="https://www.zdnet.com/article/how-people-actually-use-chatgpt-vs-claude-and-what-the-differences-tell-us/">ZDNet</a>). Coding is the top use case for Claude at 36%, whereas ChatGPT sits near 4% (<a href="https://decision.substack.com/p/how-does-the-world-use-chatgpt-and">decision.substack.com</a>).</p>
+
+<p>If we use those ratios as a rough proxy, Claude ends up with roughly 3.4M weekly coding users (12M * 36%) and Codex lands closer to 28M (700M * 4%). That would mean Codex has about eight times as many developers creating PRs using it. Even after accounting for that, Codex users would still appear to produce about 60% more Merged PRs than Claude users (13x vs. 8x).</p>
+
+<p>This is the first cross-service metric I’ve seen that hints at Codex users shipping more merged PRs than Claude. Whether that’s down to product quality, distribution, or different usage patterns is still an open question. But it’s a striking data point either way.</p>]]></content><author><name></name></author><category term="open-ai" /><category term="anthropic" /><summary type="html"><![CDATA[I just saw these numbers in Simon Willison’s write-up:]]></summary></entry><entry><title type="html">Agentic Loop Design Long Term Memory And Resets</title><link href="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html" rel="alternate" type="text/html" title="Agentic Loop Design Long Term Memory And Resets" /><published>2025-10-02T00:00:00+13:00</published><updated>2025-10-02T00:00:00+13:00</updated><id>https://alexdong.com/agentic-loop-design-long-term-memory-and-resets</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design-long-term-memory-and-resets.html"><![CDATA[<p>, -
+layout: post
+title: “Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets”
+date: 2025-10-03 19:20
+comments: true
+categories:</p>
+<ul>
+  <li>agentic</li>
+  <li>software-design
+, -</li>
+</ul>
+
+<p>When a session drags on and the context window fills up, I often watch the
+models start to get lazy. They drop earlier decisions, skim the edges, and
+sometimes declare “all tests are passing” after touching only part of the
+suite.</p>
+
+<p>Both Codex and Claude Code ship a <code class="language-plaintext highlighter-rouge">/compact</code> command that compresses,
+summarizes, and trims conversation history to make room for new messages. In
+practice, the compaction drops enough detail that I reach for it less and less.</p>
+
+<p>We need a way to reset the conversation without losing the continuity of the
+work. We need a tool that lets us restart often and still remember what we were
+doing and where we left off. There have been many attempts at “Context
+Compression,” but none have worked well enough yet.</p>
+
+<p>That tool is a plaintext <code class="language-plaintext highlighter-rouge">PLAN.md</code>. As the model cycles through the
+design-plan-implement loop, it appends and updates this file, then re-reads it
+at the start of every new session.</p>
+
+<p>Here’s the scaffold I use.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## What and Why</span>
+<span class="nt">&lt;</span><span class="err">!,</span>  <span class="na">define</span> <span class="na">the</span> <span class="na">what</span><span class="err">,</span> <span class="na">why</span><span class="err">,</span> <span class="na">scope</span> <span class="err">,</span> <span class="nt">&gt;</span>
+
+<span class="gu">## Observation</span>
+<span class="nt">&lt;</span><span class="err">!,</span>  <span class="na">facts</span> <span class="na">only</span> <span class="na">from</span> <span class="na">Observation.</span> <span class="na">Research.</span> <span class="na">Note</span> <span class="na">down</span> <span class="na">relevant</span> <span class="na">facts.</span> <span class="err">,</span> <span class="nt">&gt;</span>
+
+<span class="gu">## Design</span>
+<span class="nt">&lt;</span><span class="err">!,</span>  <span class="na">chosen</span> <span class="na">shapes</span> <span class="err">&amp;</span> <span class="na">interfaces</span><span class="err">;</span> <span class="na">proposed</span> <span class="na">options</span> <span class="na">when</span> <span class="na">there</span> <span class="na">are</span> <span class="na">real</span> <span class="na">trade-offs</span> <span class="err">,</span> <span class="nt">&gt;</span>
+
+<span class="gu">## Plan</span>
+<span class="nt">&lt;</span><span class="err">!,</span>  <span class="na">five-minute</span> <span class="na">tasks</span> <span class="na">with</span> <span class="err">[</span> <span class="err">]</span> <span class="na">checkboxes</span> <span class="na">and</span> <span class="na">nested</span> <span class="na">numbering</span> <span class="err">,</span> <span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Running the loop means cycling through four passes. After each pass I ask the
+model to capture the discussion, note the details, and record the conclusions
+in PLAN.md, then spin up a fresh session. The file becomes the single source of
+truth the agent must consult before touching anything.</p>
+
+<p>Here are the prompts I use for each phase.</p>
+
+<h2 id="what-and-why">What and Why</h2>
+
+<p>I start by anchoring the change in plain language so the model and I share the
+same target and boundaries.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Task: Refresh the "## What and Why" section in ./plans/PLAN-{slug}.md for "{brief change name}".
+
+Steps:
+1. Describe the change in 1–2 sentences.
+1. Clarify why it matters now.
+2. Capture scope boundaries: what is in/out, success measures.
+3. List open questions that block commitment; ask me for any missing context.
+
+Guardrails:
+- No solution or implementation steps.
+- Write in tight paragraphs or focused bullet points.
+- Stop after the Why section is updated.
+</code></pre></div></div>
+
+<h2 id="observation">Observation</h2>
+
+<p>Once the intent is locked, the next pass is a fact-finding sweep. No edits, no plans.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Task: Compile the Observation section for the changes described in `## What and Why`.
+
+Read ./plans/PLAN-{slug}.md first, then browse, research, and note down facts.
+
+Deliverable:
+- Append under "## Observation".
+- One bullet per relevant file, symbol, or endpoint: location + behavior in 1–2 sentences.
+- Close with "Risks &amp; brittle spots" listing edge cases or debt (facts only).
+
+Scope to inspect:
+- Code/config touching the affected data or control paths.
+- Schemas/migrations, jobs, CLIs, scripts, docs, and tests relying on current behavior.
+- External integrations, rate limits, feature flags, and environment switches.
+
+Guardrails:
+- Mark uncertain items with "?" rather than omitting them.
+- Do not edit code or propose changes.
+- Stop after Observation is complete.
+- Be thorough and methodical. Go through the files one by one.
+</code></pre></div></div>
+
+<h2 id="design">Design</h2>
+
+<p>With the facts in place, we move into the design phase and ask for options,
+trade-off analysis, and key code snippets.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Task: Draft the Design section for "What" using the "Observation" in ./plans/PLAN-{slug}.md.
+
+Deliverable:
+- Append under "## Design" in PLAN-{slug}.md.
+- Describe chosen data flows, interfaces, and storage, naming concrete functions/types.
+- When trade-offs exist, list 2–3 options with crisp pros/cons before recommending one.
+- End with "Implications for tests" describing what must be covered.
+- Include just enough code snippets to show the high-level design.
+
+Guardrails:
+- Ground every decision in Observation facts or clearly stated assumptions.
+- No implementation details below the interface level.
+- Stop after Design is complete.
+</code></pre></div></div>
+
+<h2 id="plan">Plan</h2>
+
+<p>The design turns into an execution checklist: small, verifiable moves that keep
+the loop tight.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Task: Translate the Design for "{brief change name}" into an execution plan.
+
+Deliverable:
+- Append under "## Plan" in PLAN-{slug}.md with checkbox tasks.
+- Keep tasks to five-minute chunks; nest numbered substeps if needed.
+- Include "Tests (fit)" for each task describing what must be verified before coding.
+
+Order of operations:
+1. Types/constants and contracts.
+2. Write/update data producers.
+3. Read paths/consumers.
+4. Data migrations/backfills.
+5. Clean-up and docs.
+
+Guardrails:
+- Highlight removals/renames and search/replace surfaces explicitly.
+- Stop after the Plan section is written.
+</code></pre></div></div>
+
+<h2 id="implement">Implement</h2>
+
+<p>Implementation finally pulls a single checkbox off the plan and runs it to
+completion before coming up for air.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We are now implementing the tasks from the PLAN-{slug}.md file.
+
+Execute the following tasks in order.
+&gt; {paste the exact checkbox line}
+
+Execution rules:
+- Begin with the task's Tests, write or adjust checks first.
+- Make the smallest code changes needed to satisfy those tests.
+- Run the standard project checks (`make lint`, `make test`) and report results.
+- If anything fails, even outside touched areas, resolve it before stopping.
+- Review the changes and rewrite the code changes to improve clarity or efficiency.
+- Keep rewriting until no further improvements are possible.
+- Check off the task only when all tests pass and the code is clean.
+- Do not pull another task once this one closes.
+</code></pre></div></div>
+
+<p>This rhythm, write, compact, reset, load from PLAN.md, keeps the agent
+sharp even on long-running task. Each task gets to benefit from the 
+full context window, and the model never has to guess what it was doing
+last time.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[, - layout: post title: “Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets” date: 2025-10-03 19:20 comments: true categories: agentic software-design , -]]></summary></entry><entry><title type="html">Agentic Loop Design</title><link href="https://alexdong.com/agentic-loop-design.html" rel="alternate" type="text/html" title="Agentic Loop Design" /><published>2025-10-01T22:28:00+13:00</published><updated>2025-10-01T22:28:00+13:00</updated><id>https://alexdong.com/agentic-loop-design</id><content type="html" xml:base="https://alexdong.com/agentic-loop-design.html"><![CDATA[<p>Even if you have defined the <a href="/mental-models-for-ai-along-the-ambiguous-ladder.html">problem, solution, or implementation</a> clearly, you might still struggle to get AI to deliver what you want. This is a common challenge I face when working with AI systems.</p>
 
 <p><a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/">Simon Willison’s recent post on Agentic Loop Design</a> gave us a useful framework for thinking about how we can engineer past this obstacle. The core idea is similar to <a href="/llm-evolutionary-test-time-compute.html">Evolutionary Test-Time Compute</a>, both trade time and tokens for quality.</p>
 
@@ -569,101 +776,4 @@ Do **not** say the following: would you like me to; want me to do that; do you w
 Ask at most one necessary clarifying question at the start, not the end.
 
 If the next step is obvious, do it. Example of bad: I can write playful examples. would you like me to? Example of good: Here are three playful examples:..
-</code></pre></div></div>]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[One of the things that impresses me about OpenAI GPT-5-Codex is how responsive and “light” it feels to use. Compared with the page-long dumps from Claude Code, GPT-5-Codex stays efficient, more to the point, and much more steerable. Some of that is the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry><entry><title type="html">Release `pydantic-optuna-bridge`</title><link href="https://alexdong.com/release-pydantic-optuna-bridge.html" rel="alternate" type="text/html" title="Release `pydantic-optuna-bridge`" /><published>2025-09-24T15:46:00+12:00</published><updated>2025-09-24T15:46:00+12:00</updated><id>https://alexdong.com/release-pydantic-optuna-bridge-</id><content type="html" xml:base="https://alexdong.com/release-pydantic-optuna-bridge.html"><![CDATA[<p>Today I shipped <code class="language-plaintext highlighter-rouge">pydantic-optuna-bridge</code>, a helper library that keeps the
-<a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/002_configurations.html">Optuna search spaces</a>
-in sync with an underlying Pydantic model. The library is now on
-<a href="https://pypi.org/project/pydantic-optuna-bridge/">PyPI at version 0.1.1</a> and
-available via <code class="language-plaintext highlighter-rouge">uv add pydantic-optuna-bridge</code>.</p>
-
-<p>The core idea is a reflection of the Single Responsibility Principle.</p>
-
-<ol>
-  <li>Describe the hyperparameters, their types, and available options once in
-Pydantic. This way we can leverage Pydantic to validate configs loaded from
-JSON, YAML, environment variables, or a CLI.</li>
-  <li>Decorate the model with <code class="language-plaintext highlighter-rouge">@optuna_config</code> to generate an Optuna search space.
-Let the bridge derive the matching Optuna distributions. Constrained fields
-(<code class="language-plaintext highlighter-rouge">Gt</code>, <code class="language-plaintext highlighter-rouge">Lt</code>, <code class="language-plaintext highlighter-rouge">Ge</code>, <code class="language-plaintext highlighter-rouge">Le</code>, <code class="language-plaintext highlighter-rouge">Annotated</code>) become bounded numeric searches, enums
-stay enums. (Log-scaling or categorical weights are also supported as optional
-parameters in the decorator.)</li>
-  <li>In Optuna’s <code class="language-plaintext highlighter-rouge">objective</code> function, the code can call
-<code class="language-plaintext highlighter-rouge">Model.from_optuna_trial(trial)</code> to receive the <code class="language-plaintext highlighter-rouge">trial.suggest_*</code> calls from
-the bridge on the fly. The bridge never sees the results of the training runs
-and it really does not care about the objective function.</li>
-</ol>
-
-<p>Here is the end-to-end flow you may find useful to refer to:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
-
-<span class="kn">import</span> <span class="nn">optuna</span>
-<span class="kn">from</span> <span class="nn">annotated_types</span> <span class="kn">import</span> <span class="n">Gt</span><span class="p">,</span> <span class="n">Lt</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-
-<span class="kn">from</span> <span class="nn">pydantic_optuna_bridge</span> <span class="kn">import</span> <span class="n">optuna_config</span>
-
-
-<span class="k">class</span> <span class="nc">Optimizer</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-    <span class="n">ADAM</span> <span class="o">=</span> <span class="s">"adam"</span>
-    <span class="n">SGD</span> <span class="o">=</span> <span class="s">"sgd"</span>
-    <span class="n">RMSPROP</span> <span class="o">=</span> <span class="s">"rmsprop"</span>
-
-
-<span class="o">@</span><span class="n">optuna_config</span><span class="p">(</span><span class="n">log_scale_fields</span><span class="o">=</span><span class="p">{</span><span class="s">"learning_rate"</span><span class="p">})</span>
-<span class="k">class</span> <span class="nc">TrainingConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">optimizer</span><span class="p">:</span> <span class="n">Optimizer</span>
-    <span class="n">learning_rate</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Gt</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">),</span> <span class="n">Lt</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)]</span>
-    <span class="n">hidden_units</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Gt</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">Lt</span><span class="p">(</span><span class="mi">256</span><span class="p">)]</span>
-
-
-<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">:</span> <span class="n">optuna</span><span class="p">.</span><span class="n">trial</span><span class="p">.</span><span class="n">Trial</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="n">TrainingConfig</span><span class="p">.</span><span class="n">from_optuna_trial</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">do_training_run</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>If you use Optuna and already lean on Pydantic to validate configs, this bridge
-keeps the two sources of truth from drifting apart. Feedback and pull requests
-are welcome.</p>]]></content><author><name></name></author><category term="python" /><category term="ai-optimization" /><category term="optuna" /><summary type="html"><![CDATA[Today I shipped pydantic-optuna-bridge, a helper library that keeps the Optuna search spaces in sync with an underlying Pydantic model. The library is now on PyPI at version 0.1.1 and available via uv add pydantic-optuna-bridge.]]></summary></entry><entry><title type="html">Tests for Fit and Tests for Correctness</title><link href="https://alexdong.com/tests-for-fit-and-tests-for-correctness.html" rel="alternate" type="text/html" title="Tests for Fit and Tests for Correctness" /><published>2025-09-23T08:51:00+12:00</published><updated>2025-09-23T08:51:00+12:00</updated><id>https://alexdong.com/tests-for-fit-and-tests-for-correctness</id><content type="html" xml:base="https://alexdong.com/tests-for-fit-and-tests-for-correctness.html"><![CDATA[<p>AI has nudged me to rethink how I practice test-driven development (TDD). TDD
-has been one of my foundational practices for years. Write the test, then write
-the code that makes it pass. That rhythm still holds, but with an AI assistant
-in the loop, I am changing the kinds of tests I write and when I write them.</p>
-
-<p>The loop still starts with tests, but now I make these tests part of the
-planning session. I use them as a sketch of the interface I want. I sometimes
-hand-write that interface code, sometimes ask AI to suggest three to five
-options, focusing on the shape of the data, how the code will be called, and
-the timing of how the API works hand in hand with other parts of the system.</p>
-
-<p>When the generated tests look wrong, it often means that my description was off
-or I haven’t really captured the essence of what I want to achieve. I go back
-and rewrite the prompt until the test code reads right.</p>
-
-<p>I call these “Tests for Fit”. Their job is to help me think through the
-interface before I write the implementation. They are not meant to be exhaustive
-or cover every edge case. They are a sketch of the happy path and a few common
-error cases. They help me validate that the API I am imagining is usable and
-makes sense.</p>
-
-<p>That first batch of tests lives in the plan.md file. I kick off the
-implementation process with AI, and it works through a checklist of context to
-keep in mind and guardrails I care about. Once the AI writes the code, it
-automatically runs style checkers, type checkers, and those first tests. Those
-initial tests prevent the AI from drifting into its own hallucination land.</p>
-
-<p>Once the code is in a good place, I move to the next set of tests. These are
-“Tests for Correctness.” Their job is to refer to the internal implementation
-and guide the AI to probe the code for edge cases and error handling within the
-constraints of the interface we designed.</p>
-
-<p>To do this, I often start a new session with the AI, feed it the public API and
-the implementation, and ask it to break the code through the interface. The
-goal is not so much about optimizing code coverage. Left to itself, the AI will
-happily generate piles of mocked, repetitive tests. They look impressive, but
-they are miserable to maintain.</p>
-
-<p>Rather, the goal is to create a <strong>minimal</strong> set of tests that prove that the
-code handles the expected inputs correctly. Further, instead of worrying about
-edge cases, I very much prefer to sprinkle a generous amount of logging and
-<code class="language-plaintext highlighter-rouge">assert</code> statements in the implementation so I know that any unexpected inputs
-will cause immediate crashes. <a href="/fail-fast-and-noisely-creates-more-resilient-software.html">Fail fast and noisily creates resilient software</a></p>]]></content><author><name></name></author><category term="testing" /><category term="software-engineering" /><summary type="html"><![CDATA[AI has nudged me to rethink how I practice test-driven development (TDD). TDD has been one of my foundational practices for years. Write the test, then write the code that makes it pass. That rhythm still holds, but with an AI assistant in the loop, I am changing the kinds of tests I write and when I write them.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[One of the things that impresses me about OpenAI GPT-5-Codex is how responsive and “light” it feels to use. Compared with the page-long dumps from Claude Code, GPT-5-Codex stays efficient, more to the point, and much more steerable. Some of that is the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry></feed>
