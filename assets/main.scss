@@ -29,7 +29,7 @@ $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
 // Import minima theme
-@import "minima";
+@use "minima";
 
 // Override and additional monospace-specific styles
 body {
