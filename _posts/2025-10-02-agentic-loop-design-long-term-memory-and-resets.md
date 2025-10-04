@@ -1,4 +1,4 @@
-, -
+-
 layout: post
 title: "Agentic Loop Design - Tool #1: Long-Term Memory that Survives Resets"
 date: 2025-10-03 19:20
@@ -6,7 +6,7 @@ comments: true
 categories: 
 - agentic
 - software-design
-, -
+-
 
 When a session drags on and the context window fills up, I often watch the
 models start to get lazy. They drop earlier decisions, skim the edges, and
