@@ -4,8 +4,7 @@ title: "Iberian harvester ant queens produce offspring of their own species and 
 date: 2025-09-20 12:27
 comments: true
 categories:
-  - quotes
-  - ants
+  - cool-science
 ---
 
 Ants are amazing. From [Smithsonian Magazine](

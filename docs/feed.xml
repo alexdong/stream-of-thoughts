@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-04T18:49:02+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-05T22:50:16+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Earth was born dry until a cosmic collision made it a blue planet</title><link href="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html" rel="alternate" type="text/html" title="Earth was born dry until a cosmic collision made it a blue planet" /><published>2025-10-05T22:47:00+13:00</published><updated>2025-10-05T22:47:00+13:00</updated><id>https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet</id><content type="html" xml:base="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html"><![CDATA[<p>From <a href="https://www.sciencedaily.com/releases/2025/09/250928095654.htm">Science Daily</a></p>
+
+<blockquote>
+  <p>Scientists have shown that Earth’s basic chemistry solidified within just
+three million years of the Solar System’s formation. Initially, the planet
+was barren and inhospitable, missing water and carbon compounds. A colossal
+collision with Theia likely changed everything, bringing the essential
+ingredients for life. The study highlights that habitability may hinge on
+rare chance events.</p>
+</blockquote>]]></content><author><name></name></author><category term="cool-science" /><summary type="html"><![CDATA[From Science Daily]]></summary></entry><entry><title type="html">Pavel Durov’s interview with Lex Fridman</title><link href="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html" rel="alternate" type="text/html" title="Pavel Durov’s interview with Lex Fridman" /><published>2025-10-04T18:30:00+13:00</published><updated>2025-10-04T18:30:00+13:00</updated><id>https://alexdong.com/pavel-durov-s-interview-with-lex-fridman</id><content type="html" xml:base="https://alexdong.com/pavel-durov-s-interview-with-lex-fridman.html"><![CDATA[<p>Pavel’s sincerity (when he recounted the interaction with the French Intelligence service), strong ethical foundation (when asked about what would happen if he is sentenced to 20 years in prison, he said he would starve to death to “reboot” the game rather than give in), and his slow, precise, and deliberate responses are a fresh breeze in an industry that has so much hot air.</p>
 
 <p>I am a fan.</p>
 
@@ -607,161 +616,4 @@ dataset is essentially a manual distillation process that transfers the
 capability from larger reasoning models to smaller ones. Because none of the
 papers include an ablation study, it’s unclear to me how much of the improvement
 is due to the curated dataset vs. the fact that the larger models are used to
-generate the training trace.</p>]]></content><author><name></name></author><category term="ai-training" /><summary type="html"><![CDATA[Joe turned me onto a series of papers by Pengfei Liu that challenge the conventional wisdom that “more data is always better” for post-training LLMs.]]></summary></entry><entry><title type="html">How Prompt Writing Style Shapes GPT-5 and Codex</title><link href="https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex.html" rel="alternate" type="text/html" title="How Prompt Writing Style Shapes GPT-5 and Codex" /><published>2025-09-25T21:06:00+12:00</published><updated>2025-09-25T21:06:00+12:00</updated><id>https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex</id><content type="html" xml:base="https://alexdong.com/how-prompt-writing-style-shapes-gpt-5-and-codex.html"><![CDATA[<p>One of the things that impresses me about OpenAI GPT-5-Codex is how responsive
-and “light” it feels to use. Compared with the page-long dumps from
-<a href="/due-to-odd-jax-issues.html">Claude Code</a>, GPT-5-Codex stays efficient,
-more to the point, and much more steerable. Some of that is the
-<code class="language-plaintext highlighter-rouge">gpt-5-codex</code> model itself, but I suspect a lot of it comes from the prompt
-engineering that OpenAI has done.</p>
-
-<p>So I pulled up the <a href="https://github.com/openai/codex/blob/rust-v0.36.0/codex-rs/core/gpt_5_codex_prompt.md">system prompt for
-Codex</a>
-and set it beside the <a href="https://www.reddit.com/r/PromptEngineering/comments/1mknun8/i_have_extracted_the_gpt5_system_prompt/">leaked system prompt for
-GPT-5</a> and I noticed the following differences:</p>
-
-<ol>
-  <li>
-    <p>The Codex sentences are much <strong>denser</strong>. GPT-5’s language is warm,
-supportive, lightly humorous, and keeps nudging curiosity through the
-emotional presence and teaching style baked into the prompt. Codex is
-neutral, concise, factual, and collaborative. It intentionally strips
-personality to stay clear. I ran a “clause density” check on both prompts:
-Codex averages 4.8 clauses per sentence, GPT-5 comes in at 2.1.</p>
-  </li>
-  <li>
-    <p>Codex seems to have a much <strong>less constrained dialogue flow</strong>. The
-prompt focuses on the structure of the answers, not the conversation
-dynamics. The GPT-5 prompt is more restrictive: it caps clarifying
-questions at one at the start and pushes the model to take obvious next
-steps. I also noticed that the Codex prompt has a lower imperative ratio
-(commands per sentence) and a higher negation frequency (don’ts). That mix is
-odd, and I need to think more about what it means.</p>
-  </li>
-  <li>
-    <p>The Codex content guidance emphasizes <strong>brevity</strong> and <strong>scanability</strong>. It
-pushes headers, bullets, and grouped points. The GPT-5 prompt emphasizes
-<strong>tone</strong> and <strong>engagement</strong> with instructions like “Supportive
-thoroughness”, “Lighthearted interactions”, “Adaptive teaching”, and
-“Confidence-building”.</p>
-  </li>
-  <li>
-    <p>Codex adapts based on <strong>task</strong> type (code explanations, simple tasks,
-big changes, casual one-offs) whereas the GPT-5 prompt adjusts based on <strong>user</strong>
-proficiency and emotional needs. GPT-5’s prompt feels like a coach; Codex’s
-prompt feels like a coworker with a deadline in sight.</p>
-  </li>
-  <li>
-    <p>Based on the readability analysis, the Codex prompt is written for
-university graduates (Flesch-Kincaid Grade Level 14) whereas the GPT-5 prompt
-comes in at high school level (Flesch-Kincaid Grade Level 10).</p>
-  </li>
-</ol>
-
-<p>Here’s what that looks like in the numbers:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>GPT-5-Codex (Prompt B)</th>
-      <th>GPT-5 (Prompt A)</th>
-      <th>Interpretation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Lexical Density</strong></td>
-      <td>0.82</td>
-      <td>0.78</td>
-      <td>Codex is more content-word heavy</td>
-    </tr>
-    <tr>
-      <td><strong>Type–Token Ratio (TTR)</strong></td>
-      <td>0.77</td>
-      <td>0.68</td>
-      <td>Codex uses more varied vocabulary</td>
-    </tr>
-    <tr>
-      <td><strong>Flesch Reading Ease</strong></td>
-      <td>29.0</td>
-      <td>42.1</td>
-      <td>Codex is harder to read (graduate level)</td>
-    </tr>
-    <tr>
-      <td><strong>Flesch–Kincaid Grade</strong></td>
-      <td>14.1</td>
-      <td>10.4</td>
-      <td>Codex ≈ college sophomore; GPT-5 ≈ high school</td>
-    </tr>
-    <tr>
-      <td><strong>Gunning Fog Index</strong></td>
-      <td>16.6</td>
-      <td>13.9</td>
-      <td>Codex significantly denser, more technical</td>
-    </tr>
-    <tr>
-      <td><strong>SMOG Index</strong></td>
-      <td>15.0</td>
-      <td>12.6</td>
-      <td>Codex ~Grade 15 vs. GPT-5 ~Grade 12</td>
-    </tr>
-    <tr>
-      <td><strong>Punctuation Load</strong></td>
-      <td>3.2</td>
-      <td>0.9</td>
-      <td>Codex has ~3.5× more commas/semicolons</td>
-    </tr>
-    <tr>
-      <td><strong>Imperative Ratio</strong></td>
-      <td>0.10</td>
-      <td>0.25</td>
-      <td>GPT-5 gives more direct instructions</td>
-    </tr>
-    <tr>
-      <td><strong>Negation Frequency</strong></td>
-      <td>6</td>
-      <td>3</td>
-      <td>Codex has more “don’ts” and negatives</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<p>GPT-5-Codex System Prompt</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Final answer structure and style guidelines
-
-- Plain text; CLI handles styling. Use structure only when it helps scanability.
-- Headers: optional; short Title Case (1-3 words) wrapped in **…**; no blank line before the first bullet; add only if they truly help.
-- Bullets: use - ; merge related points; keep to one line when possible; 4–6 per list ordered by importance; keep phrasing consistent.
-- Monospace: backticks for commands/paths/env vars/code ids and inline examples; use for literal keyword bullets; never combine with **.
-- Code samples or multi-line snippets should be wrapped in fenced code blocks; add a language hint whenever obvious.
-- Structure: group related bullets; order sections general → specific → supporting; for subsections, start with a bolded keyword bullet, then items; match complexity to the task.
-- Tone: collaborative, concise, factual; present tense, active voice; self‑contained; no "above/below"; parallel wording.
-- Don'ts: no nested bullets/hierarchies; no ANSI codes; don't cram unrelated keywords; keep keyword lists short—wrap/reformat if long; avoid naming formatting styles in answers.
-- Adaptation: code explanations → precise, structured with code refs; simple tasks → lead with outcome; big changes → logical walkthrough + rationale + next actions; casual one-offs → plain sentences, no headers/bullets.
-</code></pre></div></div>
-
-<hr />
-
-<p>GPT-5 System Prompt</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Do not reproduce song lyrics or any other copyrighted material, even if asked.
-
-You are an insightful, encouraging assistant who combines meticulous clarity with genuine enthusiasm and gentle humor.
-
-Supportive thoroughness: Patiently explain complex topics clearly and comprehensively.
-
-Lighthearted interactions: Maintain friendly tone with subtle humor and warmth.
-
-Adaptive teaching: Flexibly adjust explanations based on perceived user proficiency.
-
-Confidence-building: Foster intellectual curiosity and self-assurance.
-
-Do **not** say the following: would you like me to; want me to do that; do you want me to; if you want, I can; let me know if you would like me to; should I; shall I.
-
-Ask at most one necessary clarifying question at the start, not the end.
-
-If the next step is obvious, do it. Example of bad: I can write playful examples. would you like me to? Example of good: Here are three playful examples:..
-</code></pre></div></div>]]></content><author><name></name></author><category term="prompt-engineering" /><category term="open-ai" /><summary type="html"><![CDATA[One of the things that impresses me about OpenAI GPT-5-Codex is how responsive and “light” it feels to use. Compared with the page-long dumps from Claude Code, GPT-5-Codex stays efficient, more to the point, and much more steerable. Some of that is the gpt-5-codex model itself, but I suspect a lot of it comes from the prompt engineering that OpenAI has done.]]></summary></entry></feed>
+generate the training trace.</p>]]></content><author><name></name></author><category term="ai-training" /><summary type="html"><![CDATA[Joe turned me onto a series of papers by Pengfei Liu that challenge the conventional wisdom that “more data is always better” for post-training LLMs.]]></summary></entry></feed>
