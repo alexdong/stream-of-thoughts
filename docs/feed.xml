@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-05T22:50:16+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Earth was born dry until a cosmic collision made it a blue planet</title><link href="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html" rel="alternate" type="text/html" title="Earth was born dry until a cosmic collision made it a blue planet" /><published>2025-10-05T22:47:00+13:00</published><updated>2025-10-05T22:47:00+13:00</updated><id>https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet</id><content type="html" xml:base="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html"><![CDATA[<p>From <a href="https://www.sciencedaily.com/releases/2025/09/250928095654.htm">Science Daily</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-06T22:43:04+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Dwarkesh’s Fossil Fuel Analogy</title><link href="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html" rel="alternate" type="text/html" title="Dwarkesh’s Fossil Fuel Analogy" /><published>2025-10-06T22:35:00+13:00</published><updated>2025-10-06T22:35:00+13:00</updated><id>https://alexdong.com/dwarkesh-s-fossil-fuel-analogy</id><content type="html" xml:base="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html"><![CDATA[<p>Dwarkesh published a short <a href="https://www.dwarkesh.com/p/thoughts-on-sutton">follow-up</a> to his previous interview with Richard Sutton that I commented <a href="/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html">extensively last week</a>.</p>
+
+<p>I think Dwarkesh’s point on LLM may not be “the” right path forever, but it is definitely a path that we can keep exploring for a while, and maybe even take us to AGI or ASI. This doesn’t mean Sutton is wrong, but it does mean that we shouldn’t just dismiss LLM now and solely focus on RL.</p>
+
+<p>The analogy Dwarkesh made is apt:</p>
+
+<blockquote>
+  <p>In a talk a few months ago, Ilya compared pretraining data to fossil fuels. This analogy has remarkable reach. Just because fossil fuels are not renewable does not mean that our civilization ended up on a dead-end track by using them. You simply couldn’t have transitioned from the water wheels in 1800 to solar panels and fusion power plants. We had to use this cheap, convenient, plentiful intermediary.</p>
+
+  <p>AlphaGo (which was conditioned on human games) and AlphaZero (which was bootstrapped from scratch) were both superhuman Go players. AlphaZero was better.</p>
+
+  <p>Will we (or the first AGIs) eventually come up with a general learning technique that requires no initialization of knowledge - that just bootstraps itself from the very start? And will it outperform the very best AIs that have been trained to that date? Probably yes.</p>
+
+  <p>But does this mean that imitation learning must not play any role whatsoever in developing the first AGI, or even the first ASI? No. AlphaGo was still superhuman, despite being initially shepherded by human player data. The human data isn’t necessarily actively detrimental - at enough scale it just isn’t significantly helpful.</p>
+
+  <p>The accumulation of knowledge over tens of thousands of years has clearly been essential to humanity’s success. In any field of knowledge, thousands (and likely millions) of previous people were involved in building up our understanding and passing it on to the next generation. We didn’t invent the language we speak, nor the legal system we use, nor even most of the knowledge relevant to the technologies in our phones. This process is more analogous to imitation learning than to RL from scratch.</p>
+</blockquote>]]></content><author><name></name></author><category term="reinforcement-learning" /><summary type="html"><![CDATA[Dwarkesh published a short follow-up to his previous interview with Richard Sutton that I commented extensively last week.]]></summary></entry><entry><title type="html">Earth was born dry until a cosmic collision made it a blue planet</title><link href="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html" rel="alternate" type="text/html" title="Earth was born dry until a cosmic collision made it a blue planet" /><published>2025-10-05T22:47:00+13:00</published><updated>2025-10-05T22:47:00+13:00</updated><id>https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet</id><content type="html" xml:base="https://alexdong.com/earth-was-born-dry-until-a-cosmic-collision-made-it-a-blue-planet.html"><![CDATA[<p>From <a href="https://www.sciencedaily.com/releases/2025/09/250928095654.htm">Science Daily</a></p>
 
 <blockquote>
   <p>Scientists have shown that Earth’s basic chemistry solidified within just
@@ -535,85 +551,4 @@ was saying is that we don’t know how to “transfer” knowledge from one doma
 another. Or more precisely, it is impossible to transfer knowledge across
 domains the same way you can’t really translate a poem across different
 cultures. One has to leverage RL to find the optimal representation for the new
-domain.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Richard Sutton is a Turing Award winner and one of the founding fathers of Reinforcement Learning, so I listened to his interview on Dwarkesh Podcast three times, and what Richard said opened my eyes to a few powerful perspectives, but I also disagree with some of his points. This post is a collection of my thoughts on this interview.]]></summary></entry><entry><title type="html">Less is More for X</title><link href="https://alexdong.com/less-is-more-for-x.html" rel="alternate" type="text/html" title="Less is More for X" /><published>2025-09-26T22:58:00+12:00</published><updated>2025-09-26T22:58:00+12:00</updated><id>https://alexdong.com/less-is-more-for-x</id><content type="html" xml:base="https://alexdong.com/less-is-more-for-x.html"><![CDATA[<p><a href="https://x.com/joecole">Joe</a> turned me onto a series of papers by <a href="https://scholar.google.com/citations?hl=en&amp;user=oIz_CYEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Pengfei
-Liu</a>
-that challenge the conventional wisdom that “more data is always better” for
-post-training LLMs.</p>
-
-<p>Collectively, these papers show that for
-<a href="https://arxiv.org/pdf/2502.11886">RL</a>,
-<a href="https://arxiv.org/pdf/2502.03387">Reasoning</a> and
-<a href="https://arxiv.org/pdf/2509.17567">Agentic</a> tasks, a smaller yet higher-quality
-training dataset can outperform similar-scale ones, like OpenAI-o1-preview. For
-example, in the case of Reasoning, using only 1% of the training data yields
-a 45.8% absolute improvement on math and programming tasks. I thought it was
-worth sharing a few details from the reasoning paper.</p>
-
-<p>On the hypothesis:</p>
-
-<blockquote>
-  <p>We hypothesize that successful reasoning emerges from the synergy of rich
-pre-trained knowledge and sufficient computational resources at inference
-time. These developments suggest that if models possess rich reasoning
-knowledge and adequate computational space, activating their reasoning
-capabilities may require only a small number of high-quality samples that
-encourage extended deliberation, rather than massive fine-tuning datasets. We
-propose the Less-Is-More Reasoning (LIMO) Hypothesis, identifying two
-critical factors determining the elicitation threshold for complex reasoning:
-(1) the latent presence of prerequisite knowledge within the model’s
-parameters, and (2) the effectiveness of minimal exemplars in demonstrating
-problem-solving processes that encourage extended deliberation. The sample
-efficiency of eliciting advanced reasoning is thus bounded by the model’s
-encoded knowledge foundation and its exposure to training samples that
-effectively utilize inference-time computation space.</p>
-</blockquote>
-
-<p>When they describe how they constructed the smaller, higher-quality dataset,
-they emphasize that the “higher quality” label refers to the most difficult
-problems. Rather than gradually increasing difficulty as in
-<a href="https://en.wikipedia.org/wiki/Curriculum_learning">Curriculum Learning</a>, they
-focus on that challenging tail.</p>
-
-<blockquote>
-  <p>We implemented a systematic multi-stage filtration pipeline … we first
-applied a baseline difficulty filter using a short-CoT mathematical model.
-Problems that this model solved correctly within four attempts were excluded,
-ensuring that only non-trivial problems remained. Next, we sampled 32
-solution attempts and used the empirical success rate as a difficulty
-indicator. Problems that were successfully solved in only 1–3 out of 32
-attempts were retained.</p>
-</blockquote>
-
-<p>After refining the dataset this way, they constructed the training trace with
-larger reasoning models and a set of heuristics:</p>
-
-<blockquote>
-  <p>Elaborated Reasoning: Comprehensive exploration of logical steps without
-premature conclusions</p>
-
-  <p>Self-Verification: Regular validation of intermediate results and logical
-consistency</p>
-
-  <p>Exploratory Approach: Consideration of multiple possibilities before reaching
-conclusions</p>
-
-  <p>Adaptive Granularity: Appropriate detail level across simple and complex
-deductions</p>
-
-  <p>To quantify these qualities, we implemented a rule-based scoring system that
-calculated weighted metrics for each dimension. Elaborated Reasoning was
-measured by solution length (30% weight); Self-Verification through frequency
-of validation-related words like “check” and “verify” (20% weight);
-Exploratory Approach by counting tentative expressions such as “perhaps” and
-“might” (25% weight); and Adaptive Granularity via connective phrases like
-“therefore” and “since” (25% weight). All keyword frequencies were normalized
-by text length to ensure fair comparison across solutions of different sizes.</p>
-</blockquote>
-
-<p>Taken together, the results are quite impressive. Still, the more I think about
-it, the more I feel that this process of curating a smaller, higher-quality
-dataset is essentially a manual distillation process that transfers the
-capability from larger reasoning models to smaller ones. Because none of the
-papers include an ablation study, it’s unclear to me how much of the improvement
-is due to the curated dataset vs. the fact that the larger models are used to
-generate the training trace.</p>]]></content><author><name></name></author><category term="ai-training" /><summary type="html"><![CDATA[Joe turned me onto a series of papers by Pengfei Liu that challenge the conventional wisdom that “more data is always better” for post-training LLMs.]]></summary></entry></feed>
+domain.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Richard Sutton is a Turing Award winner and one of the founding fathers of Reinforcement Learning, so I listened to his interview on Dwarkesh Podcast three times, and what Richard said opened my eyes to a few powerful perspectives, but I also disagree with some of his points. This post is a collection of my thoughts on this interview.]]></summary></entry></feed>
