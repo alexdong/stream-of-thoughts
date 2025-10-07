@@ -39,3 +39,7 @@ gem "csv", "~> 3.3"
 gem "base64", "~> 0.3.0"
 
 gem "jekyll-sass-converter", "~> 2.2"
+
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.0")
+  gem "bigdecimal", "~> 3.1"
+end

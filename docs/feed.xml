@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-06T22:43:04+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Dwarkesh’s Fossil Fuel Analogy</title><link href="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html" rel="alternate" type="text/html" title="Dwarkesh’s Fossil Fuel Analogy" /><published>2025-10-06T22:35:00+13:00</published><updated>2025-10-06T22:35:00+13:00</updated><id>https://alexdong.com/dwarkesh-s-fossil-fuel-analogy</id><content type="html" xml:base="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html"><![CDATA[<p>Dwarkesh published a short <a href="https://www.dwarkesh.com/p/thoughts-on-sutton">follow-up</a> to his previous interview with Richard Sutton that I commented <a href="/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html">extensively last week</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://alexdong.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alexdong.com/" rel="alternate" type="text/html" /><updated>2025-10-07T22:13:26+13:00</updated><id>https://alexdong.com/feed.xml</id><title type="html">Alex Dong’s Blog</title><subtitle>Stream of Thoughts from Alex Dong. What I find interesting, intriguing or insightful.</subtitle><entry><title type="html">Inspect AI</title><link href="https://alexdong.com/inspect-ai.html" rel="alternate" type="text/html" title="Inspect AI" /><published>2025-10-07T21:24:00+13:00</published><updated>2025-10-07T21:24:00+13:00</updated><id>https://alexdong.com/inspect-ai</id><content type="html" xml:base="https://alexdong.com/inspect-ai.html"><![CDATA[<p><a href="https://x.com/joecole">Joe</a> mentioned the new <a href="https://safety-research.github.io/petri/">Petri Alignment
+tool</a> from Anthropic. As I read
+through the GitHub repo, I was surprised to find how simple the code is. As I
+dug deeper, I realized it’s actually a plugin for Inspect AI, an open-source
+Python project by the UK’s AI Security Institute.</p>
+
+<p>Inspect AI provides scaffolding for evaluating LLMs. I was pleasantly
+surprised to see just how many advanced features are already in place:</p>
+
+<ul>
+  <li>Execution: <a href="https://inspect.aisi.org.uk/caching.html">provider caching</a>,
+<a href="https://inspect.aisi.org.uk/parallelism.html">parallelism for multiple models, benchmarks, or
+requests</a>, and
+<a href="https://inspect.aisi.org.uk/sandboxing.html">sandboxing across Docker, EC2, or
+Proxmox</a></li>
+  <li>Debugging: <a href="https://inspect.aisi.org.uk/tracing.html">tracing</a> and tidy <a href="https://inspect.aisi.org.uk/log-viewer.html">log
+viewers</a></li>
+  <li>Output: built-in <a href="https://inspect.aisi.org.uk/structured.html">Pydantic structured
+validation</a> and <a href="https://inspect.aisi.org.uk/typing.html">typed store</a></li>
+</ul>
+
+<p>All I need to supply are three ingredients:</p>
+
+<ol>
+  <li><a href="https://inspect.aisi.org.uk/datasets.html">Datasets</a> — CSV files with
+<code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">input</code>, and <code class="language-plaintext highlighter-rouge">target</code> columns.</li>
+  <li><a href="https://inspect.aisi.org.uk/reference/inspect_ai.solver.html#generation">Solvers</a>
+— chains of Python functions that take the input and produce the model’s
+output.</li>
+  <li><a href="https://inspect.aisi.org.uk/reference/inspect_ai.scorer.html">Scorers</a> —
+metrics that turn those outputs into scores. Regular expressions, F1,
+statistics like <code class="language-plaintext highlighter-rouge">std</code> or <code class="language-plaintext highlighter-rouge">stderr</code>, and even LLM-as-Judge are ready to go.</li>
+</ol>
+
+<p>The tool is well documented, strongly typed, and actively maintained. Next up I
+want to use it to rewrite some of the benchmarks end-to-end and see how easily I can
+extend it to support more complex evaluation workflows.</p>]]></content><author><name></name></author><category term="eval" /><summary type="html"><![CDATA[Joe mentioned the new Petri Alignment tool from Anthropic. As I read through the GitHub repo, I was surprised to find how simple the code is. As I dug deeper, I realized it’s actually a plugin for Inspect AI, an open-source Python project by the UK’s AI Security Institute.]]></summary></entry><entry><title type="html">Dwarkesh’s Fossil Fuel Analogy</title><link href="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html" rel="alternate" type="text/html" title="Dwarkesh’s Fossil Fuel Analogy" /><published>2025-10-06T22:35:00+13:00</published><updated>2025-10-06T22:35:00+13:00</updated><id>https://alexdong.com/dwarkesh-s-fossil-fuel-analogy</id><content type="html" xml:base="https://alexdong.com/dwarkesh-s-fossil-fuel-analogy.html"><![CDATA[<p>Dwarkesh published a short <a href="https://www.dwarkesh.com/p/thoughts-on-sutton">follow-up</a> to his previous interview with Richard Sutton that I commented <a href="/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html">extensively last week</a>.</p>
 
 <p>I think Dwarkesh’s point on LLM may not be “the” right path forever, but it is definitely a path that we can keep exploring for a while, and maybe even take us to AGI or ASI. This doesn’t mean Sutton is wrong, but it does mean that we shouldn’t just dismiss LLM now and solely focus on RL.</p>
 
@@ -327,52 +363,52 @@ scrape the links from <code class="language-plaintext highlighter-rouge">https:/
 expressions to find the topics I was looking for.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="sh">"""</span><span class="s">Quick-and-dirty Modal docs link lister.</span><span class="sh">"""</span>
+</span><span class="s">"""Quick-and-dirty Modal docs link lister."""</span>
 
-<span class="kn">from</span> <span class="n">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span> <span class="n">re</span>
-<span class="kn">import</span> <span class="n">ssl</span>
-<span class="kn">import</span> <span class="n">urllib.request</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">ssl</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
 
 
 <span class="k">def</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-  <span class="sh">"""</span><span class="s">Download a page as text, skipping certificate checks for convenience.</span><span class="sh">"""</span>
+  <span class="s">"""Download a page as text, skipping certificate checks for convenience."""</span>
   <span class="n">ssl</span><span class="p">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">_create_unverified_context</span>  <span class="c1"># nosec - CLI helper
-</span>  <span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="nf">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>  <span class="c1"># noqa: S310 (urllib ok for one-off script)
-</span>      <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="nf">read</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">"</span><span class="s">utf-8</span><span class="sh">"</span><span class="p">)</span>
+</span>  <span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>  <span class="c1"># noqa: S310 (urllib ok for one-off script)
+</span>      <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">list_docs</span><span class="p">(</span><span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-  <span class="sh">"""</span><span class="s">Extract unique documentation links matching `pattern`.</span><span class="sh">"""</span>
-  <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nf">sorted</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
+  <span class="s">"""Extract unique documentation links matching `pattern`."""</span>
+  <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
-  <span class="n">base</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://modal.com</span><span class="sh">"</span>
-  <span class="n">docs_root</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s">/docs</span><span class="sh">"</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+  <span class="n">base</span> <span class="o">=</span> <span class="s">"https://modal.com"</span>
+  <span class="n">docs_root</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s">/docs"</span>
 
   <span class="c1"># Fetch the main docs page and pull out top-level /docs/... links.
-</span>  <span class="n">root_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="n">docs_root</span><span class="p">)</span>
-  <span class="n">top_links</span> <span class="o">=</span> <span class="nf">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">href=</span><span class="sh">"</span><span class="s">(/docs/[^</span><span class="sh">"</span><span class="s">]+)</span><span class="sh">"'</span><span class="p">,</span> <span class="n">root_html</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Top-level docs links:</span><span class="sh">"</span><span class="p">)</span>
+</span>  <span class="n">root_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="n">docs_root</span><span class="p">)</span>
+  <span class="n">top_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/[^"]+)"'</span><span class="p">,</span> <span class="n">root_html</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"Top-level docs links:"</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">top_links</span><span class="p">:</span>
-      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 
   <span class="c1"># Drill into the Guide section to enumerate guide topics.
-</span>  <span class="n">guide_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/guide</span><span class="sh">"</span><span class="p">)</span>
-  <span class="n">guide_links</span> <span class="o">=</span> <span class="nf">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">href=</span><span class="sh">"</span><span class="s">(/docs/guide/[^</span><span class="sh">"</span><span class="s">]+)</span><span class="sh">"'</span><span class="p">,</span> <span class="n">guide_html</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Guide topics:</span><span class="sh">"</span><span class="p">)</span>
+</span>  <span class="n">guide_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/guide"</span><span class="p">)</span>
+  <span class="n">guide_links</span> <span class="o">=</span> <span class="n">list_docs</span><span class="p">(</span><span class="sa">r</span><span class="s">'href="(/docs/guide/[^"]+)"'</span><span class="p">,</span> <span class="n">guide_html</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Guide topics:"</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">guide_links</span><span class="p">:</span>
-      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">base</span><span class="si">}{</span><span class="n">href</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 
   <span class="c1"># Example: fetch the CLI reference page and show any code snippets.
-</span>  <span class="n">cli_app_html</span> <span class="o">=</span> <span class="nf">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/reference/cli/app</span><span class="sh">"</span><span class="p">)</span>
-  <span class="n">code_snippets</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">&lt;code class=</span><span class="sh">"</span><span class="s">[^</span><span class="sh">"</span><span class="s">]*</span><span class="sh">"</span><span class="s">&gt;(modal [^&lt;]+)&lt;/code&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="n">cli_app_html</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">CLI `modal app` snippets:</span><span class="sh">"</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">snippet</span> <span class="ow">in</span> <span class="nf">sorted</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">code_snippets</span><span class="p">)):</span>
-      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</span>  <span class="n">cli_app_html</span> <span class="o">=</span> <span class="n">fetch_text</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">docs_root</span><span class="si">}</span><span class="s">/reference/cli/app"</span><span class="p">)</span>
+  <span class="n">code_snippets</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s">'&lt;code class="[^"]*"&gt;(modal [^&lt;]+)&lt;/code&gt;'</span><span class="p">,</span> <span class="n">cli_app_html</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">CLI `modal app` snippets:"</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">snippet</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">code_snippets</span><span class="p">)):</span>
+      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"  </span><span class="si">{</span><span class="n">snippet</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Groundbreaking? Not really. Yet it points to a potential future where LLMs
@@ -384,171 +420,4 @@ build those tools themselves.</p>
 <p>Maybe in the not-too-distant future, in addition to <a href="https://www.citadelsecurities.com/careers/details/software-developer-tools-engineer">Software Tools
 Engineer</a>
 who builds software for other humans, we’ll have a new position called
-<code class="language-plaintext highlighter-rouge">AI Tools Engineer</code> who builds libraries primarily for LLMs.</p>]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is seeing how ubiquitously Python shows up as a sidekick, the scripting language Codex reaches for when it needs task-specific tools.]]></summary></entry><entry><title type="html">Thoughts on Richard Sutton’s interview on Dwarkesh Podcast</title><link href="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html" rel="alternate" type="text/html" title="Thoughts on Richard Sutton’s interview on Dwarkesh Podcast" /><published>2025-09-27T21:56:00+12:00</published><updated>2025-09-27T21:56:00+12:00</updated><id>https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast</id><content type="html" xml:base="https://alexdong.com/thoughts-on-richard-sutton-s-interview-on-dwarkesh-podcast.html"><![CDATA[<p><a href="https://www.dwarkesh.com/p/richard-sutton">Richard Sutton</a> is a Turing Award
-winner and one of the founding fathers of Reinforcement Learning, so I listened
-to his interview on <a href="https://www.dwarkesh.com/p/richard-sutton">Dwarkesh
-Podcast</a> three times, and what
-Richard said opened my eyes to a few powerful perspectives, but I also disagree
-with some of his points. This post is a collection of my thoughts on this
-interview.</p>
-
-<h2 id="llm-vs-rl">LLM vs RL</h2>
-
-<blockquote>
-  <p>What is intelligence? The problem is to understand your world. Reinforcement
-learning is about understanding your world, whereas large language models are
-about mimicking people, doing what people say you should do. They’re not
-about figuring out what to do.</p>
-</blockquote>
-
-<p>Instead of “not about”, maybe Sutton meant was “not the best way to”. LLMs <em>can</em>
-and <em>have been</em> used to figure out what to do. In fact, the whole idea of
-<a href="/llm-evolutionary-test-time-compute.html">Evolutionary Test Time Compute</a> is
-to use LLMs to figure out what to do, and this approach has made several novel
-discoveries. But is that the most efficient way to figure out what to do, given
-all the known constraints? Probably not.</p>
-
-<blockquote>
-  <p>To mimic what people say is not really to build a model of the world at all.
-You’re mimicking things that have a model of the world: people. 
-… 
-A world model would enable you to predict what would happen. They have the
-ability to predict what a person would say. They don’t have the ability to
-predict what will happen.</p>
-</blockquote>
-
-<p>I think this is a false dichotomy. He’s contrasting linguistic prediction with
-true physical modeling, yet LLMs can be used to build a model of the world.
-<a href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/">Google’s Genie
-3</a>
-is a great example of not learning from what people say but to learn the
-fundamental physics of the world.</p>
-
-<blockquote>
-  <p>What we want, to quote Alan Turing, is a machine that can learn from
-experience, where experience is the things that actually happen in your life.
-You do things, you see what happens, and that’s what you learn from.</p>
-</blockquote>
-
-<p>It’s hard to argue that an LLM’s long context window is a form of “learning from
-experience”. But I think LLMs can still provide the foundational substrate for
-RL to build upon. RL from zero is conceptually appealing but why not leverage
-the world’s knowledge encoded in LLMs to bootstrap the learning process?</p>
-
-<p>(Sutton did raise some good point on why not. Please refer to  the “Knowledge
-and Solution” section below to see why Richard might be correct.)</p>
-
-<h2 id="ground-truth">Ground Truth</h2>
-
-<blockquote>
-  <p>There’s no ground truth. You can’t have prior knowledge if you don’t have
-ground truth, because the prior knowledge is supposed to be a hint or an
-initial belief about what the truth is.</p>
-</blockquote>
-
-<p>This is the part where I disagree the most. Sutton seems to be saying that ground
-truth only exists in lived experience. But what is ground truth? If an LLM 
-has a way to use <strong>deterministic</strong> tools to verify its own output, wouldn’t that
-be a form of ground truth? After all, a compiler verifying code is a form of
-ground truth, isn’t it?</p>
-
-<blockquote>
-  <p>Making a model of the physical world and carrying out the consequences of
-mathematical assumptions or operations, those are very different things. The
-empirical world has to be learned. You have to learn the consequences.
-Whereas the math is more computational, it’s more like standard planning.
-There they can have a goal to find the proof, and they are in some way given
-that goal to find the proof.</p>
-</blockquote>
-
-<p>Richard didn’t go into details here, but I think he was referring to the fact
-that the real world is non-deterministic, stochastic, fractal and
-chaotic. So it can be computationally intractable to model the real world. RL
-learning from the real world is not only learning to approximate the model of
-the world but also learning to what to ignore or discard.</p>
-
-<p>Still, I disagree. In <a href="https://www.youtube.com/watch?v=-HzgcbRXUK8">Demis Hassabis’s interview on Lex Fridman
-podcast</a>, Demis made the case that
-an LLM like Veo actually can produce “clean predictions about highly nonlinear
-dynamical systems”. Can we ignore this example only because the videos generated 
-by Veo are not “real world”? Even when our eyes and brains think they are? 
-What is a “real world” other than a perception afforded to us by our senses?</p>
-
-<p><a href="https://x.com/RichardSSutton/status/1971718688840864167">On X</a>, Sutton gave a
-further example of why he didn’t believe LLM’s imitation is sufficient. He said:</p>
-
-<blockquote>
-  <p>Even in birdsong learning in zebra finches the motor actions are not learned
-by imitation. The auditory result is reproduced, not the actions; in this
-crucial way it differs from LLM training.</p>
-</blockquote>
-
-<p>But if we look at LLM’s embedding layer, isn’t it reproducing the result, instead
-of the actions though?</p>
-
-<h2 id="knowledge-and-solution-are-the-product-of-the-environment">Knowledge and Solution are the Product of the Environment</h2>
-
-<blockquote>
-  <p>In every case of the bitter lesson you could start with human knowledge and
-then do the scalable things. That’s always the case. There’s never any reason
-why that has to be bad. But in fact, and in practice, it has always turned
-out to be bad. People get locked into the human knowledge approach, and they
-psychologically… Now I’m speculating why it is, but this is what has always
-happened. They get their lunch eaten by the methods that are truly scalable.</p>
-</blockquote>
-
-<p>This is one of the more important points Richard made. I think he is right
-here. Human knowledge is bounded, constrained and shaped by our physical
-hardware, so it is very likely that there exist many solutions to the same
-problem that are beyond our comprehension.</p>
-
-<p>Maybe the LLM as the DNA is bounded by the biochemistry of the earth
-environment. If we want to explore the solution space for environment X, we
-need to use RL to “do first principle thinking” with the goal to maximise
-the best performance within that particular environment.</p>
-
-<blockquote>
-  <p>What you learn, your knowledge, is about the stream. Your knowledge is about
-if you do some action, what will happen. Or it’s about which events will
-follow other events. It’s about the stream. The content of the knowledge is
-statements about the stream.</p>
-</blockquote>
-
-<p>I find this point very profound. It basically says that knowledge is a product
-of interaction with the world. Dragonfly’s knowledge is different from a
-shark’s, even though they share the same “prey” goal. This is because these two
-animals operate in two very different worlds. The shark’s eyes are specialised
-for low-light conditions and its gray-scale vision is perfect for detecting
-movements in the water. The dragonfly’s eyes are specialised for detecting
-small insects, and its visual neurons send signals to the dragonfly’s four
-wings to allow it to make rapid adjustments in flight.</p>
-
-<p>I think Richard made a powerful point that knowledge is not static. Rather,
-once the die is cast, RL remains the best way to produce the most efficient
-solution to a problem <strong>given a set of constraints</strong>. I think he is also right
-that the solution is <em>predetermined</em> by a set of constraints.</p>
-
-<blockquote>
-  <p>You learn a policy that’s specific to the environment that you’re finding
-yourself in.</p>
-</blockquote>
-
-<p>Persona. Policy. An environment for evolution. They are all the same thing to
-describe the constraints, which fundamentally shape the solution space.</p>
-
-<h2 id="transfer-learning">Transfer Learning</h2>
-
-<blockquote>
-  <p>What we have are people trying different things and they settle on something,
-a representation that transfers well or generalizes well. But we have very
-few automated techniques to promote transfer, and none of them are used in
-modern deep learning.</p>
-</blockquote>
-
-<p>If knowledge is tuned to an environment, it’s no surprise that porting it
-elsewhere is hard. This is another really profound point. I think what Richard
-was saying is that we don’t know how to “transfer” knowledge from one domain to
-another. Or more precisely, it is impossible to transfer knowledge across
-domains the same way you can’t really translate a poem across different
-cultures. One has to leverage RL to find the optimal representation for the new
-domain.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Richard Sutton is a Turing Award winner and one of the founding fathers of Reinforcement Learning, so I listened to his interview on Dwarkesh Podcast three times, and what Richard said opened my eyes to a few powerful perspectives, but I also disagree with some of his points. This post is a collection of my thoughts on this interview.]]></summary></entry></feed>
+<code class="language-plaintext highlighter-rouge">AI Tools Engineer</code> who builds libraries primarily for LLMs.</p>]]></content><author><name></name></author><category term="python" /><category term="open-ai" /><summary type="html"><![CDATA[I have been using Codex instead of Claude Code for over a week now. One nice surprise is seeing how ubiquitously Python shows up as a sidekick, the scripting language Codex reaches for when it needs task-specific tools.]]></summary></entry></feed>
