@@ -38,4 +38,4 @@ gem "csv", "~> 3.3"
 
 gem "base64", "~> 0.3.0"
 
-gem "bigdecimal", "~> 3.2"
+gem "jekyll-sass-converter", "~> 2.2"
