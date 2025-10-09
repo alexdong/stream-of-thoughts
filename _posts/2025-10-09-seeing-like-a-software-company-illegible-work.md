@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Seeing like a Software Company - Illegible Work"
-date: 2025-10-09 23:07
+title: "Seeing like a Software Company - Celebrate Illegible Work"
+date: 2025-10-11 23:07
 comments: true
 categories: 
 ---
