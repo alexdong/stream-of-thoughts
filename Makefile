@@ -1,10 +1,16 @@
-.PHONY: new publish dev clean help build
+.PHONY: new publish dev clean help build deps
 
 # Default editor (can be overridden by environment variable)
 EDITOR ?= vim
 
 # Ensure Homebrew Ruby is in PATH
 export PATH := /opt/homebrew/opt/ruby/bin:$(PATH)
+
+# Prefer Homebrew bundler when available to match Gemfile.lock version
+BUNDLE ?= bundle
+ifneq ("$(wildcard /opt/homebrew/opt/ruby/bin/bundle)","")
+	BUNDLE := /opt/homebrew/opt/ruby/bin/bundle
+endif
 
 # Get current date in YYYY-MM-DD format
 DATE := $(shell date +%Y-%m-%d)
@@ -35,9 +41,13 @@ new: ## Create a new blog post with template
 	echo "Created $$filename"; \
 	$(EDITOR) "$$filename"
 
-publish: ## Build and deploy the site
+deps: ## Ensure Ruby dependencies are installed
+	@echo "Checking Ruby dependencies..."
+	@$(BUNDLE) check >/dev/null 2>&1 || (echo "Installing missing gems..." && $(BUNDLE) install)
+
+publish: deps ## Build and deploy the site
 	@echo "Building and deploying site..."
-	@SASS_SILENCE_DEPRECATIONS=* bundle exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
+	@SASS_SILENCE_DEPRECATIONS=* $(BUNDLE) exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
 	@echo "alexdong.com" > docs/CNAME
 	git add .
 	@if git diff --cached --quiet; then \
@@ -48,19 +58,19 @@ publish: ## Build and deploy the site
 		echo "Site published successfully!"; \
 	fi
 
-build: ## Build the site into docs/ without deploying
+build: deps ## Build the site into docs/ without deploying
 	@echo "Building site into docs/..."
-	@SASS_SILENCE_DEPRECATIONS=* bundle exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
+	@SASS_SILENCE_DEPRECATIONS=* $(BUNDLE) exec jekyll build -d docs 2>&1 | grep -vE "(DEPRECATION WARNING|More info and automated migrator|╷|│|╵|/workspaces/stream-of-thoughts/assets/main.scss)" || true
 	@echo "alexdong.com" > docs/CNAME
 	@echo "Site built at docs/"
 
-dev: ## Start development server
+dev: deps ## Start development server
 	@echo "Starting Jekyll development server..."
-	bundle exec jekyll serve --livereload --incremental
+	$(BUNDLE) exec jekyll serve --livereload --incremental
 
 clean: ## Clean generated files
 	@echo "Cleaning generated files..."
-	bundle exec jekyll clean
+	$(BUNDLE) exec jekyll clean
 	rm -rf docs/*
 
 install: ## Install dependencies
@@ -71,4 +81,4 @@ install: ## Install dependencies
 	sudo apt-get install -y git-lfs
 	git lfs install
 	git lfs update --force
-	bundle install
+	$(BUNDLE) install
